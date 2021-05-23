@@ -2,6 +2,24 @@ import React, { Component } from 'react';
 import logo from '../images/logo.png'
 
 class ReviwerDashcomponent extends Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            name: '',
+            email: ''
+        }
+
+        this.changeNameHandler = this.changeNameHandler.bind(this);
+        this.changeEmailHandler = this.changeEmailHandler.bind(this);
+
+    }
+    changeNameHandler = (event) =>{
+        this.setState({name: event.target.value});
+    }
+    changeEmailHandler = (event) =>{
+        this.setState({email: event.target.value});
+    }
     render() {
         return (
             <body>
@@ -42,12 +60,30 @@ class ReviwerDashcomponent extends Component {
                     <div class="content">
                         <div className="container-fluid">
                             <div className="glass">
+                                <div className="row">
+                                    <div className="col-md-4 mt-5 ml-5 mr-5">
+                                        <div className="col-12">
+                                            <div className="form-group">
+                                            <label>Name</label>
+                                            <input placeholder="Item name" name="name" className="form-control"
+                                            value={this.state.name} onChange={this.changeItemNameHandler} />
+                                            </div>
+                                        </div>
+                                        <div className="col-12">
+                                            <div className="form-group">
+                                            <label>Email</label>
+                                            <input placeholder="Item name" name="Email" className="form-control"
+                                            value={this.state.email} onChange={this.changeItemNameHandler}/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="row text-center mb-3">
                                     <div className="col-12 mt-2">
                                         <h1>RESEARCH</h1>
                                         <div className="row ">
                                             <div className="col-md-5"></div>
-                                            <div className="col-md-2">
+                                            <div className="col-md-2 d-flex justify-content-center">
                                                 <div className="breake">
                                                 </div>
                                             </div>
@@ -77,9 +113,17 @@ class ReviwerDashcomponent extends Component {
                                         <img src={logo} alt="" class="skills"/></a>
                                     </div>
                                 </div>
-                                <div className="row text-center">
+                                <div className="row text-center mt-3">
                                     <div className="col-12 mt-2 mb-3">
                                         <h1>PROPOSAL</h1>
+                                        <div className="row ">
+                                            <div className="col-md-5"></div>
+                                            <div className="col-md-2 d-flex justify-content-center">
+                                                <div className="breake">
+                                                </div>
+                                            </div>
+                                            <div className="col-md-5"></div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="row mt-2 mb-5">

@@ -183,10 +183,22 @@ label #sidebar_btn:hover{
   font-size: 2rem;
   opacity: 0.9;  
 }
+.glass input{
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border: none;
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 2rem;
+}
 .glass .breake{
   width:200px;
-  height: 5px;
-  background: #282c34;
+  height: 3px;
+  background: #2f323a;
+  opacity: 0.6;
   border-radius: 50px;
 }
 #check:checked ~ .content{
