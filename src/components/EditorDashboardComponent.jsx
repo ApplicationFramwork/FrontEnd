@@ -67,7 +67,9 @@ class EditorDashboardComponent extends Component {
                                     <h5 className="card-title">Add Event</h5>
                                     <p className="card-text">Some quick example text to build on the card title and make up the
                                         bulk of the card's content.</p>
-                                    <a href="/addConferenceEvent" className="btn btn-primary">Go somewhere</a>
+                                    <a href="/addConferenceEvent" className="btn btn-primary">Go to Add Events
+                                        &nbsp;<i className=" fas fa-calendar-alt"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +82,9 @@ class EditorDashboardComponent extends Component {
                                     <h5 className="card-title">View Upcoming Events</h5>
                                     <p className="card-text">Some quick example text to build on the card title and make up the
                                         bulk of the card's content.</p>
-                                    <a href="/eventList" className="btn btn-primary">Go somewhere</a>
+                                    <a href="/eventList" className="btn btn-primary">Go to View Events
+                                        &nbsp;<i className=" fas fa-calendar-alt"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +96,9 @@ class EditorDashboardComponent extends Component {
                                     <h5 className="card-title">Add Event</h5>
                                     <p className="card-text">Some quick example text to build on the card title and make up the
                                         bulk of the card's content.</p>
-                                    <a href="/addConferenceEvent" className="btn btn-primary">Go somewhere</a>
+                                    <a href="/addConferenceEvent" className="btn btn-primary">Go somewhere
+                                        &nbsp;<i className=" fas fa-calendar-alt"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>

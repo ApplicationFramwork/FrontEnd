@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import ConferenceImage from "../images/Conference.jpg";
-import editor from "../components/EditorDashboardComponent";
+import editor from "./EditorDashboardComponent";
 
 
 
