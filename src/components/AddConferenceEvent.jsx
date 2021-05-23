@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import background from "../images/Conference.jpg";
 import formBackground from "../images/addEvent.svg";
+import event from "../images/event.svg";
 class AddConferenceEvent extends Component {
     constructor(props){
         super(props)
@@ -77,8 +78,8 @@ class AddConferenceEvent extends Component {
         return (
             <div className="container-fluid bg-dark">
                     <div className="row">
-                        <div className="col-md-4 mt-5 pho">
-                            <img src={formBackground} className="bg2 mt-5" alt=""/>
+                        <div className="col-sm-4 mt-5">
+                            <img src={event} className="bg2 mt-5" alt="" width={"500px"}/>
                         </div>
                         <div className="col-md-8">
                             <h1 className="text-center mt-4 font-weight-bold font-italic text-primary">ADD EVENT</h1>

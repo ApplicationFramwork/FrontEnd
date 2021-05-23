@@ -7,7 +7,7 @@ class UpdateEventsComponent extends Component {
     constructor(props){
         super(props)
         this.state = {
-            id: this.props.match.params._id,
+            id: this.props.match.params.id,
             title: '',
             eventType: '',
             description: '',
@@ -17,22 +17,21 @@ class UpdateEventsComponent extends Component {
             organizedBy: '',
             eventStatus: ''
         }
-        this.changeTitleHandler=this.changeTitleHandler.bind(this);
-        this.changeEventTypeHandler=this.changeEventTypeHandler.bind(this);
-        this.changeDescriprionHandler=this.changeDescriprionHandler.bind(this);
-        this.changeDateHandler=this.changeDateHandler.bind(this);
-        this.changeTimeHandler=this.changeTimeHandler.bind(this);
-        this.changeVenueHandler=this.changeVenueHandler.bind(this);
-        this.changeOrganizerHAndler=this.changeOrganizerHAndler.bind(this);
-        this.changeStatusHandler=this.changeStatusHandler.bind(this);
-        this.updateEvent=this.updateEvent.bind(this);
+        this.changeTitleHandler = this.changeTitleHandler.bind(this);
+        this.changeEventTypeHandler = this.changeEventTypeHandler.bind(this);
+        this.changeDescriprionHandler = this.changeDescriprionHandler.bind(this);
+        this.changeDateHandler = this.changeDateHandler.bind(this);
+        this.changeTimeHandler = this.changeTimeHandler.bind(this);
+        this.changeVenueHandler = this.changeVenueHandler.bind(this);
+        this.changeOrganizerHAndler = this.changeOrganizerHAndler.bind(this);
+        this.changeStatusHandler = this.changeStatusHandler.bind(this);
+        this.updateEvent = this.updateEvent.bind(this);
         this.cancel = this.cancel.bind(this);
     }
     componentDidMount(){
         ConferenceManagementSystemServices.getEventByID(this.state.id).then((res)=>{
             let event =res.data;
             this.setState({
-                id: event.id,
                 title: event.title,
                 eventType: event.eventType,
                 description: event.description,
@@ -58,6 +57,7 @@ class UpdateEventsComponent extends Component {
         };
         console.log('event => ' + JSON.stringify(event));
         ConferenceManagementSystemServices.updateEvent(event, this.state.id).then(res => {
+            alert("Event Updated Successfully");
             this.props.history.push("/editor");
         })
 
@@ -110,7 +110,7 @@ class UpdateEventsComponent extends Component {
                                             <div className="col-12">
                                                 <div className="form-group">
                                                     <label htmlFor="title" className="form-label">Title</label>
-                                                    <input type="text" className="form-control" name="title" id="title" placeholder="Event Title"
+                                                    <input placeholder="Title" name="title" className="form-control"
                                                            value={this.state.title} onChange={this.changeTitleHandler}/>
                                                 </div>
                                             </div>
@@ -122,7 +122,7 @@ class UpdateEventsComponent extends Component {
                                                     <div className="input-group mb-3">
                                                         <select className="custom-select" name="eventType" id="eventType" placeholder="Event Status"
                                                                 style={{height:"45px",width:"80%"}}
-                                                                onChange={this.changeEventTypeHandler}>
+                                                                value={this.state.eventType} onChange={this.changeEventTypeHandler}>
                                                             <option selected>Choose...</option>
                                                             <option value="Workshop">Workshop</option>
                                                             <option value="Research Paper Presentation">Research Paper Presentation</option>
@@ -141,7 +141,7 @@ class UpdateEventsComponent extends Component {
                                                 <div className="form-group">
                                                     <label htmlFor="description" className="form-label">Description</label>
                                                     <input type="text" className="form-control" name="description" id="description" placeholder="Event Description"
-                                                           onChange={this.changeDescriprionHandler}/>
+                                                           value={this.state.description} onChange={this.changeDescriprionHandler}/>
                                                 </div>
                                             </div>
                                         </div>
@@ -150,7 +150,7 @@ class UpdateEventsComponent extends Component {
                                                 <div className="form-group">
                                                     <label htmlFor="startDate" className="form-label">Start Date</label>
                                                     <input type="date" className="form-control" name="startDate" id="startDate"
-                                                           onChange={this.changeDateHandler}/>
+                                                           value={this.state.startDate} onChange={this.changeDateHandler}/>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,7 +159,7 @@ class UpdateEventsComponent extends Component {
                                                 <div className="form-group">
                                                     <label htmlFor="duration" className="form-label">Start Time</label>
                                                     <input type="time" className="form-control" name="duration" id="duration" placeholder="Event Duration"
-                                                           onChange={this.changeTimeHandler}/>
+                                                           value={this.state.duration} onChange={this.changeTimeHandler}/>
                                                 </div>
                                             </div>
                                         </div>
@@ -168,7 +168,7 @@ class UpdateEventsComponent extends Component {
                                                 <div className="form-group">
                                                     <label htmlFor="venue" className="form-label">Venue</label>
                                                     <input type="text" className="form-control" name="venue" id="venue" placeholder="Event Venue"
-                                                           onChange={this.changeVenueHandler}/>
+                                                           value={this.state.venue} onChange={this.changeVenueHandler}/>
                                                 </div>
                                             </div>
                                         </div>
@@ -177,7 +177,7 @@ class UpdateEventsComponent extends Component {
                                                 <div className="form-group">
                                                     <label htmlFor="organizedBy" className="form-label">Organized By</label>
                                                     <input type="text" className="form-control" name="organizedBy" id="organizedBy" placeholder="Event Organized By"
-                                                           onChange={this.changeOrganizerHAndler}/>
+                                                           value={this.state.organizedBy} onChange={this.changeOrganizerHAndler}/>
                                                 </div>
                                             </div>
                                         </div>
@@ -188,7 +188,7 @@ class UpdateEventsComponent extends Component {
                                                     <div className="input-group mb-3">
                                                         <select className="custom-select" name="eventStatus" id="eventStatus" placeholder="Event Status"
                                                                 style={{height:"45px",width:"100%"}}
-                                                                onChange={this.changeStatusHandler}>
+                                                               value={this.state.eventStatus} onChange={this.changeStatusHandler}>
                                                             <option selected>Choose...</option>
                                                             <option value="Confirmed">Confirmed</option>
                                                             <option value="Pending">Pending</option>

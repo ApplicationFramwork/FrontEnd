@@ -68,7 +68,7 @@ function App(){
             <Route path = "/eventList" component = {ListEvents}></Route>
             <Route path = "/addConferenceEvent" component = {AddConferenceEvent}></Route>
             <Route path = "/editor" component = {EditorDashboardComponent}></Route>
-            <Route path = "/updateEvent" component = {UpdateEventsComponent}></Route>
+            <Route path = "/updateEvent/:id" component = {UpdateEventsComponent}></Route>
 
 
         </div>

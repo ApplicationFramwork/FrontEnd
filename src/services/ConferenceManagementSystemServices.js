@@ -5,14 +5,14 @@ const EVENT_API_BASE_URL = "http://localhost:8000/event";
 const EVENT_API_ADDEVENT_URL = "http://localhost:8000/event/add";
 const EVENT_API_DELETE_EVENT_URL = "http://localhost:8000/event/delete";
 const EVENT_API_UPDATE_EVENT_URL = "http://localhost:8000/event/update";
-
+const EVENT_API_GET_EVENTBYID_URL = "http://localhost:8000/event/get";
 class ConferenceManagementSystemServices{
     //get all events
     getEvents(){
         return axios.get(EVENT_API_BASE_URL);
     }
     getEventByID(id){
-        return axios.get(EVENT_API_BASE_URL + '/' + id);
+        return axios.get(EVENT_API_GET_EVENTBYID_URL + '/' + id);
 
     }
     //add an event

@@ -5,6 +5,7 @@ import chart from "../images/chart.png";
 import edit from "../images/edit.png";
 import editEvent from "../images/editEvents.gif";
 import calendar2 from "../images/calendar.gif";
+import logo from "../images/logo.png";
 import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import localise from "../images/localise.gif";
 
@@ -33,10 +34,14 @@ class EditorDashboardComponent extends Component {
 
     render() {
         return (
+
             <div className="container-fluid bg-light">
+                {/*Editor sidebar*/}
                 <div className="row">
-                    <div className="col-sm-3 bg-dark text-light">
+                    <div className="col-sm-2 bg-dark text-light">
                         <div className="dropdown">
+                            <img src={logo} height={"150px"} width={"150px"}/>
+                            <br/>
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 Users
@@ -74,10 +79,8 @@ class EditorDashboardComponent extends Component {
                         <hr className="text-light"/>
                     </div>
 
-                    <div className="col-sm-9">
+                    <div className="col-sm-10">
                         <div className="row">
-
-
                             <div className="collapse" id="navbarToggleExternalContent">
                                 <div className="bg-dark p-4">
                                     <h5 className="text-white h4">Editor Dashboard</h5>
@@ -94,11 +97,9 @@ class EditorDashboardComponent extends Component {
                                     </button>
                                 </div>
                             </nav>
-                            <br/>
 
                             {/*Columns with cards*/}
-                            <div className="container">
-
+                            <div className="container m-2">
                                 <div className="row align-items-start">
                                     <div className="col">
                                         <div className="card" style={{width: "18rem"}}>
@@ -144,7 +145,6 @@ class EditorDashboardComponent extends Component {
                                     </div>
                                 </div>
                             </div>
-
                             <br/><br/>
                             {/*Display Event Details*/}
                             <div className="container">
@@ -202,7 +202,6 @@ class EditorDashboardComponent extends Component {
                                                 data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                             Accordion Item #1
                                         </button>
-
                                     </h2>
                                     <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne"
                                          data-bs-parent="#accordionExample">
