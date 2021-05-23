@@ -40,50 +40,69 @@ class ReviwerDashcomponent extends Component {
                     
 
                     <div class="content">
-                        <div className="container">
-                            <div className="row mt-5">
-                                <div class="col-md-2 box boody mt-2"><a href="/">
-                                    <h2 class="skillname text-center">HTML</h2>
-                                    <div class="cricle"></div>
-                                    <img src={logo} alt="" class="skills"/></a>
+                        <div className="container-fluid">
+                            <div className="glass">
+                                <div className="row text-center mb-3">
+                                    <div className="col-12 mt-2">
+                                        <h1>RESEARCH</h1>
+                                        <div className="row ">
+                                            <div className="col-md-5"></div>
+                                            <div className="col-md-2">
+                                                <div className="breake">
+                                                </div>
+                                            </div>
+                                            <div className="col-md-5"></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 box boody mt-2"><a href="/">
-                                    <h2 class="skillname text-center">CSS</h2>
-                                    <div class="cricle"></div>
-                                    <img src={logo} alt="" class="skills"/></a>
+                                <div className="row mt-2">
+                                    <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                        <h2 class="skillname text-center">HTML</h2>
+                                        <div class="cricle"></div>
+                                        <img src={logo} alt="" class="skills"/></a>
+                                    </div>
+                                    <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                        <h2 class="skillname text-center">CSS</h2>
+                                        <div class="cricle"></div>
+                                        <img src={logo} alt="" class="skills"/></a>
+                                    </div>
+                                    <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                        <h2 class="skillname text-center">REACT</h2>
+                                        <div class="cricle"></div>
+                                        <img src={logo} alt="" class="skills"/></a>
+                                    </div>
+                                    <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                        <h2 class="skillname">NODE JS</h2>
+                                        <div class="cricle"></div>
+                                        <img src={logo} alt="" class="skills"/></a>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 box boody mt-2"><a href="/">
-                                    <h2 class="skillname text-center">REACT</h2>
-                                    <div class="cricle"></div>
-                                    <img src={logo} alt="" class="skills"/></a>
+                                <div className="row text-center">
+                                    <div className="col-12 mt-2 mb-3">
+                                        <h1>PROPOSAL</h1>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 box boody mt-2"><a href="/">
-                                    <h2 class="skillname">NODE JS</h2>
-                                    <div class="cricle"></div>
-                                    <img src={logo} alt="" class="skills"/></a>
-                                </div>
-                            </div>
-
-                            <div className="row mt-5">
-                                <div class="col-md-2 box boody mt-2"><a href="/">
-                                    <h2 class="skillname text-center">HTML</h2>
-                                    <div class="cricle"></div>
-                                    <img src={logo} alt="" class="skills"/></a>
-                                </div>
-                                <div class="col-md-2 box boody mt-2"><a href="/">
-                                    <h2 class="skillname text-center">CSS</h2>
-                                    <div class="cricle"></div>
-                                    <img src={logo} alt="" class="skills"/></a>
-                                </div>
-                                <div class="col-md-2 box boody mt-2"><a href="/">
-                                    <h2 class="skillname text-center">REACT</h2>
-                                    <div class="cricle"></div>
-                                    <img src={logo} alt="" class="skills"/></a>
-                                </div>
-                                <div class="col-md-2 box boody mt-2"><a href="/">
-                                    <h2 class="skillname">NODE JS</h2>
-                                    <div class="cricle"></div>
-                                    <img src={logo} alt="" class="skills"/></a>
+                                <div className="row mt-2 mb-5">
+                                    <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                        <h2 class="skillname text-center">HTML</h2>
+                                        <div class="cricle"></div>
+                                        <img src={logo} alt="" class="skills"/></a>
+                                    </div>
+                                    <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                        <h2 class="skillname text-center">CSS</h2>
+                                        <div class="cricle"></div>
+                                        <img src={logo} alt="" class="skills"/></a>
+                                    </div>
+                                    <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                        <h2 class="skillname text-center">REACT</h2>
+                                        <div class="cricle"></div>
+                                        <img src={logo} alt="" class="skills"/></a>
+                                    </div>
+                                    <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                        <h2 class="skillname">NODE JS</h2>
+                                        <div class="cricle"></div>
+                                        <img src={logo} alt="" class="skills"/></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

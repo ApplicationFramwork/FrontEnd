@@ -74,7 +74,6 @@ header .left_area img{
   font-weight: 600;
   color: #fff;
   transition: 0.5s;
-  transition-property: background;
 }
 
 .logout_btn:hover{
@@ -101,24 +100,11 @@ header .left_area img{
   background: #0B87A6;
 }
 
-.profile_info{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .sidebar .profile_info .profile_image{
   width: 100px;
   height: 100px;
   border-radius: 100px;
   margin-bottom: 10px;
-}
-
-.sidebar .profile_info h4{
-  color: #ccc;
-  margin-top: 0;
-  margin-bottom: 20px;
 }
 
 .sidebar a{
@@ -130,7 +116,6 @@ header .left_area img{
   padding-left: 40px;
   box-sizing: border-box;
   transition: 0.5s;
-  transition-property: background;
 }
 
 .sidebar a:hover{
@@ -179,10 +164,31 @@ label #sidebar_btn:hover{
   background-color: #0B87A6;
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height:max-content;
   transition: 0.5s;
 }
-
+.glass {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 1rem;
+  z-index: 2;
+}
+.glass h1{
+  color: #426696;
+  font-weight: 750;
+  font-size: 2rem;
+  opacity: 0.9;  
+}
+.glass .breake{
+  width:200px;
+  height: 5px;
+  background: #282c34;
+  border-radius: 50px;
+}
 #check:checked ~ .content{
   margin-left: 60px;
 }
@@ -285,7 +291,6 @@ label #sidebar_btn:hover{
     text-decoration: none;
     box-sizing: border-box;
     transition: 0.5s;
-    transition-property: background;
   }
 
   .mobile_nav_items a:hover{
