@@ -1,14 +1,10 @@
 import React, {Component} from 'react';
-import background from "../images/Meeting-Background.jpg";
-import calender from "../images/calender.jpg";
-import chart from "../images/chart.png";
-import edit from "../images/edit.png";
-import editEvent from "../images/editEvents.gif";
 import calendar2 from "../images/calendar.gif";
-import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import localise from "../images/localise.gif";
+import editEvent from "../images/editEvents.gif";
+import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 
-class EditorDashboardComponent extends Component {
+class EditorSidebarComponent extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -30,7 +26,6 @@ class EditorDashboardComponent extends Component {
             this.setState({events : this.state.events.filter(event => event._id !==id)});
         })
     }
-
     render() {
         return (
             <div className="container-fluid bg-light">
@@ -258,13 +253,12 @@ class EditorDashboardComponent extends Component {
                             <br/>
                         </div>
                         <br/>
+
                     </div>
                 </div>
             </div>
         );
     }
-
-
 }
 
-export default EditorDashboardComponent;
+export default EditorSidebarComponent;

@@ -8,6 +8,7 @@ import ListEvents from "./components/ListEventsComponent";
 import EditorDashboardComponent from "./components/EditorDashboardComponent";
 import AddConferenceEvent from "./components/AddConferenceEvent";
 import UpdateEventsComponent from "./components/UpdateEventsComponent";
+import sidebar from "./components/EditorSidebarComponent";
 import Test from "./components/Test"
 
 
@@ -63,6 +64,7 @@ function App(){
             </Switch>
 
             </div>
+            <Route path = "/side" component = {sidebar}></Route>
             <Route path = "/eventList" component = {ListEvents}></Route>
             <Route path = "/addConferenceEvent" component = {AddConferenceEvent}></Route>
             <Route path = "/editor" component = {EditorDashboardComponent}></Route>
