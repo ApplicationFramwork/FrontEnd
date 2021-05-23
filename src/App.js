@@ -1,77 +1,24 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
-import CounterClass from "./components/CounterClass";
-import CounterFunction from "./components/CounterFunction";
-import Header from "./components/Header";
-import AddEventComponent from "./components/AddEventComponent";
-import ListEvents from "./components/ListEventsComponent";
-import EditorDashboardComponent from "./components/EditorDashboardComponent";
-import AddConferenceEvent from "./components/AddConferenceEvent";
-import UpdateEventsComponent from "./components/UpdateEventsComponent";
-import Test from "./components/Test"
+import './App.css';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import IndexPageComponent from './components/indexcomponent';
+import reviwerdash from './components/ReviwerDashcomponent';
+import reviwerachive from './components/achivementcomponent';
+import reviwersettings from './components/reviwersettingcomponent';
 
-
-
-//import axios from 'axios';
-
-/*class App extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            event:[]
-        };
-    }
-    componentDidMount() {
-        this.getEvents();
-    }
-
-    getEvents(){
-        axios.get('http://localhost:8000/event').then(res=>{
-
-                this.setState({
-                    event:res.data
-                });
-                console.log(this.state.event);
-
-        });
-    }
-    render() {
-        return (
-            <div>
-
-            </div>
-        );
-    }
-*/
-function App(){
-    return(
-        <Router>
-        <div>
-
-            <Header/>
-            <div className="container">
-
-            <Switch>
-
-                <Route path="/addEvent" exact component={AddEventComponent} />
-
-                <Route path = "/Test" component = {Test}></Route>
-
-
-
-            </Switch>
-
-            </div>
-            <Route path = "/eventList" component = {ListEvents}></Route>
-            <Route path = "/addConferenceEvent" component = {AddConferenceEvent}></Route>
-            <Route path = "/editor" component = {EditorDashboardComponent}></Route>
-            <Route path = "/updateEvent" component = {UpdateEventsComponent}></Route>
-
-
-        </div>
-        </Router>
-    );
+function App() {
+  return (
+    <div>
+      <Router>
+          <Switch>
+          <Route path = "/" exact component = {IndexPageComponent}></Route>
+          <Route path = "/reviwer" component = {reviwerdash}></Route>
+          <Route path = "/reviwerachivement" component = {reviwerachive}></Route>
+          <Route path = "/reviwersettings" component = {reviwersettings}></Route>
+        </Switch>
+    </Router>
+      
+    </div>
+  );
 }
 
 export default App;
