@@ -19,18 +19,16 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:master" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master/master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:IT19004778" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="997fbf04-e142-42ce-bb1a-e4ba5da8f572" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/FrontEnd.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="997fbf04-e142-42ce-bb1a-e4ba5da8f572" name="Default Changelist" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/src/images/icms 2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +39,11 @@
     <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1sw06CcDYo81T0ifyLPL6DLM5GB" />
@@ -52,9 +55,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BackEnd" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\AF Project\FrontEnd\src\images" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -64,8 +72,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1621768166859</updated>
-      <workItem from="1621768167956" duration="715000" />
+      <workItem from="1621768167956" duration="3227000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1621769156481</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1621769156481</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,7 +99,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master/master" />
+                        <option value="IT19004778" />
                       </list>
                     </value>
                   </entry>
@@ -95,7 +111,15 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1621769364201">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621769364201" />
     <state width="1345" height="182" key="GridCell.Tab.0.bottom" timestamp="1621768893063">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -112,9 +136,17 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="182" key="GridCell.Tab.0.right/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621768893063" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1621769171154">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621769171154" />
     <state x="484" y="275" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1621768345274">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="484" y="275" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621768345274" />
+    <state x="339" y="165" key="run.anything.popup" timestamp="1621771345230">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621771345230" />
   </component>
 </project>
