@@ -35,7 +35,7 @@ class EditorDashboardComponent extends Component {
     render() {
         return (
             <div className="container-fluid bg-dark">
-                {/*Accordion*/}
+
                 <div className="collapse" id="navbarToggleExternalContent">
                     <div className="bg-dark p-4">
                         <h5 className="text-white h4">Editor Dashboard</h5>
@@ -55,6 +55,102 @@ class EditorDashboardComponent extends Component {
                 </nav>
                 <br/>
 
+                {/*Columns with cards*/}
+                <div className="container">
+
+                    <div className="row align-items-start">
+                        <div className="col">
+                            <div className="card" style={{width: "18rem"}}>
+                                <br/>
+                                <img src={calendar2} className="card-img-top" alt="..."/>
+                                <div className="card-body">
+                                    <h5 className="card-title">Add Event</h5>
+                                    <p className="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card's content.</p>
+                                    <a href="/addConferenceEvent" className="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="card" style={{width: "18rem"}}>
+                                <br/>
+                                <img src={localise} className="card-img-top" style={{height:"200"}} alt="..."/>
+
+                                <div className="card-body">
+                                    <h5 className="card-title">View Upcoming Events</h5>
+                                    <p className="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card's content.</p>
+                                    <a href="/eventList" className="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="card" style={{width: "18rem"}}>
+                                <br/><br/><br/><br/>
+                                <img src={editEvent} className="card-img-top"alt="..."/>
+                                <div className="card-body">
+                                    <h5 className="card-title">Add Event</h5>
+                                    <p className="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card's content.</p>
+                                    <a href="/addConferenceEvent" className="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <br/><br/>
+                {/*Display Event Details*/}
+                <div className="container">
+                    <div className="row">
+                        {
+                            this.state.events.map(
+                                events =>
+                                    <div className="col-md-4">
+                                        <div className="card mt-3 sellercard">
+                                            <div className="product text-center mt-3">
+                                                <h2>Upcoming Events</h2>
+                                                <h5>{events.title}</h5>
+                                                <div className="mt-3 info">
+                                                    <span className="text1 d-block mb-3">{events.description}</span>
+                                                    <span className="text1 ">Time {events.duration} </span>
+                                                </div>
+                                                <div className="mt-3 info">
+                                                    <span className="text1 ">Status {events.eventStatus} </span>
+                                                </div>
+                                                <div className="cost mt-3 text-dark">
+                                                    <span>{events.date}</span>
+                                                </div>
+
+                                            </div>
+                                            <div className="row mt-2">
+                                                <div className="col-md-6">
+                                                    <div className="p-3 text-center text-white mt-2 cursor">
+                                                        <button className="btn btn-success btn-block">
+                                                            <i className="fas fa-edit"></i>&nbsp;
+                                                            Edit Event
+
+                                                        </button>
+                                                        <br/>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="p-3 text-center text-white mt-2 cursor">
+                                                        <button className="btn btn-danger">Delete Item</button>
+                                                        <br/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            )
+                        }
+                    </div>
+                </div>
+                <br/>
+                {/*Accordion*/}
                 <div className="accordion" id="accordionExample">
                     <div className="accordion-item">
                         <h2 className="accordion-header" id="headingOne">
@@ -115,100 +211,8 @@ class EditorDashboardComponent extends Component {
                         </div>
                     </div>
                 </div>
-               <br/>
+                <br/>
 
-                {/*Columns with cards*/}
-                <div className="container">
-
-                    <div className="row align-items-start">
-                        <div className="col">
-                            <div className="card" style={{width: "18rem"}}>
-                                <img src={calendar2} className="card-img-top" alt="..."/>
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.</p>
-                                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="card" style={{width: "18rem"}}>
-                                <br/>
-                                <img src={localise} className="card-img-top" style={{height:"200"}} alt="..."/>
-                                <br/>
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.</p>
-                                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="card" style={{width: "18rem"}}>
-                                <img src={editEvent} className="card-img-top"alt="..."/>
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.</p>
-                                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <br/><br/>
-                {/*Display Event Details*/}
-                <div className="container">
-                    <div className="row">
-                        {
-                            this.state.events.map(
-                                events =>
-                                    <div className="col-md-4">
-                                        <div className="card mt-3 sellercard">
-                                            <div className="product text-center mt-3">
-                                                <h2>Upcoming Events</h2>
-                                                <h5>{events.title}</h5>
-                                                <div className="mt-3 info">
-                                                    <span className="text1 d-block mb-3">{events.description}</span>
-                                                    <span className="text1 ">Time {events.duration} </span>
-                                                </div>
-                                                <div className="mt-3 info">
-                                                    <span className="text1 ">Status {events.eventStatus} </span>
-                                                </div>
-                                                <div className="cost mt-3 text-dark">
-                                                    <span>{events.date}</span>
-                                                </div>
-
-                                            </div>
-                                            <div className="row mt-2">
-                                                <div className="col-md-6">
-                                                    <div className="p-3 text-center text-white mt-2 cursor">
-                                                        <button className="btn btn-success btn-block">
-                                                            <i className="fas fa-edit"></i>&nbsp;
-                                                            Edit Event
-
-                                                        </button>
-                                                        <br/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-6">
-                                                    <div className="p-3 text-center text-white mt-2 cursor">
-                                                        <button className="btn btn-danger">Delete Item</button>
-                                                        <br/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            )
-                        }
-                    </div>
-                </div>
             </div>
         );
     }
