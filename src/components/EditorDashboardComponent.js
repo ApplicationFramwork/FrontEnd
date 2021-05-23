@@ -3,7 +3,11 @@ import background from "../images/Meeting-Background.jpg";
 import calender from "../images/calender.jpg";
 import chart from "../images/chart.png";
 import edit from "../images/edit.png";
+import editEvent from "../images/editEvents.gif";
+import calendar2 from "../images/calendar.gif";
 import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
+import localise from "../images/localise.gif";
+
 
 class EditorDashboardComponent extends Component {
     constructor(props){
@@ -119,7 +123,7 @@ class EditorDashboardComponent extends Component {
                     <div className="row align-items-start">
                         <div className="col">
                             <div className="card" style={{width: "18rem"}}>
-                                <img src={calender} className="card-img-top" alt="..."/>
+                                <img src={calendar2} className="card-img-top" alt="..."/>
                                 <div className="card-body">
                                     <h5 className="card-title">Card title</h5>
                                     <p className="card-text">Some quick example text to build on the card title and make up the
@@ -131,7 +135,7 @@ class EditorDashboardComponent extends Component {
                         <div className="col">
                             <div className="card" style={{width: "18rem"}}>
                                 <br/>
-                                <img src={chart} className="card-img-top" style={{height:"200"}} alt="..."/>
+                                <img src={localise} className="card-img-top" style={{height:"200"}} alt="..."/>
                                 <br/>
                                 <div className="card-body">
                                     <h5 className="card-title">Card title</h5>
@@ -143,7 +147,7 @@ class EditorDashboardComponent extends Component {
                         </div>
                         <div className="col">
                             <div className="card" style={{width: "18rem"}}>
-                                <img src={edit} className="card-img-top"alt="..."/>
+                                <img src={editEvent} className="card-img-top"alt="..."/>
                                 <div className="card-body">
                                     <h5 className="card-title">Card title</h5>
                                     <p className="card-text">Some quick example text to build on the card title and make up the
