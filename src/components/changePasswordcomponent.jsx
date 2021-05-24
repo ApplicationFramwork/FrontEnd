@@ -82,7 +82,7 @@ class changePasswordcomponent extends Component {
                                         <div className="col-md-8 ml-2 mr-2 mt-5">
                                             <div className="form-group">
                                                 <label>Current-Password</label>
-                                                <input placeholder="Item name" name="password" className="form-control"
+                                                <input placeholder="Current-Password" name="password" className="form-control"
                                                 value={this.state.currentpassword} onChange={this.changepasswordHandler} />
                                             </div>
                                         </div>
@@ -91,7 +91,7 @@ class changePasswordcomponent extends Component {
                                         <div className="col-md-8 ml-2 mr-2 mt-5">
                                             <div className="form-group">
                                                 <label>New-Password</label>
-                                                <input placeholder="Item name" name="newpassword" className="form-control"
+                                                <input placeholder="New-Password" name="newpassword" className="form-control"
                                                 value={this.state.newpassword} onChange={this.changenewpassHandler} />
                                             </div>
                                         </div>
@@ -100,7 +100,7 @@ class changePasswordcomponent extends Component {
                                         <div className="col-md-8 ml-2 mr-2 mt-5">
                                             <div className="form-group">
                                                 <label>Reenter-Password</label>
-                                                <input placeholder="Item name" name="reenternewpassword" className="form-control"
+                                                <input placeholder="Reenter-Password" name="reenternewpassword" className="form-control"
                                                 value={this.state.reenterpassword} onChange={this.changereenterpassHandler} />
                                             </div>
                                         </div>

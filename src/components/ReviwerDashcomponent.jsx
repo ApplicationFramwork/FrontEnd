@@ -64,17 +64,14 @@ class ReviwerDashcomponent extends Component {
                                 <div className="row">
                                     <div className="col-md-4 mt-5 ml-5 mr-5">
                                         <div className="col-12">
-                                            <div className="form-group">
-                                            <label>Name</label>
-                                            <input placeholder="Item name" name="name" className="form-control"
-                                            value={this.state.name} onChange={this.changeItemNameHandler} />
+                                            <div className="form-group  names">
+                                            <label>Name : <span >JANKA priyantha</span></label>
                                             </div>
                                         </div>
                                         <div className="col-12">
-                                            <div className="form-group">
-                                            <label>Email</label>
-                                            <input placeholder="Item name" name="Email" className="form-control"
-                                            value={this.state.email} onChange={this.changeItemNameHandler}/>
+                                            <div className="form-group  names">
+                                            <label>Email: <span>JANKA priyantha</span></label>
+                                            
                                             </div>
                                         </div>
                                     </div>

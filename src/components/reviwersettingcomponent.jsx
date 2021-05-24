@@ -87,14 +87,14 @@ class reviwersettingcomponent extends Component {
                                         <div className="col-md-5 ml-2 mr-2 mt-5">
                                             <div className="form-group">
                                                 <label>First Name</label>
-                                                <input placeholder="Item name" name="firstname" className="form-control"
+                                                <input placeholder="First Name" name="firstname" className="form-control"
                                                 value={this.state.firstname} onChange={this.changefirstNameHandler} />
                                             </div>
                                         </div>
                                         <div className="col-md-5 ml-2 mr-2 mt-5">
                                             <div className="form-group">
                                                 <label>Last Name</label>
-                                                <input placeholder="Item name" name="lastname" className="form-control"
+                                                <input placeholder="Last Name" name="lastname" className="form-control"
                                                 value={this.state.lastname} onChange={this.changelastNameHandler}/>
                                             </div>
                                         </div>
@@ -103,7 +103,7 @@ class reviwersettingcomponent extends Component {
                                         <div className="col-md-8 ml-2 mr-2 mt-5">
                                             <div className="form-group">
                                                 <label>Email</label>
-                                                <input placeholder="Item name" name="email" className="form-control"
+                                                <input placeholder="Email" name="email" className="form-control"
                                                 value={this.state.email} onChange={this.changeemailHandler} />
                                             </div>
                                         </div>
@@ -112,7 +112,7 @@ class reviwersettingcomponent extends Component {
                                         <div className="col-md-8 ml-2 mr-2 mt-5">
                                             <div className="form-group">
                                                 <label>Current-Password</label>
-                                                <input placeholder="Item name" name="password" className="form-control"
+                                                <input placeholder="Current-Password" name="password" className="form-control"
                                                 value={this.state.password} onChange={this.changepasswordHandler} />
                                             </div>
                                         </div>
