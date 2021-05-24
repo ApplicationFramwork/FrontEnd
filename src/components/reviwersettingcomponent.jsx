@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.png'
-import CmsSevice from '../frontendRoutes/routes'
+import CmsSevice from '../services/ConferenceManagementSystemServices';
 
 class reviwersettingcomponent extends Component {
     constructor(props){
@@ -45,7 +45,7 @@ class reviwersettingcomponent extends Component {
         }))
     }
     //UPADATE REVIWER DETAILS
-    updateitem = (e) =>{
+    updatereviwer = (e) =>{
         e.preventDefault();
         let reviwer = {first_name: this.state.firstname,last_name: this.state.lastname,email: this.state.email};
         console.log('reviwer => ' + JSON.stringify(reviwer));

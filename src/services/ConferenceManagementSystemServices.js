@@ -6,7 +6,25 @@ const EVENT_API_ADDEVENT_URL = "http://localhost:8000/event/add";
 const EVENT_API_DELETE_EVENT_URL = "http://localhost:8000/event/delete";
 const EVENT_API_UPDATE_EVENT_URL = "http://localhost:8000/event/update";
 
+//reviwer Servises URL
+const BackendAPIGetOneReviwer_URL = "http://localhost:8070/reviwer/getreviwer";
+const BackendAPIUpdateReviwer_URL = "http://localhost:8070/reviwer/update";
+const BackendAPIDeleteReviwer_URL = "http://localhost:8070/reviwer/delete";
+
 class ConferenceManagementSystemServices{
+
+    //get reviwer details using reviwer id
+    getreviwer(id){
+        return axios.get(BackendAPIGetOneReviwer_URL + '/' + id);
+    }
+    //update reviwer using reviwer id
+    updatereviwer(reviwer, id){
+        return axios.put(BackendAPIUpdateReviwer_URL  + '/' + id, reviwer);
+    }
+    //delete reviwer using reviwer id
+    deletereviwer(id, email){
+        return axios.delete(BackendAPIDeleteReviwer_URL  + '/' + id + '/' + email)
+    }
     //get all events
     getEvents(){
         return axios.get(EVENT_API_BASE_URL);

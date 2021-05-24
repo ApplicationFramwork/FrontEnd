@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.png';
-import CmsSevice from '../frontendRoutes/routes'
+import CmsSevice from '../services/ConferenceManagementSystemServices';
 
 class ReviwerDashcomponent extends Component {
     constructor(props){
