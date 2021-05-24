@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.png'
 import CmsSevice from '../services/ConferenceManagementSystemServices';
+import Swal from 'sweetalert2';
+
 
 class reviwersettingcomponent extends Component {
     constructor(props){
@@ -52,24 +54,98 @@ class reviwersettingcomponent extends Component {
     //UPADATE REVIWER DETAILS
     updatereviwer = (e) =>{
         e.preventDefault();
-        if(this.state.currentpass === this.state.password){
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success ml-5',
+              cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          })
+          
+          swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "You want to update account",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, update it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+                if(this.state.currentpass === this.state.password){
             
-            let reviwer = {first_name: this.state.firstname,last_name: this.state.lastname,email: this.state.email,
-                password: this.state.password,type: this.state.type,number_Of_reviews: this.state.number_Of_reviews};
-            console.log('reviwer => ' + JSON.stringify(reviwer));
-    
-            CmsSevice.updatereviwer(reviwer, this.state.id).then(res => {
-               console.log('success');
-           })
-        }else{
-            console.log('password error')
-        }
+                    let reviwer = {first_name: this.state.firstname,last_name: this.state.lastname,email: this.state.email,
+                        password: this.state.password,type: this.state.type,number_Of_reviews: this.state.number_Of_reviews};
+                    console.log('reviwer => ' + JSON.stringify(reviwer));
+            
+                    CmsSevice.updatereviwer(reviwer, this.state.id).then(res => {
+                       console.log('success');
+                   })
+                   swalWithBootstrapButtons.fire(
+                    
+                    'Your Account has been Updated.',
+                    'success'
+                  )
+                }else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Current Password is wrong!'
+                      })
+                }
+              
+            } else if (
+              /* Read more about handling dismissals below */
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              swalWithBootstrapButtons.fire(
+                'Cancelled',
+                'Your Update is cancelled',
+                'error'
+              )
+            }
+          })
+          
+        
     }
     deletereviwer = (e) =>{
         e.preventDefault();
-        CmsSevice.deletereviwer(this.state.id, this.state.email).then(res =>{
-            console.log('success');
-        })
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success ml-5',
+              cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          })
+          
+          swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+                CmsSevice.deletereviwer(this.state.id, this.state.email).then(res =>{
+                    console.log('success');
+                })
+              swalWithBootstrapButtons.fire(
+                'Deleted!',
+                'Your Account has been deleted.',
+                'success'
+              )
+            } else if (
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              swalWithBootstrapButtons.fire(
+                'Cancelled',
+                'Your Account is safe',
+                'error'
+              )
+            }
+          })
     }
     render() {
         return (
@@ -155,7 +231,7 @@ class reviwersettingcomponent extends Component {
                                             <div className="form-group names">
                                                 <h5>Current-Password</h5>
                                                 <input placeholder="Current-Password" name="password" className="form-control"
-                                                value={this.state.password} onChange={this.changepasswordHandler} />
+                                                value={this.state.password} onChange={this.changepasswordHandler} required/>
                                             </div>
                                         </div>
                                     </div>
@@ -167,7 +243,7 @@ class reviwersettingcomponent extends Component {
                                     <div className="row justify-content-center">
                                                             
                                         <div className="col-md-3 mt-3 mb-5">
-                                                <button className="btn btn-success btn-block" onClick={this.updatereviwer}>Update Item</button>
+                                                <button className="btn btn-success btn-block" onClick={this.updatereviwer}>Update Details</button>
                                         </div>
                                                             
                                         <div className="col-md-3 mt-3 mb-5">

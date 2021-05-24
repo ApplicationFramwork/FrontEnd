@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.png'
 import CmsSevice from '../services/ConferenceManagementSystemServices';
+import Swal from 'sweetalert2';
 
 class changePasswordcomponent extends Component {
     constructor(props){
@@ -51,21 +52,59 @@ class changePasswordcomponent extends Component {
     //UPADATE REVIWER DETAILS
     updatereviwer = (e) =>{
         e.preventDefault();
-        if(this.state.currentpassword === this.state.password && this.state.newpassword === this.state.reenterpassword){
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success ml-5',
+              cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          })
+          
+          swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "Do you want to Update Password?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, update it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+                if(this.state.currentpassword === this.state.password && this.state.newpassword === this.state.reenterpassword){
             
-            let reviwer = {first_name: this.state.firstname,last_name: this.state.lastname,email: this.state.email,
-                password: this.state.newpassword,type: this.state.type,number_Of_reviews: this.state.number_Of_reviews};
-            console.log('reviwer => ' + JSON.stringify(reviwer));
-    
-            CmsSevice.updatereviwer(reviwer, this.state.id).then(res => {
-               console.log('success');
-               
-           })
-        }else{
-            console.log('password error')
-            console.log(this.state.reenterpassword);
-               console.log(this.state.currentpassword);
-        }
+                    let reviwer = {first_name: this.state.firstname,last_name: this.state.lastname,email: this.state.email,
+                        password: this.state.newpassword,type: this.state.type,number_Of_reviews: this.state.number_Of_reviews};
+                    console.log('reviwer => ' + JSON.stringify(reviwer));
+            
+                    CmsSevice.updatereviwer(reviwer, this.state.id).then(res => {
+                       console.log('success');
+                   })
+                   swalWithBootstrapButtons.fire(
+                    'Updated!',
+                    'Your Password has been Updated.',
+                    'success'
+                  )
+                }else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Current Password is wrong!'
+                      })
+                }
+              
+            } else if (
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              swalWithBootstrapButtons.fire(
+                'Cancelled',
+                'Your Update is cancelled',
+                'error'
+              )
+            }
+          })
+       
+          
+        
     }
     render() {
         return (
@@ -131,7 +170,7 @@ class changePasswordcomponent extends Component {
                                         </div>
                                     </div>
                                     <div className="row d-flex justify-content-center">
-                                        <div className="col-md-8 ml-2 mr-2 mt-5">
+                                        <div className="col-md-8 ml-2 mr-2 mt-4">
                                             <div className="form-group names">
                                                 <h5>New-Password</h5>
                                                 <input placeholder="New-Password" name="newpassword" className="form-control"
@@ -140,7 +179,7 @@ class changePasswordcomponent extends Component {
                                         </div>
                                     </div>
                                     <div className="row d-flex justify-content-center">
-                                        <div className="col-md-8 ml-2 mr-2 mt-5">
+                                        <div className="col-md-8 ml-2 mr-2 mt-4">
                                             <div className="form-group names">
                                                 <h5>Reenter-Password</h5>
                                                 <input placeholder="Reenter-Password" name="reenternewpassword" className="form-control"
@@ -148,25 +187,17 @@ class changePasswordcomponent extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="row d-flex justify-content-center">
-                                    <div className="row  mb-5">
-                                        <div className=" mb-5"></div>
-                                    </div>
-                                </div>
+                                   
                                 <div className="row justify-content-center">
                                                             
-                                        <div className="col-md-3 mt-3 mb-5">
-                                                <button className="btn btn-success btn-block" onClick={this.updatereviwer}>Update Item</button>
+                                        <div className="col-md-3 mt-4 mb-5">
+                                            <button className="btn btn-success btn-block" onClick={this.updatereviwer}>Update Password</button>
                                         </div>
                                                             
-                                        <div className="col-md-3 mt-3 mb-5">
+                                        <div className="col-md-3 mt-4 mb-5 ">
                                             <button className="btn btn-danger btn-block" onClick={this.cancle}>cancle</button> 
                                         </div>
-
-                                        <div className="col-md-3 mt-3 mb-5">
-                                            <button className="btn btn-danger btn-block" onClick={this.deletereviwer}>Delete Account</button> 
-                                        </div>
-                                                            
+            
                                     </div>
                                 </form>
                             </div>
