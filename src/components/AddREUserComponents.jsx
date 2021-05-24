@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AdminDashboardComponent from "./AdminDashboardComponent";
 
+
 class AddREUserComponents extends  Component{
     render() {
         return(
@@ -45,61 +46,69 @@ class AddREUserComponents extends  Component{
                         <hr className="text-light"/>
                     </div>
 
-                    <div className="col-sm-6 bg-secondary justify-contend-center text-light">
-                        <form className="form-container">
-                            <div className="form-group">
-                                <label for= "name_s" className="text-small text-dark">Name : </label>
-                                <input type="name" className="form-control" id="name_s"
-                                       placeholder="Ex : John Wick"/>
-                            </div>
+                    <div className="col-sm-6 m-1 frm">
+                        <div className="row">
+                            <div className="col-sm-4"></div>
+                            <div className="col-sm-8 bg-secondary justify-contend-center text-light">
+                                <h3>User Registration</h3>
+                                <form className="form-container">
+                                    <div className="form-group">
+                                        <label htmlFor="name_s" className="text-small text-dark">Name : </label>
+                                        <input type="name" className="form-control" id="name_s"
+                                               placeholder="Ex : John Wick"/>
+                                    </div>
 
-                            <br/>
-                            <div className="form-group">
-                                <label htmlFor="email1" className="text-dark">Email Address : </label>
-                                <input type="email" className="form-control" id="email1"
-                                       aria-describedby="emailHelp" placeholder="email@example.com"/>
-                                    <small id="emailHelp" className="form-text text-light">We'll never share your email
-                                        with anyone else.</small>
-                            </div>
+                                    <br/>
+                                    <div className="form-group">
+                                        <label htmlFor="email1" className="text-dark">Email Address : </label>
+                                        <input type="email" className="form-control" id="email1"
+                                               aria-describedby="emailHelp" placeholder="email@example.com"/>
+                                        <small id="emailHelp" className="form-text text-light">We'll never share your
+                                            email
+                                            with anyone else.</small>
+                                    </div>
 
-                            <br/>
-                            <div className="form-group">
-                                <label htmlFor="UserName" className="text-dark">User Name : </label>
-                                <input type="name" className="form-control" id="UserName"
-                                       placeholder="Ex : @John_Wick"/>
-                            </div>
+                                    <br/>
+                                    <div className="form-group">
+                                        <label htmlFor="UserName" className="text-dark">User Name : </label>
+                                        <input type="name" className="form-control" id="UserName"
+                                               placeholder="Ex : @John_Wick"/>
+                                    </div>
 
-                            <br/>
-                            <div className="form-group">
-                                <label htmlFor="password" className="text-dark">Password : </label>
-                                <input type="password" className="form-control" id="password"
-                                       placeholder="Password"/>
-                            </div>
+                                    <br/>
+                                    <div className="form-group">
+                                        <label htmlFor="password" className="text-dark">Password : </label>
+                                        <input type="password" className="form-control" id="password"
+                                               placeholder="Password"/>
+                                    </div>
 
-                            <br/>
-                            <div className="form-group">
-                                <label htmlFor="UserRole" className="text-dark">User Role : </label>
-                                <select id="UserRole" className="form-control">
-                                    <option selected>Editor</option>
-                                    <option>Reviewer</option>
-                                </select>
-                            </div>
+                                    <br/>
+                                    <div className="form-group">
+                                        <label htmlFor="UserRole" className="text-dark">User Role : </label>
+                                        <select id="UserRole" className="form-control">
+                                            <option selected>Editor</option>
+                                            <option>Reviewer</option>
+                                        </select>
+                                    </div>
 
-                            <br/>
-                            <div className="form-group">
-                                <label htmlFor="mobile" className="text-dark">Mobile Phone : </label>
-                                <input type="number" className="form-control" id="mobile"
-                                       placeholder="+94752699587"/>
-                            </div>
+                                    <br/>
+                                    <div className="form-group">
+                                        <label htmlFor="mobile" className="text-dark">Mobile Phone : </label>
+                                        <input type="number" className="form-control" id="mobile"
+                                               placeholder="+94752699587"/>
+                                    </div>
 
-                            <br/>
-                            <div className="col-auto">
-                                <button type="submit" className="btn btn-primary mb-2">Submit</button>
+                                    <br/>
+                                    <div className="col-auto">
+                                        <button type="submit" className="btn btn-primary mb-2">Submit</button>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
+                        </div>
                         <br/>
                         <br/>
                     </div>
+
                 </div>
             </div>
         );

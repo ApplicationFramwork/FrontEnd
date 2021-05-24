@@ -1,3 +1,13 @@
 html {
   font-size: 1rem;
 }
+.frm{
+  background-image: url("images/undraw_add_friends_re_3xte.svg");
+}
+.lg-body{
+  background-image: url("images/WhatsApp Image 2021-05-24 at 12.39.40.jpeg");
+  height: 100%;
+}
+.loginCard{
+  color: #800080;
+}
