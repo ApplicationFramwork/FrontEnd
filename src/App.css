@@ -199,6 +199,13 @@ label #sidebar_btn:hover{
   padding: 0.5rem;
   border-radius: 2rem;
 }
+.glass .names h5{
+  color: #426696;
+  font-weight: 400;
+  font-size: 2rem;
+  opacity: 0.9;
+  width:auto;
+}
 .glass input{
   background: linear-gradient(
     to right bottom,
@@ -425,7 +432,7 @@ label #sidebar_btn:hover{
 
 .box:nth-child(1) .cricle,
 .box:nth-child(1) .skillname{
-  background: #FFA500;
+  background: #F84F31;
 }
 .box:nth-child(2) .cricle,
 .box:nth-child(2) .skillname{

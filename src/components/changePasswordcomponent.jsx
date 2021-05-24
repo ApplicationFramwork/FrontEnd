@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.png'
+import CmsSevice from '../frontendRoutes/routes'
 
 class changePasswordcomponent extends Component {
     constructor(props){
         super(props)
 
         this.state = {
+            id : this.props.match.params.id,
             currentpassword: '',
             newpassword: '',
             reenterpassword: ''
@@ -80,8 +82,8 @@ class changePasswordcomponent extends Component {
                                 <form className="form-container">
                                     <div className="row d-flex justify-content-center">
                                         <div className="col-md-8 ml-2 mr-2 mt-5">
-                                            <div className="form-group">
-                                                <label>Current-Password</label>
+                                            <div className="form-group names">
+                                                <h5>Current-Password</h5>
                                                 <input placeholder="Current-Password" name="password" className="form-control"
                                                 value={this.state.currentpassword} onChange={this.changepasswordHandler} />
                                             </div>
@@ -89,8 +91,8 @@ class changePasswordcomponent extends Component {
                                     </div>
                                     <div className="row d-flex justify-content-center">
                                         <div className="col-md-8 ml-2 mr-2 mt-5">
-                                            <div className="form-group">
-                                                <label>New-Password</label>
+                                            <div className="form-group names">
+                                                <h5>New-Password</h5>
                                                 <input placeholder="New-Password" name="newpassword" className="form-control"
                                                 value={this.state.newpassword} onChange={this.changenewpassHandler} />
                                             </div>
@@ -98,8 +100,8 @@ class changePasswordcomponent extends Component {
                                     </div>
                                     <div className="row d-flex justify-content-center">
                                         <div className="col-md-8 ml-2 mr-2 mt-5">
-                                            <div className="form-group">
-                                                <label>Reenter-Password</label>
+                                            <div className="form-group names">
+                                                <h5>Reenter-Password</h5>
                                                 <input placeholder="Reenter-Password" name="reenternewpassword" className="form-control"
                                                 value={this.state.reenterpassword} onChange={this.changereenterpassHandler} />
                                             </div>

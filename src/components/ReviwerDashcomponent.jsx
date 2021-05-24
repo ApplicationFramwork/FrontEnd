@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import logo from '../images/logo.png'
+import logo from '../images/logo.png';
+import CmsSevice from '../frontendRoutes/routes'
 
 class ReviwerDashcomponent extends Component {
     constructor(props){
         super(props)
 
         this.state = {
-            name: '',
+            id : this.props.match.params.id,
+            firstname: '',
+            Lastname: '',
             email: ''
         }
 
@@ -18,6 +21,16 @@ class ReviwerDashcomponent extends Component {
     }
     changeEmailHandler = (event) =>{
         this.setState({email: event.target.value});
+    }
+    //Get Reviwer details
+    componentDidMount(){
+        CmsSevice.getreviwer(this.state.id).then((res=>{
+            let reviwewr =res.data;
+            this.setState({firstname: reviwewr.first_name,
+                        Lastname:reviwewr.last_name,
+                        email :reviwewr.email
+             })
+        }))
     }
     render() {
         return (
@@ -42,7 +55,7 @@ class ReviwerDashcomponent extends Component {
                             <i class="fa fa-bars nav_btn"></i>
                         </div>
                         <div class="mobile_nav_items">
-                            <a href="/reviwer"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+                            <a href="/reviwer+{this.state.id}"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
                             <a href="/reviwerachivement"><i class="fas fa-info-circle"></i><span>Achievement</span></a>
                             <a href="/reviwersettings"><i class="fa fa-key"></i><span>Change Password</span></a>
                             <a href="/reviwersettings"><i class="fas fa-sliders-h"></i><span>Account-Settings</span></a>
@@ -64,14 +77,8 @@ class ReviwerDashcomponent extends Component {
                                 <div className="row">
                                     <div className="col-md-4 mt-5 ml-5 mr-5">
                                         <div className="col-12">
-                                            <div className="form-group  names">
-                                            <h5>Name : Maleesha Suraj</h5>
-                                            </div>
-                                        </div>
-                                        <div className="col-12">
-                                            <div className="form-group  names">
-                                            <h5>Email : Maleesha Suraj</h5>
-                                            
+                                            <div className="form-group names mb-3">
+                                            <h5>Name : {this.state.firstname} {this.state.Lastname}</h5>
                                             </div>
                                         </div>
                                     </div>

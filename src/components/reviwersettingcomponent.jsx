@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.png'
+import CmsSevice from '../frontendRoutes/routes'
 
 class reviwersettingcomponent extends Component {
     constructor(props){
         super(props)
 
         this.state = {
+            id : this.props.match.params.id,
             firstname: '',
             lastname: '',
             email: '',
+            currentpass: '',
             password: ''
         }
 
@@ -28,6 +31,17 @@ class reviwersettingcomponent extends Component {
     }
     changepasswordHandler = (event) =>{
         this.setState({email: event.target.value});
+    }
+    //get reviwer details
+    componentDidMount(){
+        CmsSevice.getreviwer(this.state.id).then((res=>{
+            let reviwewr =res.data;
+            this.setState({firstname: reviwewr.first_name,
+                        lastname:reviwewr.last_name,
+                        email :reviwewr.email,
+                        currentpass : reviwewr.password
+             })
+        }))
     }
     render() {
         return (
@@ -84,34 +98,34 @@ class reviwersettingcomponent extends Component {
                                 </div>
                                 <form className="form-container">
                                     <div className="row d-flex justify-content-center">
-                                        <div className="col-md-5 ml-2 mr-2 mt-5">
-                                            <div className="form-group">
-                                                <label>First Name</label>
+                                        <div className="col-md-5 ml-2 mr-2 mt-4">
+                                            <div className="form-group names">
+                                                <h5>First Name</h5>
                                                 <input placeholder="First Name" name="firstname" className="form-control"
                                                 value={this.state.firstname} onChange={this.changefirstNameHandler} />
                                             </div>
                                         </div>
-                                        <div className="col-md-5 ml-2 mr-2 mt-5">
-                                            <div className="form-group">
-                                                <label>Last Name</label>
+                                        <div className="col-md-5 ml-2 mr-2 mt-4">
+                                            <div className="form-group names">
+                                                <h5>Last Name</h5>
                                                 <input placeholder="Last Name" name="lastname" className="form-control"
                                                 value={this.state.lastname} onChange={this.changelastNameHandler}/>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="row d-flex justify-content-center">
-                                        <div className="col-md-8 ml-2 mr-2 mt-5">
-                                            <div className="form-group">
-                                                <label>Email</label>
+                                        <div className="col-md-8 ml-2 mr-2 mt-3">
+                                            <div className="form-group names">
+                                                <h5>Email</h5>
                                                 <input placeholder="Email" name="email" className="form-control"
                                                 value={this.state.email} onChange={this.changeemailHandler} />
                                             </div>
                                         </div>
                                     </div>
                                     <div className="row d-flex justify-content-center">
-                                        <div className="col-md-8 ml-2 mr-2 mt-5">
-                                            <div className="form-group">
-                                                <label>Current-Password</label>
+                                        <div className="col-md-8 ml-2 mr-2 mt-3">
+                                            <div className="form-group names">
+                                                <h5>Current-Password</h5>
                                                 <input placeholder="Current-Password" name="password" className="form-control"
                                                 value={this.state.password} onChange={this.changepasswordHandler} />
                                             </div>
@@ -119,10 +133,24 @@ class reviwersettingcomponent extends Component {
                                     </div>
                                     <div className="row d-flex justify-content-center">
                                     <div className="row  mb-5">
-                                        <div className=" mb-5"></div>
+                                        <div className=""></div>
                                     </div>
                                 </div>
+                                    <div className="row justify-content-center">
+                                                            
+                                        <div className="col-md-4 mt-3 mb-5">
+                                                <button className="btn btn-success btn-block" onClick={this.updateitem}>Update Item</button>
+                                        </div>
+                                                            
+                                        <div className="col-md-4 mt-3 mb-5">
+                                            <button className="btn btn-danger btn-block" onClick={this.cancle}>cancle</button> 
+                                            </div>
+                                                            
+                                    </div>
                                 </form>
+                                <div>
+                                 <div className="row mb-2"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
