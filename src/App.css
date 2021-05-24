@@ -1,13 +1,55 @@
 html {
   font-size: 1rem;
+
+}
+a{
+  text-decoration: none;
 }
 .frm{
   background-image: url("images/undraw_add_friends_re_3xte.svg");
 }
 .lg-body{
   background-image: url("images/WhatsApp Image 2021-05-24 at 12.39.40.jpeg");
-  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 .loginCard{
   color: #800080;
+}
+.fPass{
+  color: #7363ef;
+}
+.btnLogin{
+  background-color: #7363ef;
+  text-align: center;
+
+}
+.ulIcons{
+  display: inline-block;
+  text-align: center;
+}
+.fb{
+  background-color: #7363ef;
+  color: white;
+  border: #7363ef solid 2px;
+  padding: 2px;
+  margin-right: 10px;
+  border-radius: 3px;
+
+}
+.twit{
+  background-color: #5eacec;
+  color: white;
+  border: #5eacec solid 2px;
+  padding: 2px;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+.mail{
+  background-color: #ea4b38;
+  color: white;
+  border: #ea4b38 solid 2px;
+  padding: 2px;
+  border-radius: 3px;
 }
