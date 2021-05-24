@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import AdminDashboard from './components/AdminDashboardComponent'
+import AddREComponent from './components/AddREUserComponents';
 import logo from './images/icms 2.png';
 
 function App() {
@@ -47,7 +49,7 @@ function App() {
             </nav>
             <Router>
                 <switch>
-                    <Route path = "/" exact component = {AdminDashboard}></Route>
+                    <Route path = "/" exact component = {AddREComponent}></Route>
                 </switch>
             </Router>
         </div>

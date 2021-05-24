@@ -25,10 +25,15 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="997fbf04-e142-42ce-bb1a-e4ba5da8f572" name="Default Changelist" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/images/icms 2.png" afterDir="false" />
+    <list default="true" id="997fbf04-e142-42ce-bb1a-e4ba5da8f572" name="Default Changelist" comment="admin dashboard added">
+      <change afterPath="$PROJECT_DIR$/src/components/AddREUserComponents.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/lineGraph.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/piechart.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AdminDashboardComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AdminDashboardComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +60,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BackEnd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -72,7 +77,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1621768166859</updated>
-      <workItem from="1621768167956" duration="3227000" />
+      <workItem from="1621768167956" duration="17108000" />
+      <workItem from="1621836631886" duration="639000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1621769156481</created>
@@ -81,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621769156481</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="admin dashboard added">
+      <created>1621771757412</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1621771757412</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,12 +123,18 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="admin dashboard added" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin dashboard added" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="795" y="126" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1621773175755">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="795" y="126" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621773175755" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1621769364201">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -136,17 +155,17 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="182" key="GridCell.Tab.0.right/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621768893063" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1621769171154">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1621771766159">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621769171154" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621771766159" />
     <state x="484" y="275" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1621768345274">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="484" y="275" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621768345274" />
-    <state x="339" y="165" key="run.anything.popup" timestamp="1621771345230">
+    <state x="339" y="165" key="run.anything.popup" timestamp="1621778595141">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" key="run.anything.popup/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621771345230" />
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621778595141" />
   </component>
 </project>

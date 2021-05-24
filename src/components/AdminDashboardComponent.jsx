@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
+import lineGraph from '../images/lineGraph.png';
+import piechart from '../images/piechart.png';
+import allusers from './UserListComponents';
 class AdminDashboardComponent extends Component{
     render() {
         return (
             <div class="container-fluid bg-light">
                 <div className="row">
-                    <div className="col-sm-3 bg-dark text-light">
+                    <div className="col-sm-2 bg-dark text-light">
                         <div class="dropdown">
                             <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 Users
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">All Users</a></li>
+                                <li><a class="dropdown-item" href={allusers}>All Users</a></li>
                                 <li><a class="dropdown-item" href="#">Add Users</a></li>
                                <li><a class="dropdown-item" href="#">Search</a></li>
                             </ul>
@@ -40,154 +43,82 @@ class AdminDashboardComponent extends Component{
                         <hr className="text-light"/>
                     </div>
                     
-                    <div className="col-sm-9 text-light">
+                    <div className="col-sm-10 text-light">
+                       <center><b><h3 className="bg-info text-dark m-1"> User Details </h3></b></center>
                         <div className="row">
-                            <div class="col-sm-5 card">
-                                <span class="align-top text-dark">Total User Count</span>
-                                <span class="font-size-3 font-weight-medium text-lh-sm text-dark" >50,102</span>
-                                <div class="mb-1">
-                                    <span class="text-secondary font-size-1">Deposit:</span>
-                                    <span class="font-weight-medium font-size-1">$1,050</span>
-                                </div>
-                                <div>
-                                    <span class="text-primary font-weight-medium text-lh-sm">
-                                        <span class="fas fa-arrow-up text-success small"></span>
-                                        +2.1% ($122)
-                                    </span>
-                                </div>
+                            <div class="col-sm-3 card m-1">
+                                <center><b><span className="align-top text-dark">Total User Count</span></b></center>
+                                <small>All users</small>
+                                <h1><span className="text-primary font-weight-medium text-lh-sm">
+                                        <span className="fas fa-arrow-up text-success small"></span>
+                                        +10000
+                                    </span> </h1><center>
+                                <small className="text-dark"> view all user details</small></center>
+                                <br/>
+                                <button type="button" className="btn btn-danger">View</button>
                             </div>
 
-                            <div class="col-sm-1">
-                                &nbsp;
+
+                            <div class="col-sm-5 card bg-light m-1">
+                                <img src={lineGraph}/>
                             </div>
-                            <div class="col-sm-5 card bg-light ">
-                                <span class="align-top text-dark">Total User Count</span>
-                                <span class="font-size-3 font-weight-medium text-lh-sm text-dark" >50,102</span>
-                                <div class="mb-1">
-                                    <span class="text-secondary font-size-1">Deposit:</span>
-                                    <span class="font-weight-medium font-size-1">$1,050</span>
-                                </div>
-                                <div>
-                                    <span class="text-primary font-weight-medium text-lh-sm">
-                                        <span class="fas fa-arrow-up text-success small"></span>
-                                        +2.1% ($122)
-                                    </span>
-                                </div>
+
+                            <div className="col-sm-3 card bg-light m-1">
+                                <img src={piechart}/>
                             </div>
-                            
+
                         </div>
-
-                        <br/>
+                        <hr className="text-dark "/>
 
                         <div className="row">
-                            <div class="col-sm-5 card">
-                                <span class="align-top text-dark">Total User Count</span>
-                                <span class="font-size-3 font-weight-medium text-lh-sm text-dark" >50,102</span>
-                                <div class="mb-1">
-                                    <span class="text-secondary font-size-1">Deposit:</span>
-                                    <span class="font-weight-medium font-size-1">$1,050</span>
-                                </div>
-                                <div>
-                                    <span class="text-primary font-weight-medium text-lh-sm">
-                                        <span class="fas fa-arrow-up text-success small"></span>
-                                        +2.1% ($122)
-                                    </span>
-                                </div>
+                            <center><b><h3 className="bg-info text-dark m-1"> Research Details </h3></b></center>
+                            <div className="col-sm-3 card m-1">
+                                <center><b><span className="align-top text-dark">Total Research Count</span></b></center>
+                                <small>All users</small>
+                                <h1><span className="text-primary font-weight-medium text-lh-sm">
+                                        <span className="fas fa-arrow-up text-success small"></span>
+                                        +10000
+                                    </span></h1>
+                                <center>
+                                    <small className="text-dark"> view all user details</small></center>
+                                <br/>
+                                <button type="button" className="btn btn-danger">View</button>
                             </div>
 
-                            <div class="col-sm-1">
-                                &nbsp;
+
+                            <div className="col-sm-5 card bg-light m-1">
+                                <img src={lineGraph}/>
                             </div>
-                            <div class="col-sm-5 card ">
-                                <span class="align-top text-dark">Total User Count</span>
-                                <span class="font-size-3 font-weight-medium text-lh-sm text-dark" >50,102</span>
-                                <div class="mb-1">
-                                    <span class="text-secondary font-size-1">Deposit:</span>
-                                    <span class="font-weight-medium font-size-1">$1,050</span>
-                                </div>
-                                <div>
-                                    <span class="text-primary font-weight-medium text-lh-sm">
-                                        <span class="fas fa-arrow-up text-success small"></span>
-                                        +2.1% ($122)
-                                    </span>
-                                </div>
+
+                            <div className="col-sm-3 card bg-light m-1">
+                                <img src={piechart}/>
                             </div>
-                            
                         </div>
-
-                        <br/>
-
-                        <div className="row">
-                            <div class="col-sm-5 card">
-                                <span class="align-top text-dark">Total User Count</span>
-                                <span class="font-size-3 font-weight-medium text-lh-sm text-dark" >50,102</span>
-                                <div class="mb-1">
-                                    <span class="text-secondary font-size-1">Deposit:</span>
-                                    <span class="font-weight-medium font-size-1">$1,050</span>
-                                </div>
-                                <div>
-                                    <span class="text-primary font-weight-medium text-lh-sm">
-                                        <span class="fas fa-arrow-up text-success small"></span>
-                                        +2.1% ($122)
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-1">
-                                &nbsp;
-                            </div>
-                            <div class="col-sm-5 card ">
-                                <span class="align-top text-dark">Total User Count</span>
-                                <span class="font-size-3 font-weight-medium text-lh-sm text-dark" >50,102</span>
-                                <div class="mb-1">
-                                    <span class="text-secondary font-size-1">Deposit:</span>
-                                    <span class="font-weight-medium font-size-1">$1,050</span>
-                                </div>
-                                <div>
-                                    <span class="text-primary font-weight-medium text-lh-sm">
-                                        <span class="fas fa-arrow-up text-success small"></span>
-                                        +2.1% ($122)
-                                    </span>
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <br/>
+                        <hr className="text-dark "/>
 
                         <div className="row">
-                            <div class="col-sm-5 card">
-                                <div className="row">
-                                    <div className="col-sm-6">
-                                        <i class="fas fa-users text-dark"></i>
-                                        <br />
-                                        
-                                        <span class="text-primary font-weight-medium text-lh-sm">
-                                            
-                                            <span class="fas fa-arrow-up text-success small"></span>
-                                            <span>10000</span>
-                                            </span>
-                                    </div>
-                                    <div className="col-sm-6"> 
-                                        <span class="align-top text-dark">Total User Count</span>
-                                        <span class="font-size-3 font-weight-medium text-lh-sm text-dark" >50,102</span>
-                                        <div class="mb-1">
-                                            <span class="text-secondary font-size-1">Deposit:</span>
-                                            <span class="font-weight-medium font-size-1">$1,050</span>
-                                        </div>
-                                        <div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
+                            <center><b><h3 className="bg-info text-dark m-1"> Events Details </h3></b></center>
+                            <div className="col-sm-3 card m-1">
+                                <center><b><span className="align-top text-dark">Total events Count</span></b></center>
+                                <small>All users</small>
+                                <h1><span className="text-primary font-weight-medium text-lh-sm">
+                                        <span className="fas fa-arrow-up text-success small"></span>
+                                        +10000
+                                    </span></h1>
+                                <center>
+                                    <small className="text-dark"> view all user details</small></center>
+                                <br/>
+                                <button type="button" className="btn btn-danger">View</button>
                             </div>
 
-                            <div class="col-sm-1">
-                                &nbsp;
+
+                            <div className="col-sm-5 card bg-light m-1">
+                                <img src={lineGraph}/>
                             </div>
-                            <div class="col-sm-5 card ">
+
+                            <div className="col-sm-3 card bg-light m-1">
+                                <img src={piechart}/>
                             </div>
-                            
                         </div>
 
                     </div>
