@@ -65,12 +65,12 @@ class ReviwerDashcomponent extends Component {
                                     <div className="col-md-4 mt-5 ml-5 mr-5">
                                         <div className="col-12">
                                             <div className="form-group  names">
-                                            <label>Name : <span >JANKA priyantha</span></label>
+                                            <h5>Name : Maleesha Suraj</h5>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-group  names">
-                                            <label>Email: <span>JANKA priyantha</span></label>
+                                            <h5>Email : Maleesha Suraj</h5>
                                             
                                             </div>
                                         </div>
