@@ -19,6 +19,7 @@ class reviwersettingcomponent extends Component {
         this.changelastNameHandler = this.changelastNameHandler.bind(this);
         this.changeemailHandler = this.changeemailHandler.bind(this);
         this.changepasswordHandler = this.changepasswordHandler.bind(this);
+        this.updatereviwer = this.updateitem.bind(this);
     }
     changefirstNameHandler = (event) =>{
         this.setState({firstname: event.target.value});
@@ -42,6 +43,17 @@ class reviwersettingcomponent extends Component {
                         currentpass : reviwewr.password
              })
         }))
+    }
+    //UPADATE REVIWER DETAILS
+    updateitem = (e) =>{
+        e.preventDefault();
+        let reviwer = {first_name: this.state.firstname,last_name: this.state.lastname,email: this.state.email};
+        console.log('reviwer => ' + JSON.stringify(reviwer));
+
+        CmsSevice.updatereviwer(reviwer, this.state.id).then(res => {
+           console.log('success')
+       })
+       
     }
     render() {
         return (
@@ -139,7 +151,7 @@ class reviwersettingcomponent extends Component {
                                     <div className="row justify-content-center">
                                                             
                                         <div className="col-md-4 mt-3 mb-5">
-                                                <button className="btn btn-success btn-block" onClick={this.updateitem}>Update Item</button>
+                                                <button className="btn btn-success btn-block" onClick={this.updatereviwer}>Update Item</button>
                                         </div>
                                                             
                                         <div className="col-md-4 mt-3 mb-5">

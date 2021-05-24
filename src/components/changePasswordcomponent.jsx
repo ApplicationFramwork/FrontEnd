@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.png'
-import CmsSevice from '../frontendRoutes/routes'
 
 class changePasswordcomponent extends Component {
     constructor(props){
