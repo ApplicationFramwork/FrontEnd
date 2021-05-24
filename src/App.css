@@ -190,7 +190,6 @@ label #sidebar_btn:hover{
     rgba(255, 255, 255, 0.3)
   );
   border: none;
-  width: 50%;
   padding: 0.5rem;
   border-radius: 2rem;
 }

@@ -1,33 +1,28 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.png'
 
-class reviwersettingcomponent extends Component {
+class changePasswordcomponent extends Component {
     constructor(props){
         super(props)
 
         this.state = {
-            firstname: '',
-            lastname: '',
-            email: '',
-            password: ''
+            currentpassword: '',
+            newpassword: '',
+            reenterpassword: ''
         }
 
-        this.changefirstNameHandler = this.changefirstNameHandler.bind(this);
-        this.changelastNameHandler = this.changelastNameHandler.bind(this);
-        this.changeemailHandler = this.changeemailHandler.bind(this);
-        this.changepasswordHandler = this.changepasswordHandler.bind(this);
-    }
-    changefirstNameHandler = (event) =>{
-        this.setState({firstname: event.target.value});
-    }
-    changelastNameHandler = (event) =>{
-        this.setState({lastname: event.target.value});
-    }
-    changeemailHandler = (event) =>{
-        this.setState({email: event.target.value});
+        this.changepasswordHandler= this.changepasswordHandler.bind(this);
+        this.changenewpassHandler= this.changenewpassHandler.bind(this);
+        this.changereenterpassHandler= this.changereenterpassHandler.bind(this);
     }
     changepasswordHandler = (event) =>{
-        this.setState({email: event.target.value});
+        this.setState({currentpassword: event.target.value});
+    }
+    changenewpassHandler = (event) =>{
+        this.setState({newpassword: event.target.value});
+    }
+    changereenterpassHandler = (event) =>{
+        this.setState({reenterpassword: event.target.value});
     }
     render() {
         return (
@@ -61,8 +56,8 @@ class reviwersettingcomponent extends Component {
                     <div class="sidebar">
                             <a href="/reviwer"><i class="fas fa-desktop mt-5 mb-5"></i><span>Dashboard</span></a>
                             <a href="/reviwerachivement"><i class="fas fa-info-circle mt-5 mb-5"></i><span>Achievement</span></a>
-                            <a href="/reviwerchangepassword"><i class="fa fa-key mt-5 mb-5"></i><span>Change Password</span></a>
-                            <a className="active" href="/reviwersettings"><i class="fas fa-sliders-h mt-5 mb-5"></i><span>Account-Settings</span></a>
+                            <a className="active" href="/reviwerchangepassword"><i class="fa fa-key mt-5 mb-5"></i><span>Change Password</span></a>
+                            <a href="/reviwersettings"><i class="fas fa-sliders-h mt-5 mb-5"></i><span>Account-Settings</span></a>
                     </div>
                     
 
@@ -71,7 +66,7 @@ class reviwersettingcomponent extends Component {
                             <div className="glass">
                                 <div className="row text-center mb-3">
                                     <div className="col-12 mt-3">
-                                        <h1>EDIT REVIWER DETAILS</h1>
+                                        <h1>EDIT PASSWORD</h1>
                                         <div className="row ">
                                             <div className="col-md-4"></div>
                                             <div className="col-md-4 d-flex justify-content-center">
@@ -84,36 +79,29 @@ class reviwersettingcomponent extends Component {
                                 </div>
                                 <form className="form-container">
                                     <div className="row d-flex justify-content-center">
-                                        <div className="col-md-5 ml-2 mr-2 mt-5">
-                                            <div className="form-group">
-                                                <label>First Name</label>
-                                                <input placeholder="Item name" name="firstname" className="form-control"
-                                                value={this.state.firstname} onChange={this.changefirstNameHandler} />
-                                            </div>
-                                        </div>
-                                        <div className="col-md-5 ml-2 mr-2 mt-5">
-                                            <div className="form-group">
-                                                <label>Last Name</label>
-                                                <input placeholder="Item name" name="lastname" className="form-control"
-                                                value={this.state.lastname} onChange={this.changelastNameHandler}/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="row d-flex justify-content-center">
-                                        <div className="col-md-8 ml-2 mr-2 mt-5">
-                                            <div className="form-group">
-                                                <label>Email</label>
-                                                <input placeholder="Item name" name="email" className="form-control"
-                                                value={this.state.email} onChange={this.changeemailHandler} />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="row d-flex justify-content-center">
                                         <div className="col-md-8 ml-2 mr-2 mt-5">
                                             <div className="form-group">
                                                 <label>Current-Password</label>
                                                 <input placeholder="Item name" name="password" className="form-control"
-                                                value={this.state.password} onChange={this.changepasswordHandler} />
+                                                value={this.state.currentpassword} onChange={this.changepasswordHandler} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="row d-flex justify-content-center">
+                                        <div className="col-md-8 ml-2 mr-2 mt-5">
+                                            <div className="form-group">
+                                                <label>New-Password</label>
+                                                <input placeholder="Item name" name="newpassword" className="form-control"
+                                                value={this.state.newpassword} onChange={this.changenewpassHandler} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="row d-flex justify-content-center">
+                                        <div className="col-md-8 ml-2 mr-2 mt-5">
+                                            <div className="form-group">
+                                                <label>Reenter-Password</label>
+                                                <input placeholder="Item name" name="reenternewpassword" className="form-control"
+                                                value={this.state.reenterpassword} onChange={this.changereenterpassHandler} />
                                             </div>
                                         </div>
                                     </div>
@@ -131,4 +119,4 @@ class reviwersettingcomponent extends Component {
     }
 }
 
-export default reviwersettingcomponent;
+export default changePasswordcomponent;
