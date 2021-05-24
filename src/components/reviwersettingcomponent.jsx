@@ -19,7 +19,7 @@ class reviwersettingcomponent extends Component {
         this.changelastNameHandler = this.changelastNameHandler.bind(this);
         this.changeemailHandler = this.changeemailHandler.bind(this);
         this.changepasswordHandler = this.changepasswordHandler.bind(this);
-        this.updatereviwer = this.updateitem.bind(this);
+       
     }
     changefirstNameHandler = (event) =>{
         this.setState({firstname: event.target.value});
@@ -51,9 +51,15 @@ class reviwersettingcomponent extends Component {
         console.log('reviwer => ' + JSON.stringify(reviwer));
 
         CmsSevice.updatereviwer(reviwer, this.state.id).then(res => {
-           console.log('success')
+           console.log('success');
        })
        
+    }
+    deletereviwer = (e) =>{
+        e.preventDefault();
+        CmsSevice.deletereviwer(this.state.id, this.state.email).then(res =>{
+            console.log('success');
+        })
     }
     render() {
         return (
@@ -150,13 +156,17 @@ class reviwersettingcomponent extends Component {
                                 </div>
                                     <div className="row justify-content-center">
                                                             
-                                        <div className="col-md-4 mt-3 mb-5">
+                                        <div className="col-md-3 mt-3 mb-5">
                                                 <button className="btn btn-success btn-block" onClick={this.updatereviwer}>Update Item</button>
                                         </div>
                                                             
-                                        <div className="col-md-4 mt-3 mb-5">
+                                        <div className="col-md-3 mt-3 mb-5">
                                             <button className="btn btn-danger btn-block" onClick={this.cancle}>cancle</button> 
-                                            </div>
+                                        </div>
+
+                                        <div className="col-md-3 mt-3 mb-5">
+                                            <button className="btn btn-danger btn-block" onClick={this.deletereviwer}>Delete Account</button> 
+                                        </div>
                                                             
                                     </div>
                                 </form>
