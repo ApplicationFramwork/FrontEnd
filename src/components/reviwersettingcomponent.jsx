@@ -10,9 +10,11 @@ class reviwersettingcomponent extends Component {
             id : this.props.match.params.id,
             firstname: '',
             lastname: '',
+            number_Of_reviews: '',
+            type: '',
+            password: '',
             email: '',
-            currentpass: '',
-            password: ''
+            currentpass: ''
         }
 
         this.changefirstNameHandler = this.changefirstNameHandler.bind(this);
@@ -31,7 +33,7 @@ class reviwersettingcomponent extends Component {
         this.setState({email: event.target.value});
     }
     changepasswordHandler = (event) =>{
-        this.setState({email: event.target.value});
+        this.setState({password: event.target.value});
     }
     //get reviwer details
     componentDidMount(){
@@ -40,20 +42,28 @@ class reviwersettingcomponent extends Component {
             this.setState({firstname: reviwewr.first_name,
                         lastname:reviwewr.last_name,
                         email :reviwewr.email,
-                        currentpass : reviwewr.password
+                        currentpass : reviwewr.password,
+                        number_Of_reviews : reviwewr.number_Of_reviews,
+                        type : reviwewr.type
              })
+             console.log(this.state.currentpass);
         }))
     }
     //UPADATE REVIWER DETAILS
     updatereviwer = (e) =>{
         e.preventDefault();
-        let reviwer = {first_name: this.state.firstname,last_name: this.state.lastname,email: this.state.email};
-        console.log('reviwer => ' + JSON.stringify(reviwer));
-
-        CmsSevice.updatereviwer(reviwer, this.state.id).then(res => {
-           console.log('success');
-       })
-       
+        if(this.state.currentpass === this.state.password){
+            
+            let reviwer = {first_name: this.state.firstname,last_name: this.state.lastname,email: this.state.email,
+                password: this.state.password,type: this.state.type,number_Of_reviews: this.state.number_Of_reviews};
+            console.log('reviwer => ' + JSON.stringify(reviwer));
+    
+            CmsSevice.updatereviwer(reviwer, this.state.id).then(res => {
+               console.log('success');
+           })
+        }else{
+            console.log('password error')
+        }
     }
     deletereviwer = (e) =>{
         e.preventDefault();
@@ -85,7 +95,7 @@ class reviwersettingcomponent extends Component {
                         <div class="mobile_nav_items">
                             <a href="/reviwer"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
                             <a href="/reviwerachivement"><i class="fas fa-info-circle"></i><span>Achievement</span></a>
-                            <a href="/reviwersettings"><i class="fa fa-key"></i><span>Change Password</span></a>
+                            <a href="/reviwerchangepassword"><i class="fa fa-key"></i><span>Change Password</span></a>
                             <a href="/reviwersettings"><i class="fas fa-sliders-h"></i><span>Account-Settings</span></a>
                         </div>
                     </div>

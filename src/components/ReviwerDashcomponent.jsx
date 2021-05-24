@@ -57,7 +57,7 @@ class ReviwerDashcomponent extends Component {
                         <div class="mobile_nav_items">
                             <a href="/reviwer+{this.state.id}"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
                             <a href="/reviwerachivement"><i class="fas fa-info-circle"></i><span>Achievement</span></a>
-                            <a href="/reviwersettings"><i class="fa fa-key"></i><span>Change Password</span></a>
+                            <a href="/reviwerchangepassword"><i class="fa fa-key"></i><span>Change Password</span></a>
                             <a href="/reviwersettings"><i class="fas fa-sliders-h"></i><span>Account-Settings</span></a>
                         </div>
                     </div>

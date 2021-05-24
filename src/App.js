@@ -12,9 +12,9 @@ function App() {
       <Router>
           <Switch>
           <Route path = "/" exact component = {IndexPageComponent}></Route>
-          <Route path = "/reviwer/:id" component = {reviwerdash}></Route>
+          <Route path = "/reviwer/" component = {reviwerdash}></Route>
           <Route path = "/reviwerachivement" component = {reviwerachive}></Route>
-          <Route path = "/reviwersettings/:id" component = {reviwersettings}></Route>
+          <Route path = "/reviwersettings/" component = {reviwersettings}></Route>
           <Route path = "/reviwerchangepassword" component = {reviwerchangepassword}></Route>
         </Switch>
     </Router>
