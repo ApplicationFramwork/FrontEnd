@@ -44,7 +44,8 @@ class EditorDashboardComponent extends Component {
                             <br/>
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                Users
+                                <i className="fas fa-calendar-alt"></i> &nbsp;
+                                View Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a className="dropdown-item" href="#">All Users</a></li>
@@ -56,6 +57,7 @@ class EditorDashboardComponent extends Component {
                         <div className="dropdown my-2">
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
+                                <i className="fas fa-calendar-alt"></i> &nbsp;
                                 Researches
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -68,14 +70,18 @@ class EditorDashboardComponent extends Component {
                         <div className="dropdown my-2">
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
+                                <i className="fas fa-calendar-alt"></i> &nbsp;
                                 Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a className="dropdown-item" href="#">Action</a></li>
                                 <li><a className="dropdown-item" href="#">Another action</a></li>
                                 <li><a className="dropdown-item" href="#">Something else here</a></li>
+
                             </ul>
+
                         </div>
+
                         <hr className="text-light"/>
                     </div>
 

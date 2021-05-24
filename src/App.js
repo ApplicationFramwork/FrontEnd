@@ -49,28 +49,18 @@ function App(){
     return(
         <Router>
         <div>
-
-            <Header/>
             <div className="container">
-
             <Switch>
-
                 <Route path="/addEvent" exact component={AddEventComponent} />
 
-                <Route path = "/Test" component = {Test}></Route>
-
-
-
             </Switch>
-
             </div>
+            <Route path = "/Test" component = {Test}></Route>
             <Route path = "/side" component = {sidebar}></Route>
             <Route path = "/eventList" component = {ListEvents}></Route>
             <Route path = "/addConferenceEvent" component = {AddConferenceEvent}></Route>
             <Route path = "/editor" component = {EditorDashboardComponent}></Route>
             <Route path = "/updateEvent/:id" component = {UpdateEventsComponent}></Route>
-
-
         </div>
         </Router>
     );

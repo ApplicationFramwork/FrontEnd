@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import formBackground from "../images/addEvent.svg";
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
+import logo from "../images/logo.png";
+import event from "../images/event.svg";
 
 
 class UpdateEventsComponent extends Component {
@@ -39,7 +41,9 @@ class UpdateEventsComponent extends Component {
                 duration: event.duration,
                 venue: event.venue,
                 organizedBy: event.organizedBy,
-                eventStatus: event.eventStatus
+                eventStatus: event.eventStatus,
+
+               
             });
         })
     }
@@ -63,7 +67,10 @@ class UpdateEventsComponent extends Component {
 
     }
     changeTitleHandler = (event)=> {
-        this.setState({title: event.target.value});
+        const title = event.target.name;
+        const value = event.target.value;
+        this.setState({[title]: value});
+        //this.setState({title: event.target.value});
     }
     changeEventTypeHandler = (event)=> {
         this.setState({eventType: event.target.value});
@@ -93,130 +100,193 @@ class UpdateEventsComponent extends Component {
 
     render() {
         return (
-
-            <div className="container-fluid bg-dark">
+            <div className="container-fluid bg-light">
+                {/*Editor sidebar*/}
                 <div className="row">
-                    <div className="col-md-4 mt-5 pho">
-                        <img src={formBackground} className="bg2 mt-5" alt=""/>
+                    <div className="col-sm-2 bg-dark text-light">
+                        <div className="dropdown">
+                            <img src={logo} height={"150px"} width={"150px"}/>
+                            <br/>
+                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <i className="fas fa-calendar-alt"></i> &nbsp;
+                                View Events
+                            </button>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a className="dropdown-item" href="#">All Users</a></li>
+                                <li><a className="dropdown-item" href="#">Add Users</a></li>
+                                <li><a className="dropdown-item" href="#">Search</a></li>
+                            </ul>
+                        </div>
+                        <hr className="text-light"/>
+                        <div className="dropdown my-2">
+                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <i className="fas fa-calendar-alt"></i> &nbsp;
+                                Researches
+                            </button>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a className="dropdown-item" href="#">Action</a></li>
+                                <li><a className="dropdown-item" href="#">Another action</a></li>
+                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                        <hr className="text-light"/>
+                        <div className="dropdown my-2">
+                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <i className="fas fa-calendar-alt"></i> &nbsp;
+                                Events
+                            </button>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a className="dropdown-item" href="#">Action</a></li>
+                                <li><a className="dropdown-item" href="#">Another action</a></li>
+                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                        <hr className="text-light"/>
                     </div>
-                    <div className="col-md-8">
-                        <h1 className="text-center mt-4 font-weight-bold font-italic text-primary">UPDATE EVENT</h1>
-                        <div className="justify-contend-center mt-5">
-                            <div className="row">
-                                <div className="col-md-2"></div>
-                                <div className="col-md-8">
-                                    <form className="form-container">
-                                        <div className="row">
-                                            <div className="col-12">
-                                                <div className="form-group">
-                                                    <label htmlFor="title" className="form-label">Title</label>
-                                                    <input placeholder="Title" name="title" className="form-control"
-                                                           value={this.state.title} onChange={this.changeTitleHandler}/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-12">
-                                                <div className="form-group">
-                                                    <label htmlFor="eventType" className="form-label">Event Type</label>
-                                                    <div className="input-group mb-3">
-                                                        <select className="custom-select" name="eventType" id="eventType" placeholder="Event Status"
-                                                                style={{height:"45px",width:"80%"}}
-                                                                value={this.state.eventType} onChange={this.changeEventTypeHandler}>
-                                                            <option selected>Choose...</option>
-                                                            <option value="Workshop">Workshop</option>
-                                                            <option value="Research Paper Presentation">Research Paper Presentation</option>
-                                                        </select>
-                                                        <div className="input-group-append">
-
-                                                            <label className="input-group-text"
-                                                                   htmlFor="inputGroupSelect02">Event Type</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-12">
-                                                <div className="form-group">
-                                                    <label htmlFor="description" className="form-label">Description</label>
-                                                    <input type="text" className="form-control" name="description" id="description" placeholder="Event Description"
-                                                           value={this.state.description} onChange={this.changeDescriprionHandler}/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-12">
-                                                <div className="form-group">
-                                                    <label htmlFor="startDate" className="form-label">Start Date</label>
-                                                    <input type="date" className="form-control" name="startDate" id="startDate"
-                                                           value={this.state.startDate} onChange={this.changeDateHandler}/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-12">
-                                                <div className="form-group">
-                                                    <label htmlFor="duration" className="form-label">Start Time</label>
-                                                    <input type="time" className="form-control" name="duration" id="duration" placeholder="Event Duration"
-                                                           value={this.state.duration} onChange={this.changeTimeHandler}/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-12">
-                                                <div className="form-group">
-                                                    <label htmlFor="venue" className="form-label">Venue</label>
-                                                    <input type="text" className="form-control" name="venue" id="venue" placeholder="Event Venue"
-                                                           value={this.state.venue} onChange={this.changeVenueHandler}/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-12">
-                                                <div className="form-group">
-                                                    <label htmlFor="organizedBy" className="form-label">Organized By</label>
-                                                    <input type="text" className="form-control" name="organizedBy" id="organizedBy" placeholder="Event Organized By"
-                                                           value={this.state.organizedBy} onChange={this.changeOrganizerHAndler}/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-12">
-                                                <div className="form-group">
-                                                    <label htmlFor="eventStatus" className="form-label">Event Status</label>
-                                                    <div className="input-group mb-3">
-                                                        <select className="custom-select" name="eventStatus" id="eventStatus" placeholder="Event Status"
-                                                                style={{height:"45px",width:"100%"}}
-                                                               value={this.state.eventStatus} onChange={this.changeStatusHandler}>
-                                                            <option selected>Choose...</option>
-                                                            <option value="Confirmed">Confirmed</option>
-                                                            <option value="Pending">Pending</option>
-                                                            <option value="Rejected">Rejected</option>
-                                                        </select>
-                                                        <div className="input-group-append">
-                                                            <label className="input-group-text"
-                                                                   htmlFor="inputGroupSelect02">Event Status</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="row justify-content-center">
-                                            <div className="col-md-6 mt-3">
-                                                <button type="submit" className="btn btn-primary" onClick={this.updateEvent}>Update</button>
-                                                <button className="btn btn-danger"  onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
-                                            </div>
-                                            <div className="col-md-6 mt-3">
-                                            </div>
-                                        </div>
-                                    </form>
+                    <div className="col-sm-10">
+                        <div className="row">
+                            <div className="collapse" id="navbarToggleExternalContent">
+                                <div className="bg-dark p-4">
+                                    <h5 className="text-white h4">Editor Dashboard</h5>
+                                    <span className="text-muted">{this.state.currentDateTime}</span>
                                 </div>
-                                <div className="col-md-3">
+                            </div>
+                            <nav className="navbar navbar-dark bg-dark">
+                                <div className="container-fluid">
+                                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#navbarToggleExternalContent"
+                                            aria-controls="navbarToggleExternalContent" aria-expanded="false"
+                                            aria-label="Toggle navigation">
+                                        <span className="fas fa-angle-down"></span>
+                                    </button>
+                                </div>
+                            </nav>
+                            <div className="col-sm-4 mt-5">
+                                <img src={event} className="bg2 mt-5" alt="" height={"100%"} width={"100%"}/>
+                            </div>
+                            <div className="col-md-8">
+                                <h1 className="text-center mt-4 font-weight-bold font-italic text-primary">UPDATE EVENT</h1>
+                                <div className="justify-contend-center mt-5">
+                                    <div className="row">
+                                        <div className="col-md-2"></div>
+                                        <div className="col-md-8">
+                                            <form className="form-container">
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <div className="form-group">
+                                                            <label htmlFor="title" className="form-label">Title</label>
+                                                            <input placeholder="Title" name="title" className="form-control"
+                                                                   value={this.state.title} onChange={this.changeTitleHandler}/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <div className="form-group">
+                                                            <label htmlFor="eventType" className="form-label">Event Type</label>
+                                                            <div className="input-group mb-3">
+                                                                <select className="custom-select" name="eventType" id="eventType" placeholder="Event Status"
+                                                                        style={{height:"45px",width:"80%"}}
+                                                                        value={this.state.eventType} onChange={this.changeEventTypeHandler}>
+                                                                    <option selected>Choose...</option>
+                                                                    <option value="Workshop">Workshop</option>
+                                                                    <option value="Research Paper Presentation">Research Paper Presentation</option>
+                                                                </select>
+                                                                <div className="input-group-append">
+
+                                                                    <label className="input-group-text"
+                                                                           htmlFor="inputGroupSelect02">Event Type</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <div className="form-group">
+                                                            <label htmlFor="description" className="form-label">Description</label>
+                                                            <input type="text" className="form-control" name="description" id="description" placeholder="Event Description"
+                                                                   value={this.state.description} onChange={this.changeDescriprionHandler}/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <div className="form-group">
+                                                            <label htmlFor="startDate" className="form-label">Start Date</label>
+                                                            <input type="date" className="form-control" name="startDate" id="startDate"
+                                                                   value={this.state.startDate} onChange={this.changeDateHandler}/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <div className="form-group">
+                                                            <label htmlFor="duration" className="form-label">Start Time</label>
+                                                            <input type="time" className="form-control" name="duration" id="duration" placeholder="Event Duration"
+                                                                   value={this.state.duration} onChange={this.changeTimeHandler}/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <div className="form-group">
+                                                            <label htmlFor="venue" className="form-label">Venue</label>
+                                                            <input type="text" className="form-control" name="venue" id="venue" placeholder="Event Venue"
+                                                                   value={this.state.venue} onChange={this.changeVenueHandler}/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <div className="form-group">
+                                                            <label htmlFor="organizedBy" className="form-label">Organized By</label>
+                                                            <input type="text" className="form-control" name="organizedBy" id="organizedBy" placeholder="Event Organized By"
+                                                                   value={this.state.organizedBy} onChange={this.changeOrganizerHAndler}/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <div className="form-group">
+                                                            <label htmlFor="eventStatus" className="form-label">Event Status</label>
+                                                            <div className="input-group mb-3">
+                                                                <select className="custom-select" name="eventStatus" id="eventStatus" placeholder="Event Status"
+                                                                        style={{height:"45px",width:"100%"}}
+                                                                        value={this.state.eventStatus} onChange={this.changeStatusHandler}>
+                                                                    <option selected>Choose...</option>
+                                                                    <option value="Confirmed">Confirmed</option>
+                                                                    <option value="Pending">Pending</option>
+                                                                    <option value="Rejected">Rejected</option>
+                                                                </select>
+                                                                <div className="input-group-append">
+                                                                    <label className="input-group-text"
+                                                                           htmlFor="inputGroupSelect02">Event Status</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-6 mt-3">
+                                                        <button type="submit" className="btn btn-primary" onClick={this.updateEvent}>Update</button>
+                                                        <button className="btn btn-danger"  onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
+                                                    </div>
+                                                    <div className="col-md-6 mt-3">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div className="col-md-3">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <br/>
                     </div>
                 </div>
             </div>
