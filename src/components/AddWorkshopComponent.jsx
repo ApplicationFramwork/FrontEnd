@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
-import background from "../images/Conference.jpg";
-import formBackground from "../images/addEvent.svg";
-import event from "../images/event.svg";
 import logo from "../images/logo.png";
-class AddConferenceEvent extends Component {
+import event from "../images/event.svg";
+import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
+
+class AddWorkshopComponent extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -26,9 +25,9 @@ class AddConferenceEvent extends Component {
         this.changeOrganizerHAndler=this.changeOrganizerHAndler.bind(this);
         this.changeStatusHandler=this.changeStatusHandler.bind(this);
     }
-    saveEvent = (e) => {
+    saveWorkshop = (e) => {
         e.preventDefault();
-        let event = {
+        let workshop = {
             title: this.state.title,
             eventType: this.state.eventType,
             description: this.state.description,
@@ -38,42 +37,41 @@ class AddConferenceEvent extends Component {
             organizedBy: this.state.organizedBy,
             eventStatus: this.state.eventStatus
         };
-        console.log('event => ' + JSON.stringify(event));
-        ConferenceManagementSystemServices.addEvent(event).then(res =>{
-            alert("Ëvent Added Successfully");
-            this.props.history.push('/eventList');
+        console.log('workshop => ' + JSON.stringify(workshop));
+        ConferenceManagementSystemServices.addWorkshop(workshop).then(res =>{
+            alert("Workshop Added Successfully");
+            this.props.history.push('/workshopList');
         });
     }
-    changeTitleHandler = (event)=> {
-        this.setState({title: event.target.value});
+    changeTitleHandler = (workshop)=> {
+        this.setState({title: workshop.target.value});
 
     }
-    changeEventTypeHandler = (event)=> {
-        this.setState({eventType: event.target.value});
+    changeEventTypeHandler = (workshop)=> {
+        this.setState({eventType: workshop.target.value});
     }
-    changeDescriprionHandler = (event)=> {
-        this.setState({description: event.target.value});
+    changeDescriprionHandler = (workshop)=> {
+        this.setState({description: workshop.target.value});
     }
-    changeDateHandler = (event)=> {
-        this.setState({startDate: event.target.value});
+    changeDateHandler = (workshop)=> {
+        this.setState({startDate: workshop.target.value});
     }
-    changeTimeHandler = (event)=> {
-        this.setState({duration: event.target.value});
+    changeTimeHandler = (workshop)=> {
+        this.setState({duration: workshop.target.value});
     }
-    changeVenueHandler = (event)=> {
-        this.setState({venue: event.target.value});
+    changeVenueHandler = (workshop)=> {
+        this.setState({venue: workshop.target.value});
     }
-    changeOrganizerHAndler = (event)=> {
-        this.setState({organizedBy: event.target.value});
+    changeOrganizerHAndler = (workshop)=> {
+        this.setState({organizedBy: workshop.target.value});
     }
-    changeStatusHandler = (event)=> {
-        this.setState({eventStatus: event.target.value});
+    changeStatusHandler = (workshop)=> {
+        this.setState({eventStatus: workshop.target.value});
     }
     //cancel button
     cancel(){
         this.props.history.push('/editor');
     }
-
     render() {
         return (
             <div className="container-fluid bg-light">
@@ -100,7 +98,7 @@ class AddConferenceEvent extends Component {
                                 Add Event
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href={"/addConferenceEvent"}>Add new Event</a></li>
+                                <li><a className="dropdown-item" href={"/addConferenceEvent"}>Add new Workshop</a></li>
 
                             </ul>
                         </div>
@@ -165,7 +163,7 @@ class AddConferenceEvent extends Component {
                                                                         style={{height:"45px",width:"100%"}}
                                                                         onChange={this.changeEventTypeHandler}>
                                                                     <option selected>Choose...</option>
-                                                                    <option value="Research Paper Presentation">Research Paper Presentation</option>
+                                                                    <option value="Research Paper Presentation">Workshop</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -236,7 +234,7 @@ class AddConferenceEvent extends Component {
 
                                                 <div className="row justify-content-center">
                                                     <div className="col-md-6 mt-3">
-                                                        <button type="submit" className="btn btn-primary" onClick={this.saveEvent}>Submit</button>
+                                                        <button type="submit" className="btn btn-primary" onClick={this.saveWorkshop}>Submit</button>
                                                         <button className="btn btn-danger"  onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
                                                     </div>
                                                     <div className="col-md-6 mt-3">
@@ -258,4 +256,4 @@ class AddConferenceEvent extends Component {
     }
 }
 
-export default AddConferenceEvent;
+export default AddWorkshopComponent;

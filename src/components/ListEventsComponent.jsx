@@ -12,8 +12,8 @@ class ListEventsComponent extends Component {
     }
     componentDidMount(){
         conferenceManagementSystemServices.getEvents().then((res) => {
+            //events2: this.state.events.filter(event => event.type !=="Workshop")
             this.setState({ events: res.data});
-
         });
     }
     delete(id){
@@ -30,19 +30,17 @@ class ListEventsComponent extends Component {
             <div className="container-fluid bg-light">
                 {/*Editor sidebar*/}
                 <div className="row">
-                    <div className="col-sm-2 bg-dark text-light">
+                    <div className="col-sm-2  bg-dark text-light">
                         <div className="dropdown">
                             <img src={logo} height={"150px"} width={"150px"}/>
                             <br/>
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                View Events
+                                Home Page
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">All Users</a></li>
-                                <li><a className="dropdown-item" href="#">Add Users</a></li>
-                                <li><a className="dropdown-item" href="#">Search</a></li>
+                                <li><a className="dropdown-item" href={"/editor"}>Navigate to Homepage</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -50,12 +48,10 @@ class ListEventsComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Researches
+                               Add Event
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><a className="dropdown-item" href={"/addConferenceEvent"}>Click to Add New Event</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -63,18 +59,27 @@ class ListEventsComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Events
+                                View Upcoming Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><a className="dropdown-item" href="#">View Upcoming Events</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
-                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     </div>
                     <div className="col-sm-10">
+                        <div className="row">
+                            <nav className="navbar navbar-light bg-light">
+                                <div className="container-fluid">
+                                    <form className="d-flex">
+                                        <input className="form-control me-2" type="search" placeholder="Search"
+                                               name="searchQuery"aria-label="Search"/>
+                                        <button className="btn btn-outline-success" type="submit">Search</button>
+                                    </form>
+                                </div>
+                            </nav>
+                            </div>
                         <div className="row">
                             <div className="collapse" id="navbarToggleExternalContent">
                                 <div className="bg-dark p-4">

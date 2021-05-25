@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import formBackground from "../images/addEvent.svg";
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import logo from "../images/logo.png";
-import event from "../images/event.svg";
+import event from "../images/Followers.svg";
 
 
 class UpdateEventsComponent extends Component {
@@ -41,10 +41,8 @@ class UpdateEventsComponent extends Component {
                 duration: event.duration,
                 venue: event.venue,
                 organizedBy: event.organizedBy,
-                eventStatus: event.eventStatus,
-
-               
-            });
+                eventStatus: event.eventStatus
+            })
         })
     }
     updateEvent = (e) =>{
@@ -67,10 +65,7 @@ class UpdateEventsComponent extends Component {
 
     }
     changeTitleHandler = (event)=> {
-        const title = event.target.name;
-        const value = event.target.value;
-        this.setState({[title]: value});
-        //this.setState({title: event.target.value});
+        this.setState({title: event.target.value});
     }
     changeEventTypeHandler = (event)=> {
         this.setState({eventType: event.target.value});
@@ -110,12 +105,10 @@ class UpdateEventsComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                View Events
+                                Home Page
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">All Users</a></li>
-                                <li><a className="dropdown-item" href="#">Add Users</a></li>
-                                <li><a className="dropdown-item" href="#">Search</a></li>
+                                <li><a className="dropdown-item" href={"/editor"}>Go to Home Page</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -123,12 +116,10 @@ class UpdateEventsComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Researches
+                                Add Event
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><a className="dropdown-item" href={"/addConferenceEvent"}>Click to Add an Event</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -136,15 +127,14 @@ class UpdateEventsComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Events
+                                View Upcoming Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><a className="dropdown-item" href={"/addConferenceEvent"}>Upcoming Events</a></li>
                             </ul>
                         </div>
-                        <hr className="text-light"/>
+                        <hr className="text-light"/> <br/><br/><br/><br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/>
                     </div>
                     <div className="col-sm-10">
                         <div className="row">
@@ -168,7 +158,7 @@ class UpdateEventsComponent extends Component {
                                 <img src={event} className="bg2 mt-5" alt="" height={"100%"} width={"100%"}/>
                             </div>
                             <div className="col-md-8">
-                                <h1 className="text-center mt-4 font-weight-bold font-italic text-primary">UPDATE EVENT</h1>
+                                <h1 className="text-center mt-4 font-weight-bold">UPDATE EVENT</h1>
                                 <div className="justify-contend-center mt-5">
                                     <div className="row">
                                         <div className="col-md-2"></div>
@@ -188,18 +178,13 @@ class UpdateEventsComponent extends Component {
                                                         <div className="form-group">
                                                             <label htmlFor="eventType" className="form-label">Event Type</label>
                                                             <div className="input-group mb-3">
-                                                                <select className="custom-select" name="eventType" id="eventType" placeholder="Event Status"
-                                                                        style={{height:"45px",width:"80%"}}
+                                                                <select className="custom-select" name="eventType" placeholder="Event Status"
+                                                                        style={{height:"45px",width:"100%"}}
                                                                         value={this.state.eventType} onChange={this.changeEventTypeHandler}>
                                                                     <option selected>Choose...</option>
                                                                     <option value="Workshop">Workshop</option>
                                                                     <option value="Research Paper Presentation">Research Paper Presentation</option>
                                                                 </select>
-                                                                <div className="input-group-append">
-
-                                                                    <label className="input-group-text"
-                                                                           htmlFor="inputGroupSelect02">Event Type</label>
-                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -262,10 +247,6 @@ class UpdateEventsComponent extends Component {
                                                                     <option value="Pending">Pending</option>
                                                                     <option value="Rejected">Rejected</option>
                                                                 </select>
-                                                                <div className="input-group-append">
-                                                                    <label className="input-group-text"
-                                                                           htmlFor="inputGroupSelect02">Event Status</label>
-                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -286,7 +267,6 @@ class UpdateEventsComponent extends Component {
                                 </div>
                             </div>
                         </div>
-                        <br/>
                     </div>
                 </div>
             </div>

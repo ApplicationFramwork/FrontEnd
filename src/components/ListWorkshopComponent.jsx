@@ -1,77 +1,45 @@
 import React, { Component } from 'react';
-import logo from "../images/logo.png";
-import {Table} from "react-bootstrap";
-import calendar2 from "../images/calendar.gif";
-import localise from "../images/localise.gif";
-import editEvent from "../images/editEvents.gif";
-import background from "../images/Conference.jpg";
-import formBackground from "../images/addEvent.svg";
-
-import event from "../images/event.svg";
 import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
-class Test extends Component{
+import {Table} from "react-bootstrap";
+import logo from "../images/logo.png";
+
+class ListWorkshopComponent extends Component {
     constructor(props){
         super(props)
         this.state = {
-            events: [],
-            search: ''
+            workshops: []
         }
-
-
     }
-
-
-
-
     componentDidMount(){
-        conferenceManagementSystemServices.getEvents().then((res) => {
-            this.setState({ events: res.data});
-
+        conferenceManagementSystemServices.getWorkshop().then((res) => {
+            this.setState({ workshops: res.data});
         });
     }
-
     delete(id){
-        conferenceManagementSystemServices.deleteEvent(id).then(res=>{
-            this.setState({events : this.state.events.filter(event => event._id !==id)});
+        conferenceManagementSystemServices.deleteWorkshop(id).then(res=>{
+            this.setState({workshops : this.state.workshops.filter(workshop => workshop._id !==id)});
         })
     }
-    editEvent(id){
+    editWorkshop(id){
         console.log('event id'+id);
-        this.props.history.push('/updateEvent/'+ id);
+        this.props.history.push('/updateWorkshop/'+ id);
     }
-
-    /*filterData(events,searchKey){
-        const result = events.filter((event)=>
-            event.title.includes(searchKey));
-        this.setState({events: result})
-    }
-
-    handleSearch = (e)=>{
-        const searchKey = e.currentTarget.value;
-        conferenceManagementSystemServices.getEvents().then((res) => {
-            this.filterData(res.data.events, searchKey)
-
-        });
-    }*/
-
     render() {
         return (
             <div className="container-fluid bg-light">
                 {/*Editor sidebar*/}
                 <div className="row">
-                    <div className="col-sm-2 bg-dark text-light">
+                    <div className="col-sm-2  bg-dark text-light">
                         <div className="dropdown">
                             <img src={logo} height={"150px"} width={"150px"}/>
                             <br/>
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                View Events
+                                Home Page
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">All Users</a></li>
-                                <li><a className="dropdown-item" href="#">Add Users</a></li>
-                                <li><a className="dropdown-item" href="#">Search</a></li>
+                                <li><a className="dropdown-item" href={"/editor"}>Navigate to Homepage</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -79,12 +47,10 @@ class Test extends Component{
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Researches
+                                Add Event
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><a className="dropdown-item" href={"/addConferenceEvent"}>Click to Add New Event</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -92,29 +58,28 @@ class Test extends Component{
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Events
+                                View Upcoming Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><a className="dropdown-item" href="#">View Upcoming Events</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
-                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     </div>
-
                     <div className="col-sm-10">
                         <div className="row">
                             <nav className="navbar navbar-light bg-light">
                                 <div className="container-fluid">
                                     <form className="d-flex">
                                         <input className="form-control me-2" type="search" placeholder="Search"
-                                               name="searchQuery" onChange={this.handleSearch} aria-label="Search"/>
-                                            <button className="btn btn-outline-success" type="submit">Search</button>
+                                               name="searchQuery"aria-label="Search"/>
+                                        <button className="btn btn-outline-success" type="submit">Search</button>
                                     </form>
                                 </div>
                             </nav>
+                        </div>
+                        <div className="row">
                             <div className="collapse" id="navbarToggleExternalContent">
                                 <div className="bg-dark p-4">
                                     <h5 className="text-white h4">Editor Dashboard</h5>
@@ -131,9 +96,7 @@ class Test extends Component{
                                     </button>
                                 </div>
                             </nav>
-
                         </div>
-
                         {/*Add Event*/}
                         <div className="row">
 
@@ -141,46 +104,45 @@ class Test extends Component{
                                 <br/>
                                 <Table className="table" striped bordered hover>
                                     <thead>
-                                        <tr>
-
-                                            <th scope="col"> Title</th>
-                                            <th scope="col"> Event Type</th>
-                                            <th scope="col"> Description</th>
-                                            <th scope="col"> Start Date</th>
-                                            <th scope="col"> Time</th>
-                                            <th scope="col"> Venue</th>
-                                            <th scope="col"> Organized By</th>
-                                            <th scope="col"> Event Status</th>
-                                            <th scope="col"> Update</th>
-                                            <th scope="col"> Delete</th>
-                                        </tr>
+                                    <tr>
+                                        <th scope="col"> Title</th>
+                                        <th scope="col"> Event Type</th>
+                                        <th scope="col"> Description</th>
+                                        <th scope="col"> Start Date</th>
+                                        <th scope="col"> Time</th>
+                                        <th scope="col"> Venue</th>
+                                        <th scope="col"> Organized By</th>
+                                        <th scope="col"> Event Status</th>
+                                        <th scope="col"> Update</th>
+                                        <th scope="col"> Delete</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
                                     {
-                                        this.state.events.map(
-                                            event =>
-                                                <tr key = {event._id}>
-                                                    <td>{event.title}</td>
-                                                    <td>{event.eventType}</td>
-                                                    <td> {event.description} </td>
-                                                    <td> {event.startDate}</td>
-                                                    <td> {event.duration}</td>
-                                                    <td> {event.venue}</td>
-                                                    <td> {event.organizedBy}</td>
-                                                    <td> {event.eventStatus}</td>
+                                        this.state.workshops.map(
+                                            workshop =>
+                                                <tr key = {workshop._id}>
+                                                    <td>{workshop.title}</td>
+                                                    <td>{workshop.eventType}</td>
+                                                    <td> {workshop.description} </td>
+                                                    <td> {workshop.startDate}</td>
+                                                    <td> {workshop.duration}</td>
+                                                    <td> {workshop.venue}</td>
+                                                    <td> {workshop.organizedBy}</td>
+                                                    <td> {workshop.eventStatus}</td>
                                                     <td>
-                                                        <button style={{marginLeft: "10px"}}  className="btn btn-warning" onClick={ () => this.editEvent(event._id)}>
+                                                        <button style={{marginLeft: "10px"}}  className="btn btn-warning" onClick={ () => this.editWorkshop(workshop._id)}>
                                                             Update
                                                             <i className="fas fa-edit"></i>
                                                         </button>
                                                     </td>
                                                     <td>
-                                                        <button style={{marginLeft: "10px"}}  className="btn btn-danger"onClick={ () => this.delete(event._id)}>
+                                                        <button style={{marginLeft: "10px"}}  className="btn btn-danger"onClick={ () => this.delete(workshop._id)}>
                                                             Delete
                                                             <i className="fas fa-trash-alt"></i>
                                                         </button>
                                                     </td>
-                                                <br/>
+                                                    <br/>
                                                 </tr>
                                         )
                                     }
@@ -191,7 +153,9 @@ class Test extends Component{
                     </div>
                 </div>
             </div>
+
         );
     }
 }
-export default Test;
+
+export default ListWorkshopComponent;

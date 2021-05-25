@@ -14,23 +14,31 @@ class EditorDashboardComponent extends Component {
         super(props)
         this.state = {
             currentDateTime: Date().toLocaleString(),
-            events: []
+            events: [],
+            workshops: []
         }
-        //this.edititem = this.edititem.bind(this);
+        this.editEvent = this.editEvent.bind(this);
     }
     componentDidMount(){
         conferenceManagementSystemServices.getEvents().then((res) => {
             this.setState({ events: res.data});
         });
+        conferenceManagementSystemServices.getWorkshop().then((res) => {
+            this.setState({ workshops: res.data});
+        });
     }
-    /*editEvent(id) {
-        this.props.history.push('/editEvent/'+ id);
-    }*/
-    delete(id){
+    editEvent(id) {
+        this.props.history.push('/updateEvent/'+ id);
+    }
+    editWorkshop(id) {
+        this.props.history.push('/updateWorkshop/'+ id);
+    }
+
+    /*delete(id){
         conferenceManagementSystemServices.deleteEvent(id).then(res=>{
             this.setState({events : this.state.events.filter(event => event._id !==id)});
         })
-    }
+    }*/
 
     render() {
         return (
@@ -77,11 +85,8 @@ class EditorDashboardComponent extends Component {
                                 <li><a className="dropdown-item" href="#">Action</a></li>
                                 <li><a className="dropdown-item" href="#">Another action</a></li>
                                 <li><a className="dropdown-item" href="#">Something else here</a></li>
-
                             </ul>
-
                         </div>
-
                         <hr className="text-light"/>
                     </div>
 
@@ -161,7 +166,7 @@ class EditorDashboardComponent extends Component {
                                                 <div className="col-md-4">
                                                     <div className="card mt-3 sellercard">
                                                         <div className="product text-center mt-3">
-                                                            <h2>Upcoming Events</h2>
+                                                            <h2>Upcoming Research Paper Presentations</h2>
                                                             <h5>{events.title}</h5>
                                                             <div className="mt-3 info">
                                                                 <span className="text1 d-block mb-3">{events.description}</span>
@@ -175,10 +180,10 @@ class EditorDashboardComponent extends Component {
                                                             </div>
 
                                                         </div>
-                                                        <div className="row mt-2">
+                                                        <div className="row mt-8">
                                                             <div className="col-md-6">
                                                                 <div className="p-3 text-center text-white mt-2 cursor">
-                                                                    <button className="btn btn-success btn-block">
+                                                                    <button className="btn btn-success btn-block" onClick={ () => this.editEvent(events._id)}>
                                                                         <i className="fas fa-edit"></i>&nbsp;
                                                                         Edit Event
 
@@ -186,9 +191,45 @@ class EditorDashboardComponent extends Component {
                                                                     <br/>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        )
+                                    }
+                                </div>
+                            </div>
+                            <br/>
+                            {/*Display Workshop Details*/}
+                            <div className="container">
+                                <div className="row">
+                                    {
+                                        this.state.workshops.map(
+                                            workshops =>
+                                                <div className="col-md-4">
+                                                    <div className="card mt-3 sellercard">
+                                                        <div className="product text-center mt-3">
+                                                            <h2>Upcoming Workshops</h2>
+                                                            <h5>{workshops.title}</h5>
+                                                            <div className="mt-3 info">
+                                                                <span className="text1 d-block mb-3">{workshops.description}</span>
+                                                                <span className="text1 ">Time {workshops.duration} </span>
+                                                            </div>
+                                                            <div className="mt-3 info">
+                                                                <span className="text1 ">Status {workshops.eventStatus} </span>
+                                                            </div>
+                                                            <div className="cost mt-3 text-dark">
+                                                                <span>{workshops.date}</span>
+                                                            </div>
+
+                                                        </div>
+                                                        <div className="row mt-2">
                                                             <div className="col-md-6">
                                                                 <div className="p-3 text-center text-white mt-2 cursor">
-                                                                    <button className="btn btn-danger">Delete Item</button>
+                                                                    <button className="btn btn-warning btn-block" onClick={ () => this.editWorkshop(workshops._id)}>
+                                                                        <i className="fas fa-edit"></i>&nbsp;
+                                                                        Edit Event
+
+                                                                    </button>
                                                                     <br/>
                                                                 </div>
                                                             </div>
