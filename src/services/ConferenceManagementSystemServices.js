@@ -11,8 +11,18 @@ const BackendAPIGetOneReviwer_URL = "http://localhost:8070/reviwer/getreviwer";
 const BackendAPIUpdateReviwer_URL = "http://localhost:8070/reviwer/update";
 const BackendAPIDeleteReviwer_URL = "http://localhost:8070/reviwer/delete";
 
+//user service URL
+const BackendAPIAddUserr_URL = "http://localhost:8070/user/add";
+
 class ConferenceManagementSystemServices{
 
+    //maleesha
+    //add user
+    adduser(user){
+        return axios.post(BackendAPIAddUserr_URL, user);
+    }
+
+    //vihanga
     //get reviwer details using reviwer id
     getreviwer(id){
         return axios.get(BackendAPIGetOneReviwer_URL + '/' + id);
@@ -25,6 +35,9 @@ class ConferenceManagementSystemServices{
     deletereviwer(id, email){
         return axios.delete(BackendAPIDeleteReviwer_URL  + '/' + id + '/' + email)
     }
+
+
+    //kithmini
     //get all events
     getEvents(){
         return axios.get(EVENT_API_BASE_URL);

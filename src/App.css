@@ -449,3 +449,67 @@ label #sidebar_btn:hover{
 .box:nth-child(4) .skillname{
   background: #835F72  ;
 }
+a{
+  text-decoration: none;
+}
+.lg-body{
+  background-image: url("images/WhatsApp Image 2021-05-24 at 12.39.40.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.loginCard{
+  color: #800080;
+}
+.fPass{
+  color: #7363ef;
+}
+.btnLogin{
+  background-color: #7363ef;
+  text-align: center;
+
+}
+.ulIcons{
+  display: inline-block;
+  text-align: center;
+}
+.fb{
+  background-color: #7363ef;
+  color: white;
+  border: #7363ef solid 2px;
+  padding: 2px;
+  margin-right: 10px;
+  border-radius: 3px;
+
+}
+.twit{
+  background-color: #5eacec;
+  color: white;
+  border: #5eacec solid 2px;
+  padding: 2px;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+.mail{
+  background-color: #ea4b38;
+  color: white;
+  border: #ea4b38 solid 2px;
+  padding: 2px;
+  border-radius: 3px;
+}
+
+.signup-bdy{
+
+  background-image: url("images/WhatsApp Image 2021-05-25 at 11.11.38.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 0;
+  height: 100vh;
+}
+.signUpForm {
+  opacity: 0.8;
+  font-size: 15px;
+}
+.headdingIcms{
+  font-weight: bold;
+}
