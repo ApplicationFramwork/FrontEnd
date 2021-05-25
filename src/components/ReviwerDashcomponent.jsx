@@ -109,7 +109,7 @@ class ReviwerDashcomponent extends Component {
                                         <div class="cricle"></div>
                                         <img src={research} alt="" class="skills"/></a>
                                     </div>
-                                    <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                    <div class="col-md-2 box boody mt-1 mb-2"><a href="/allresearch">
                                         <h2 class="skillname text-center">ALL RESEARCH</h2>
                                         <div class="cricle"></div>
                                         <img src={research} alt="" class="skills"/></a>

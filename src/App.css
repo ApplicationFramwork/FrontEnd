@@ -250,6 +250,9 @@ label #sidebar_btn:hover{
 /* Responsive CSS */
 
 @media screen and (max-width: 780px){
+  .pagetopic{
+    display: none;
+  }
   header{
     z-index: 20;
     position: fixed;
