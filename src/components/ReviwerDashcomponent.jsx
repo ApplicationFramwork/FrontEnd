@@ -85,7 +85,7 @@ class ReviwerDashcomponent extends Component {
                                         </div>
                                         <div className="col-12">
                                             <div className="form-group names mb-3">
-                                            <h5>Number Of reviwes : {this.state.number_of_reviwes} </h5>
+                                            <h5>Number Of reviews : {this.state.number_of_reviwes} </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -104,7 +104,7 @@ class ReviwerDashcomponent extends Component {
                                     </div>
                                 </div>
                                 <div className="row mt-2">
-                                    <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                    <div class="col-md-2 box boody mt-1 mb-2"><a href="/newresearch/">
                                         <h2 class="skillname text-center">NEW RESEARCH</h2>
                                         <div class="cricle"></div>
                                         <img src={research} alt="" class="skills"/></a>

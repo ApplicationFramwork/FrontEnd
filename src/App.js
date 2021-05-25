@@ -5,6 +5,7 @@ import reviwerdash from './components/ReviwerDashcomponent';
 import reviwersettings from './components/reviwersettingcomponent';
 import reviwerchangepassword from './components/changePasswordcomponent';
 import allresearch from './components/allresearch';
+import newresearch from './components/newResearch';
 
 function App() {
   return (
@@ -12,10 +13,11 @@ function App() {
       <Router>
           <Switch>
           <Route path = "/" exact component = {IndexPageComponent}></Route>
-          <Route path = "/reviwer/:id" component = {reviwerdash}></Route>
+          <Route path = "/reviwer" component = {reviwerdash}></Route>
           <Route path = "/reviwersettings" component = {reviwersettings}></Route>
           <Route path = "/reviwerchangepassword" component = {reviwerchangepassword}></Route>
           <Route path = "/allresearch" component = {allresearch}></Route>
+          <Route path = "/newresearch"  component = {newresearch}></Route>
         </Switch>
     </Router>
       
