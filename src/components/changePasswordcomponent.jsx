@@ -12,7 +12,6 @@ class changePasswordcomponent extends Component {
             firstname: '',
             lastname: '',
             number_Of_reviews: '',
-            type: '',
             email: '',
             password: '',
             currentpassword: '',
@@ -41,8 +40,7 @@ class changePasswordcomponent extends Component {
                 lastname:reviwewr.last_name,
                 email :reviwewr.email,
                 password : reviwewr.password,
-                number_Of_reviews : reviwewr.number_Of_reviews,
-                type : reviwewr.type
+                number_Of_reviews : reviwewr.number_Of_reviews
             })
             
              console.log(this.state.password);
@@ -73,7 +71,7 @@ class changePasswordcomponent extends Component {
                 if(this.state.currentpassword === this.state.password && this.state.newpassword === this.state.reenterpassword){
             
                     let reviwer = {first_name: this.state.firstname,last_name: this.state.lastname,email: this.state.email,
-                        password: this.state.newpassword,type: this.state.type,number_Of_reviews: this.state.number_Of_reviews};
+                        password: this.state.newpassword,number_Of_reviews: this.state.number_Of_reviews};
                     console.log('reviwer => ' + JSON.stringify(reviwer));
             
                     CmsSevice.updatereviwer(reviwer, this.state.id).then(res => {

@@ -13,7 +13,6 @@ class reviwersettingcomponent extends Component {
             firstname: '',
             lastname: '',
             number_Of_reviews: '',
-            type: '',
             password: '',
             email: '',
             currentpass: ''
@@ -45,8 +44,7 @@ class reviwersettingcomponent extends Component {
                         lastname:reviwewr.last_name,
                         email :reviwewr.email,
                         currentpass : reviwewr.password,
-                        number_Of_reviews : reviwewr.number_Of_reviews,
-                        type : reviwewr.type
+                        number_Of_reviews : reviwewr.number_Of_reviews
              })
              console.log(this.state.currentpass);
         }))
@@ -75,7 +73,7 @@ class reviwersettingcomponent extends Component {
                 if(this.state.currentpass === this.state.password){
             
                     let reviwer = {first_name: this.state.firstname,last_name: this.state.lastname,email: this.state.email,
-                        password: this.state.password,type: this.state.type,number_Of_reviews: this.state.number_Of_reviews};
+                        password: this.state.password,number_Of_reviews: this.state.number_Of_reviews};
                     console.log('reviwer => ' + JSON.stringify(reviwer));
             
                     CmsSevice.updatereviwer(reviwer, this.state.id).then(res => {
