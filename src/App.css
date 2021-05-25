@@ -351,7 +351,7 @@ label #sidebar_btn:hover{
   width: 200px;
   height: 160px; 
   margin: auto;  
-  background: #2F323A;
+  background: #42d8f7;
   border-radius: 20px;
   transform-style: preserve-3d;
 }
@@ -362,7 +362,7 @@ label #sidebar_btn:hover{
   left: 20px;
   font-size: 3em;
   font-weight: 900;
-  color: #fff;
+  color: #2F323A;
   font-style: italic;
   opacity: 0;
 }
@@ -373,7 +373,7 @@ label #sidebar_btn:hover{
   right: 20px;
   font-size: 3em;
   font-weight: 900;
-  color: #fff;
+  color: #2F323A;
   font-style: italic;
   opacity: 0;
   transition: 0.5s;
@@ -444,5 +444,5 @@ label #sidebar_btn:hover{
 }
 .box:nth-child(4) .cricle,
 .box:nth-child(4) .skillname{
-  background: #68a063  ;
+  background: #835F72  ;
 }

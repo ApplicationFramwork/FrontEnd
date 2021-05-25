@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.png';
+import research from '../images/research.png';
+import proposal from '../images/proposal.png';
 import CmsSevice from '../services/ConferenceManagementSystemServices';
 
 class ReviwerDashcomponent extends Component {
@@ -10,7 +12,8 @@ class ReviwerDashcomponent extends Component {
             id : this.props.match.params.id,
             firstname: '',
             Lastname: '',
-            email: ''
+            email: '',
+            number_of_reviwes: ''
         }
 
         this.changeNameHandler = this.changeNameHandler.bind(this);
@@ -28,7 +31,8 @@ class ReviwerDashcomponent extends Component {
             let reviwewr =res.data;
             this.setState({firstname: reviwewr.first_name,
                         Lastname:reviwewr.last_name,
-                        email :reviwewr.email
+                        email :reviwewr.email,
+                        number_of_reviwes : reviwewr.number_Of_reviews
              })
         }))
     }
@@ -56,7 +60,6 @@ class ReviwerDashcomponent extends Component {
                         </div>
                         <div class="mobile_nav_items">
                             <a href="/reviwer+{this.state.id}"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-                            <a href="/reviwerachivement"><i class="fas fa-info-circle"></i><span>Achievement</span></a>
                             <a href="/reviwerchangepassword"><i class="fa fa-key"></i><span>Change Password</span></a>
                             <a href="/reviwersettings"><i class="fas fa-sliders-h"></i><span>Account-Settings</span></a>
                         </div>
@@ -65,7 +68,6 @@ class ReviwerDashcomponent extends Component {
                     <div class="sidebar">
                     
                             <a className="active" href="/reviwer"><i class="fas fa-desktop mt-5 mb-5"></i><span>Dashboard</span></a>
-                            <a href="/reviwerachivement"><i class="fas fa-info-circle mt-5 mb-5"></i><span>Achievement</span></a>
                             <a href="/reviwerchangepassword"><i class="fa fa-key mt-5 mb-5"></i><span>Change Password</span></a>
                             <a href="/reviwersettings"><i class="fas fa-sliders-h mt-5 mb-5"></i><span>Account-Settings</span></a>
                     </div>
@@ -75,10 +77,15 @@ class ReviwerDashcomponent extends Component {
                         <div className="container-fluid">
                             <div className="glass">
                                 <div className="row">
-                                    <div className="col-md-4 mt-5 ml-5 mr-5">
+                                    <div className="col-md-4 mt-3 ml-1 mr-5">
                                         <div className="col-12">
                                             <div className="form-group names mb-3">
                                             <h5>Name : {this.state.firstname} {this.state.Lastname}</h5>
+                                            </div>
+                                        </div>
+                                        <div className="col-12">
+                                            <div className="form-group names mb-3">
+                                            <h5>Number Of reviwes : {this.state.number_of_reviwes} </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -98,24 +105,24 @@ class ReviwerDashcomponent extends Component {
                                 </div>
                                 <div className="row mt-2">
                                     <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
-                                        <h2 class="skillname text-center">HTML</h2>
+                                        <h2 class="skillname text-center">NEW RESEARCH</h2>
                                         <div class="cricle"></div>
-                                        <img src={logo} alt="" class="skills"/></a>
+                                        <img src={research} alt="" class="skills"/></a>
                                     </div>
                                     <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
-                                        <h2 class="skillname text-center">CSS</h2>
+                                        <h2 class="skillname text-center">ALL RESEARCH</h2>
                                         <div class="cricle"></div>
-                                        <img src={logo} alt="" class="skills"/></a>
+                                        <img src={research} alt="" class="skills"/></a>
                                     </div>
                                     <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
-                                        <h2 class="skillname text-center">REACT</h2>
+                                        <h2 class="skillname text-center">ACCEPTED RESEARCH</h2>
                                         <div class="cricle"></div>
-                                        <img src={logo} alt="" class="skills"/></a>
+                                        <img src={research} alt="" class="skills"/></a>
                                     </div>
                                     <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
-                                        <h2 class="skillname">NODE JS</h2>
+                                        <h2 class="skillname">REJECTED RESEARCH</h2>
                                         <div class="cricle"></div>
-                                        <img src={logo} alt="" class="skills"/></a>
+                                        <img src={research} alt="" class="skills"/></a>
                                     </div>
                                 </div>
                                 <div className="row text-center mt-3">
@@ -133,24 +140,24 @@ class ReviwerDashcomponent extends Component {
                                 </div>
                                 <div className="row mt-2 mb-5">
                                     <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
-                                        <h2 class="skillname text-center">HTML</h2>
+                                        <h2 class="skillname text-center">NEW PROPOSALS</h2>
                                         <div class="cricle"></div>
-                                        <img src={logo} alt="" class="skills"/></a>
+                                        <img src={proposal} alt="" class="skills"/></a>
                                     </div>
                                     <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
-                                        <h2 class="skillname text-center">CSS</h2>
+                                        <h2 class="skillname text-center">ALL PROPOSALS</h2>
                                         <div class="cricle"></div>
-                                        <img src={logo} alt="" class="skills"/></a>
+                                        <img src={proposal} alt="" class="skills"/></a>
                                     </div>
                                     <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
-                                        <h2 class="skillname text-center">REACT</h2>
+                                        <h2 class="skillname text-center">ACCEPTED PROPOSALS</h2>
                                         <div class="cricle"></div>
-                                        <img src={logo} alt="" class="skills"/></a>
+                                        <img src={proposal} alt="" class="skills"/></a>
                                     </div>
                                     <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
-                                        <h2 class="skillname">NODE JS</h2>
+                                        <h2 class="skillname">REJECTED PROPOSALS</h2>
                                         <div class="cricle"></div>
-                                        <img src={logo} alt="" class="skills"/></a>
+                                        <img src={proposal} alt="" class="skills"/></a>
                                     </div>
                                 </div>
                             </div>

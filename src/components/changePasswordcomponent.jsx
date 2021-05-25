@@ -129,7 +129,6 @@ class changePasswordcomponent extends Component {
                         </div>
                         <div class="mobile_nav_items">
                             <a href="/reviwer"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-                            <a href="/reviwerachivement"><i class="fas fa-info-circle"></i><span>Achievement</span></a>
                             <a href="/reviwerchangepassword"><i class="fa fa-key"></i><span>Change Password</span></a>
                             <a href="/reviwersettings"><i class="fas fa-sliders-h"></i><span>Account-Settings</span></a>
                         </div>
@@ -137,7 +136,6 @@ class changePasswordcomponent extends Component {
                     
                     <div class="sidebar">
                             <a href="/reviwer"><i class="fas fa-desktop mt-5 mb-5"></i><span>Dashboard</span></a>
-                            <a href="/reviwerachivement"><i class="fas fa-info-circle mt-5 mb-5"></i><span>Achievement</span></a>
                             <a className="active" href="/reviwerchangepassword"><i class="fa fa-key mt-5 mb-5"></i><span>Change Password</span></a>
                             <a href="/reviwersettings"><i class="fas fa-sliders-h mt-5 mb-5"></i><span>Account-Settings</span></a>
                     </div>
