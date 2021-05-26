@@ -1,18 +1,18 @@
 import axios from 'axios';
 
 //Events Service URLS
-const EVENT_API_BASE_URL = "http://localhost:8000/event";
-const EVENT_API_ADDEVENT_URL = "http://localhost:8000/event/add";
-const EVENT_API_DELETE_EVENT_URL = "http://localhost:8000/event/delete";
-const EVENT_API_UPDATE_EVENT_URL = "http://localhost:8000/event/update";
-const EVENT_API_GET_EVENTBYID_URL = "http://localhost:8000/event/get";
+const EVENT_API_BASE_URL = "http://localhost:8070/event";
+const EVENT_API_ADDEVENT_URL = "http://localhost:8070/event/add";
+const EVENT_API_DELETE_EVENT_URL = "http://localhost:8070/event/delete";
+const EVENT_API_UPDATE_EVENT_URL = "http://localhost:8070/event/update";
+const EVENT_API_GET_EVENTBYID_URL = "http://localhost:8070/event/get";
 
 //Workshop Service URLS
-const WORKSHOP_API_BASE_URL = "http://localhost:8000/workshop";
-const WORKSHOP_API_DELETE_WORKSHOP_URL = "http://localhost:8000/workshop/delete";
-const WORKSHOP_API_ADDWORKSHOP_URL = "http://localhost:8000/workshop/add";
-const EVENT_API_UPDATE_WORKSHOP_URL = "http://localhost:8000/workshop/update";
-const EVENT_API_GET_WORKSHOPBYID_URL = "http://localhost:8000/workshop/existingWorkshop";
+const WORKSHOP_API_BASE_URL = "http://localhost:8070/workshop";
+const WORKSHOP_API_DELETE_WORKSHOP_URL = "http://localhost:8070/workshop/delete";
+const WORKSHOP_API_ADDWORKSHOP_URL = "http://localhost:8070/workshop/add";
+const EVENT_API_UPDATE_WORKSHOP_URL = "http://localhost:8070/workshop/update";
+const EVENT_API_GET_WORKSHOPBYID_URL = "http://localhost:8070/workshop/existingWorkshop";
 
 class ConferenceManagementSystemServices{
     //get all events

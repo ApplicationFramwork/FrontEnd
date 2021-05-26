@@ -141,7 +141,7 @@ class AddConferenceEvent extends Component {
                                 <img src={event} className="bg2 mt-5" alt="" height={"100%"} width={"100%"}/>
                             </div>
                             <div className="col-md-8">
-                                <h1 className="text-center mt-4 font-weight-bold">ADD EVENT</h1>
+                                <h1 className="text-center mt-4 font-weight-bold">ADD RESEARCH PAPER PRESENTATION</h1>
                                 <div className="justify-contend-center mt-5">
                                     <div className="row">
                                         <div className="col-md-2"></div>

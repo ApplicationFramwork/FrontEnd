@@ -136,13 +136,11 @@ class Test extends Component{
 
                         {/*Add Event*/}
                         <div className="row">
-
                             <div className="container">
                                 <br/>
                                 <Table className="table" striped bordered hover>
                                     <thead>
                                         <tr>
-
                                             <th scope="col"> Title</th>
                                             <th scope="col"> Event Type</th>
                                             <th scope="col"> Description</th>

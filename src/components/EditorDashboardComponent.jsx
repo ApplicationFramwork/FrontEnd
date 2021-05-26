@@ -117,7 +117,7 @@ class EditorDashboardComponent extends Component {
                                             <br/>
                                             <img src={calendar2} className="card-img-top" alt="..."/>
                                             <div className="card-body">
-                                                <h5 className="card-title">Add Event</h5>
+                                                <h5 className="card-title">Add Research Paper Prsentation</h5>
                                                 <p className="card-text">Some quick example text to build on the card title and make up the
                                                     bulk of the card's content.</p>
                                                 <a href="/addConferenceEvent" className="btn btn-primary">Go to Add Events
@@ -131,10 +131,10 @@ class EditorDashboardComponent extends Component {
                                             <br/>
                                             <img src={localise} className="card-img-top" style={{height:"200"}} alt="..."/>
                                             <div className="card-body">
-                                                <h5 className="card-title">View Upcoming Events</h5>
+                                                <h5 className="card-title">Add a Workshop</h5>
                                                 <p className="card-text">Some quick example text to build on the card title and make up the
                                                     bulk of the card's content.</p>
-                                                <a href="/eventList" className="btn btn-primary">Go to View Events
+                                                <a href="/addWorkshop" className="btn btn-primary">Go to View Events
                                                     &nbsp;<i className=" fas fa-calendar-alt"></i>
                                                 </a>
                                             </div>
@@ -145,10 +145,10 @@ class EditorDashboardComponent extends Component {
                                             <br/><br/><br/><br/>
                                             <img src={editEvent} className="card-img-top"alt="..."/>
                                             <div className="card-body">
-                                                <h5 className="card-title">Add Event</h5>
+                                                <h5 className="card-title">View upcoming Events</h5>
                                                 <p className="card-text">Some quick example text to build on the card title and make up the
                                                     bulk of the card's content.</p>
-                                                <a href="/addConferenceEvent" className="btn btn-primary">Go somewhere
+                                                <a href="/eventList" className="btn btn-primary">Go somewhere
                                                     &nbsp;<i className=" fas fa-calendar-alt"></i>
                                                 </a>
                                             </div>

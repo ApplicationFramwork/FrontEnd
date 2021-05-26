@@ -261,8 +261,6 @@ class UpdateEventsComponent extends Component {
                                                 </div>
                                             </form>
                                         </div>
-                                        <div className="col-md-3">
-                                        </div>
                                     </div>
                                 </div>
                             </div>
