@@ -36,13 +36,19 @@ class AddConferenceEvent extends Component {
             duration: this.state.duration,
             venue: this.state.venue,
             organizedBy: this.state.organizedBy,
-            eventStatus: this.state.eventStatus
+            eventStatus: this.state.eventStatus,
+
         };
         console.log('event => ' + JSON.stringify(event));
-        ConferenceManagementSystemServices.addEvent(event).then(res =>{
-            alert("Ëvent Added Successfully");
-            this.props.history.push('/eventList');
-        });
+        if(this.state.title !==''&& this.state.eventType!=='' && this.state.description!== '' && this.state.startDate!==''
+            && this.state.duration!=='' && this.state.venue!=='' && this.state.organizedBy!=='' && this.state.eventStatus!==''){
+            ConferenceManagementSystemServices.addEvent(event).then(res =>{
+                alert("Ëvent Added Successfully");
+                this.props.history.push('/eventList');
+            });
+        }else{
+            alert("Please fill each required field");
+        }
     }
     changeTitleHandler = (event)=> {
         this.setState({title: event.target.value});

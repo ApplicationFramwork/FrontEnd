@@ -38,10 +38,16 @@ class AddWorkshopComponent extends Component {
             eventStatus: this.state.eventStatus
         };
         console.log('workshop => ' + JSON.stringify(workshop));
-        ConferenceManagementSystemServices.addWorkshop(workshop).then(res =>{
-            alert("Workshop Added Successfully");
-            this.props.history.push('/workshopList');
-        });
+        if(this.state.title !==''&& this.state.eventType!=='' && this.state.description!== '' && this.state.startDate!==''
+            && this.state.duration!=='' && this.state.venue!=='' && this.state.organizedBy!=='' && this.state.eventStatus!==''){
+            ConferenceManagementSystemServices.addWorkshop(workshop).then(res =>{
+                alert("Workshop Added Successfully");
+                this.props.history.push('/workshopList');
+            });
+        }else{
+            alert("Please fill each required field");
+        }
+
     }
     changeTitleHandler = (workshop)=> {
         this.setState({title: workshop.target.value});
@@ -163,7 +169,7 @@ class AddWorkshopComponent extends Component {
                                                                         style={{height:"45px",width:"100%"}}
                                                                         onChange={this.changeEventTypeHandler}>
                                                                     <option selected>Choose...</option>
-                                                                    <option value="Research Paper Presentation">Workshop</option>
+                                                                    <option value="Workshop">Workshop</option>
                                                                 </select>
                                                             </div>
                                                         </div>

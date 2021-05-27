@@ -56,10 +56,16 @@ class UpdateWorkshopComponent extends Component {
             eventStatus: this.state.eventStatus
         };
         console.log('workshop => ' + JSON.stringify(workshop));
-        ConferenceManagementSystemServices.updateWorkshop(workshop, this.state.id).then(res => {
-            alert("Workshop Updated Successfully");
-            this.props.history.push("/editor");
-        })
+        if(this.state.title !==''&& this.state.eventType!=='' && this.state.description!== '' && this.state.startDate!==''
+            && this.state.duration!=='' && this.state.venue!=='' && this.state.organizedBy!=='' && this.state.eventStatus!==''){
+            ConferenceManagementSystemServices.updateWorkshop(workshop, this.state.id).then(res => {
+                alert("Workshop Updated Successfully");
+                this.props.history.push("/editor");
+            })
+        }else{
+            alert("Please fill each required field");
+        }
+
 
     }
     changeTitleHandler = (workshop)=> {

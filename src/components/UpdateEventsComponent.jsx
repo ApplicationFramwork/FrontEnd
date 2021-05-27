@@ -57,11 +57,18 @@ class UpdateEventsComponent extends Component {
             organizedBy: this.state.organizedBy,
             eventStatus: this.state.eventStatus
         };
+
         console.log('event => ' + JSON.stringify(event));
-        ConferenceManagementSystemServices.updateEvent(event, this.state.id).then(res => {
-            alert("Event Updated Successfully");
-            this.props.history.push("/editor");
-        })
+        if(this.state.title !==''&& this.state.eventType!=='' && this.state.description!== '' && this.state.startDate!==''
+            && this.state.duration!=='' && this.state.venue!=='' && this.state.organizedBy!=='' && this.state.eventStatus!==''){
+            ConferenceManagementSystemServices.updateEvent(event, this.state.id).then(res => {
+                alert("Event Updated Successfully");
+                this.props.history.push("/editor");
+            })
+        }else{
+            alert("Please fill each required field");
+        }
+
 
     }
     changeTitleHandler = (event)=> {
