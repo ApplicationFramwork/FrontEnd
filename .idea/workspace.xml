@@ -25,12 +25,19 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="997fbf04-e142-42ce-bb1a-e4ba5da8f572" name="Default Changelist" comment="User login added">
-      <change afterPath="$PROJECT_DIR$/src/components/UserSignUpComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/WhatsApp Image 2021-05-25 at 11.11.38.jpeg" afterDir="false" />
+    <list default="true" id="997fbf04-e142-42ce-bb1a-e4ba5da8f572" name="Default Changelist" comment="User signup added">
+      <change afterPath="$PROJECT_DIR$/src/components/uploadImage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/user-profile-component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/Profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/user.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/ConferenceManagementSystemServices.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserLogin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserLogin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserSignUpComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserSignUpComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +91,9 @@
       <workItem from="1621768167956" duration="17108000" />
       <workItem from="1621836631886" duration="8784000" />
       <workItem from="1621858653817" duration="5913000" />
-      <workItem from="1621920959443" duration="6531000" />
+      <workItem from="1621920959443" duration="17998000" />
+      <workItem from="1622010223845" duration="1999000" />
+      <workItem from="1622106158326" duration="20594000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1621769156481</created>
@@ -121,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621864722351</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="User signup added">
+      <created>1621941285359</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1621941285359</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,17 +174,19 @@
     <MESSAGE value="User registration form added" />
     <MESSAGE value="User registration II form added" />
     <MESSAGE value="User login added" />
-    <option name="LAST_COMMIT_MESSAGE" value="User login added" />
+    <MESSAGE value="User signup added" />
+    <option name="LAST_COMMIT_MESSAGE" value="User signup added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="795" y="126" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1621773175755">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="795" y="126" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621773175755" />
-    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1621769364201">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="1713" y="124" key="FileChooserDialogImpl" timestamp="1622019876714">
+      <screen x="1366" y="0" width="1024" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621769364201" />
+    <state x="1713" y="124" key="FileChooserDialogImpl/0.0.1366.738/1366.0.1024.738@1366.0.1024.738" timestamp="1622019876714" />
     <state width="1345" height="182" key="GridCell.Tab.0.bottom" timestamp="1621768893063">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -185,10 +203,11 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="182" key="GridCell.Tab.0.right/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621768893063" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1621864731023">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="1572" y="102" key="Vcs.Push.Dialog.v2" timestamp="1621941338000">
+      <screen x="1366" y="0" width="1024" height="738" />
     </state>
     <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621864731023" />
+    <state x="1572" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738/1366.0.1024.738@1366.0.1024.738" timestamp="1621941338000" />
     <state x="484" y="275" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1621768345274">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -197,5 +216,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1621778595141" />
+    <state x="233" y="59" width="897" height="678" key="search.everywhere.popup" timestamp="1622145701312">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="233" y="59" width="897" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1024.738@0.0.1366.738" timestamp="1622145701312" />
+    <state x="1541" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1024.738@1366.0.1024.738" timestamp="1621944614635" />
   </component>
 </project>

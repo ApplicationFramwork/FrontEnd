@@ -68,3 +68,43 @@ a{
 .headdingIcms{
   font-weight: bold;
 }
+.dash-head{
+  text-align: right;
+}
+.dash-1st{
+  background-color: #283045;
+}
+i:hover{
+  color: #ea4b38;
+}
+.btnCus{
+  background-color: #b0adf2;
+  color: white;
+ }
+.txtActive{
+  color: #b0adf2 ;
+}
+.col-side-update{
+  text-align: right;
+}
+.growUp{
+  color: #645bce;
+  font-size: x-large;
+}
+.reports{
+  color:#018eac;
+  background-color: #26425a;
+  padding: 5px;
+  border-radius: 50%;
+}
+.cube{
+  background-color: #3a344c;
+  color: #d64a53;
+  padding: 5px;
+  border-radius: 50%;
+}
+.editFrm{
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+}

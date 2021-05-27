@@ -62,7 +62,7 @@ class UserSignUpComponent extends Component{
                                         <input className="form-check-input" type="radio" name="Radios"
                                                id="Radios" value="Conference_Conductor"/>
                                         <label className="form-check-label" htmlFor="Radios">
-                                            Conference Conductor
+                                            Work Conductor
                                         </label>
                                     </div>
                                     <div className="form-check">

@@ -1,6 +1,66 @@
 import React, { Component } from 'react';
 import logo from '../images/icms 2.png';
+import cmsService from '../service/ConferenceManagementSystemServices';
+import jwt_decord from 'jwt-decode';
+import Swal from 'sweetalert2';
 class UserLogin extends  Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            email : '',
+            password : ''
+        }
+
+        this.changeemailHandler = this.changeemailHandler.bind(this);
+        this.changepasswordHandler = this.changepasswordHandler.bind(this);
+
+
+    }
+    changeemailHandler = (event) =>{
+        this.setState({email: event.target.value});
+    }
+    changepasswordHandler = (event) =>{
+        this.setState({password: event.target.value});
+    }
+
+    login = (e) =>{
+        e.preventDefault();
+        let user = {email : this.state.email, password : this.state.password};
+        console.log('user => ' + JSON.stringify(user));
+
+        if(this.state.email!= "" && this.state.password != "") {
+            cmsService.login(user).then( res =>{
+                // console.log((res.data.token))
+                // console.log(res.data.status)
+                localStorage.setItem("token",res.data.token);
+                let type = jwt_decord(localStorage.getItem("token")).user_role;
+
+                //check user type and navigate to dash board
+                if(type === "editor"){
+                    this.props.history.push('/dash');
+                }else if (type === "admin"){
+                    this.props.history.push('/dash');
+                }else{
+
+                }
+
+            }).catch((err) =>{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: err
+                })
+            })
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please check input details again!'
+            })
+        }
+    }
+
+
     render() {
         return(
             <div className="container-fluid">
@@ -28,7 +88,8 @@ class UserLogin extends  Component{
                             <div className="form-group">
                                 <label htmlFor="User_Name" className="text-small text-light mt-2">User Name : </label>
                                 <input type="name" className="form-control" id="User_Name"
-                                       placeholder="Ex : @John_Wick"/>
+                                        placeholder="Ex : @John_Wick"
+                                       value={this.state.email} onChange={this.changeemailHandler}/>
                             </div>
 
                             {/*input feild for password*/}
@@ -36,7 +97,8 @@ class UserLogin extends  Component{
                                 <label htmlFor="password" className="text-light">password :
                                 </label>
                                 <input type="password" className="form-control" id="password"
-                                       aria-describedby="emailHelp" placeholder="*********"/>
+                                       aria-describedby="emailHelp" placeholder="*********"
+                                       value={this.state.password} onChange={this.changepasswordHandler}/>
                                 <small id="emailHelp" className="form-text fPass">
                                     <a href={"#"}> Forgot Password ? </a>
                                 </small>
@@ -51,15 +113,14 @@ class UserLogin extends  Component{
                             </div>
 
                             {/*sign in button*/}
-                            <a href={"#"}><diV class="btnLogin">
-                                <h6 className="text-light p-2">Sign In</h6>
-                            </diV></a>
-
+                            <div class="btnLogin">
+                                <button type="button" className="btn" onClick={this.login}>Sign in</button>
+                            </div>
                             {/*create account link*/}
                             <div>
                                 <small className="text-light">
                                     New on our platform? <i className="fPass">
-                                    <a href={"#"}>Create an account</a>
+                                    <a href={'#'}>Create an account</a>
                                 </i>
                                 </small>
                             </div>
