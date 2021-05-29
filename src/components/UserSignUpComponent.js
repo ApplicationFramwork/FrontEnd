@@ -11,13 +11,18 @@ class UserSignUpComponent extends Component{
             email: '',
             password: '',
             reneterpassword: '',
-            type: ''
+            type: '',
+            doc: ''
             
         }
         this.changeemailHandler = this.changeemailHandler.bind(this);
         this.changepasswordHandler = this.changepasswordHandler.bind(this);
         this.changerepasswordHandler = this.changerepasswordHandler.bind(this);
         this.changeradioHandler = this.changeradioHandler.bind(this);
+        this.changedocHandler = this.changedocHandler.bind(this);
+    }
+    changedocHandler = (event) =>{
+        this.setState({ doc: event.target.files[0] });
     }
     changeemailHandler = (event) =>{
         this.setState({email: event.target.value});
@@ -51,7 +56,7 @@ class UserSignUpComponent extends Component{
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
-                let user = {email : this.state.email, password : this.state.password, type :this.state.type};
+                let user = {email : this.state.email, password : this.state.password, type :this.state.type, document :this.state.doc};
                 console.log('user => ' + JSON.stringify(user));
 
                 if(this.state.password === this.state.reneterpassword && this.state.email !== '' && this.state.type !== '' && this.state.password !== ''){
@@ -66,6 +71,7 @@ class UserSignUpComponent extends Component{
                         'Your Account has been Created.',
                         'success'
                     )
+                    
             }else{
                 Swal.fire({
                     icon: 'error',
@@ -164,7 +170,8 @@ class UserSignUpComponent extends Component{
                                     <i className="text-warning"><i className="fas fa-exclamation-triangle m-2"></i>
                                         Note : You should provide your document before sign in to the system </i>
                                 </div>
-                                <input className="form-control bg-success mt-2 mb-3" type="file" id="formFileDisabled" />
+                                <input className="form-control bg-success mt-2 mb-3" type="file" id="formFileDisabled"
+                                value={this.state.password} onChange={this.changedocHandler}  />
 
                                 <div className="form-check my-2 mt-4">
                                     <input className="form-check-input" type="radio" name="agreement"
