@@ -6,10 +6,10 @@ a{
   text-decoration: none;
 }
 .frm{
-  background-image: url("images/undraw_add_friends_re_3xte.svg");
+  background-image: url("./images/undraw_add_friends_re_3xte.svg");
 }
 .lg-body{
-  background-image: url("images/WhatsApp Image 2021-05-24 at 12.39.40.jpeg");
+  background-image: url("./images/WhatsApp Image 2021-05-24 at 12.39.40.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
