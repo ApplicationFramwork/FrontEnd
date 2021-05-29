@@ -3,7 +3,7 @@ import jwt_decord from "jwt-decode";
 //Login service URL
 const LOGIN_URL = "https://it19004778.d2n41wr3m7a1wa.amplifyapp.com/user/login";
 const ACCOUNT_DEACTIVATE_URL = "http://localhost:8070/user/delete";
-const ACCOUNT_UPDATE_URL = "http://localhost:8070/user/update";
+const ACCOUNT_UPDATE_URL = "https://it19004778.d2n41wr3m7a1wa.amplifyapp.com/user/update";
 
 class ConferenceManagementSystemServices{
     login(user){
