@@ -1,9 +1,9 @@
 import axios from 'axios';
 import jwt_decord from "jwt-decode";
 //Login service URL
-const LOGIN_URL = "https://it19004778.d2n41wr3m7a1wa.amplifyapp.com/user/login";
-const ACCOUNT_DEACTIVATE_URL = "https://it19004778.d2n41wr3m7a1wa.amplifyapp.com/user/delete";
-const ACCOUNT_UPDATE_URL = "https://it19004778.d2n41wr3m7a1wa.amplifyapp.com/user/update";
+const LOGIN_URL = "https://it19004778.d12hx76qkqbpq6.amplifyapp.com/user/login";
+const ACCOUNT_DEACTIVATE_URL = "https://it19004778.d12hx76qkqbpq6.amplifyapp.com/user/delete";
+const ACCOUNT_UPDATE_URL = "https://it19004778.d12hx76qkqbpq6.amplifyapp.com/user/update";
 
 class ConferenceManagementSystemServices{
     login(user){
