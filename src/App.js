@@ -12,6 +12,8 @@ import UpdateEventsComponent from "./components/UpdateEventsComponent";
 import ListWorkshops from "./components/ListWorkshopComponent";
 import AddWorkshop from "./components/AddWorkshopComponent";
 import UpdateWorkshopComponent from "./components/UpdateWorkshopComponent";
+import ViewResearchEvents from "./components/ViewResearchEvents";
+import ViewWorkshops from "./components/ViewWorkshops";
 import sidebar from "./components/EditorSidebarComponent";
 import Test from "./components/Test"
 import about from "./components/AboutUs";
@@ -69,6 +71,8 @@ function App(){
             <Route path = "/workshopList" component = {ListWorkshops}></Route>
             <Route path = "/addWorkshop" component = {AddWorkshop}></Route>
             <Route path = "/updateWorkshop/:id" component = {UpdateWorkshopComponent}></Route>
+            <Route path = "/research" component = {ViewResearchEvents}></Route>
+            <Route path = "/workshop" component = {ViewWorkshops}></Route>
             <Route path = "/about" component = {about}></Route>
         </div>
         </Router>
