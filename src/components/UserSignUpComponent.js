@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.png';
-import CmsSevice from '../services/ConferenceManagementSystemServices';
+import axios from 'axios';
 import Swal from 'sweetalert2';
 
 class UserSignUpComponent extends Component{
@@ -59,13 +59,28 @@ class UserSignUpComponent extends Component{
                 let user = {email : this.state.email, password : this.state.password, type :this.state.type, document :this.state.doc};
                 console.log('user => ' + JSON.stringify(user));
 
-                if(this.state.password === this.state.reneterpassword && this.state.email !== '' && this.state.type !== '' && this.state.password !== ''){
-                    CmsSevice.adduser(user).then(res=>{
-                        console.log(this.state.email);
-                        console.log(this.state.password);
-                        console.log(this.state.reneterpassword);
-                        console.log(this.state.type);
-                    })
+                if (this.state.password === this.state.reneterpassword && this.state.email !== '' && this.state.type !== '' && this.state.password !== '') {
+                    const formData = new FormData();
+                    formData.append('email', this.state.email);
+                    formData.append('password', this.state.password);
+                    formData.append('type', this.state.type);
+                    formData.append('document', this.state.doc);
+                    console.log(this.state.doc)
+                    const config = {
+                        headers: {
+                            'content-type': 'multipart/form-data'
+                        }
+                    };
+                    axios.post("http://localhost:8070/user/add", formData, config)
+                        .then((response) => {
+                            alert("The file is successfully uploaded");
+                        })
+                    // CmsSevice.adduser(user).then(res=>{
+                    //     console.log(this.state.email);
+                    //     console.log(this.state.password);
+                    //     console.log(this.state.reneterpassword);
+                    //     console.log(this.state.type);
+                    // })
                     swalWithBootstrapButtons.fire(
                         'Created!',
                         'Your Account has been Created.',
@@ -114,7 +129,7 @@ class UserSignUpComponent extends Component{
                             </div>
                             <hr className="m-2"/>
                         </center>
-                            <form className="form-container mt-2">
+                        <form className="form-container mt-2">
                                 <div className="form-group">
                                     <label htmlFor="User_Name" className="text-small text-light mt-5">User Name : </label>
                                      <input type="name" className="form-control" id="User_Name"
@@ -170,8 +185,9 @@ class UserSignUpComponent extends Component{
                                     <i className="text-warning"><i className="fas fa-exclamation-triangle m-2"></i>
                                         Note : You should provide your document before sign in to the system </i>
                                 </div>
-                                <input className="form-control bg-success mt-2 mb-3" type="file" id="formFileDisabled"
-                                value={this.state.password} onChange={this.changedocHandler}  />
+                                <input className="form-control bg-success mt-2 mb-3" type="file" name="doc"
+                                onChange={this.changedocHandler} />{console.log(this.state.doc)}
+                                
 
                                 <div className="form-check my-2 mt-4">
                                     <input className="form-check-input" type="radio" name="agreement"
