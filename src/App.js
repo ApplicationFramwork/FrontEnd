@@ -11,6 +11,7 @@ import signup from './components/UserSignUpComponent';
 function App() {
   return (
     <div>
+      
       <Router>
           <Switch>
           <Route path = "/" exact component = {IndexPageComponent}></Route>
