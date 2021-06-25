@@ -145,6 +145,10 @@ class reviwersettingcomponent extends Component {
             }
           })
     }
+    cancle = (e) => {
+        e.preventDefault();
+        this.props.history.push("/reviwer")
+    }
     render() {
         return (
             <body>

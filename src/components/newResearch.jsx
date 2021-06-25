@@ -2,6 +2,19 @@ import React, { Component } from 'react';
 import logo from '../images/logo.png';
 
 class newResearch extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            research_topic: '',
+            submiteremail: '',
+            reseach_description: '',
+            status:'',
+            doc: ''
+
+        }
+    }
+    
     render() {
         return (
             <body>

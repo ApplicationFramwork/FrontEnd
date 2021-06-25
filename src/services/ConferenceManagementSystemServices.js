@@ -16,6 +16,9 @@ const BackendAPIAddResercher = "http://localhost:8070/user/addresearcher";
 const BackendAPIAddWorkshop_presenter = "http://localhost:8070/user/addWorkshop_presenter";
 const BackendAPIAddAttendee = "http://localhost:8070/user/addattende";
 
+//Research Service URL
+const BackendAPIgetllresearch = "http://localhost:8070/researchdoc/getallresearchdocs";
+
 class ConferenceManagementSystemServices{
 
     //maleesha
@@ -42,6 +45,9 @@ class ConferenceManagementSystemServices{
     //delete reviwer using reviwer id
     deletereviwer(id, email){
         return axios.delete(BackendAPIDeleteReviwer_URL  + '/' + id + '/' + email)
+    }
+    getallresearchdoc() {
+        return axios.get(BackendAPIgetllresearch);
     }
 
 
