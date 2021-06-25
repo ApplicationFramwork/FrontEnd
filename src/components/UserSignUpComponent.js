@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CmsSevice from "../services/ConferenceManagementSystemServices";
 import logo from '../images/logo.png';
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -71,16 +72,20 @@ class UserSignUpComponent extends Component{
                             'content-type': 'multipart/form-data'
                         }
                     };
-                    axios.post("http://localhost:8070/user/add", formData, config)
-                        .then((response) => {
-                            alert("The file is successfully uploaded");
+                    if (this.state.type === "Researcher") {
+                        axios.post("http://localhost:8070/user/addresearcher", formData, config)
+                        console.log(user)
+                    }
+                    if (this.state.type === "Attendee") {
+                        CmsSevice.addattendess(user).then(res => {
+                            console.log(user)
                         })
-                    // CmsSevice.adduser(user).then(res=>{
-                    //     console.log(this.state.email);
-                    //     console.log(this.state.password);
-                    //     console.log(this.state.reneterpassword);
-                    //     console.log(this.state.type);
-                    // })
+                    }
+                    else{
+                        axios.post("http://localhost:8070/user/addWorkshoppresenter", formData, config)
+                        console.log(user)
+                    }
+                    
                     swalWithBootstrapButtons.fire(
                         'Created!',
                         'Your Account has been Created.',
@@ -165,8 +170,8 @@ class UserSignUpComponent extends Component{
                                     </div>
                                     <div className="form-check ml-3">
                                         <input className="form-check-input" type="radio" name="Radios"
-                                               id="Radios" value=" Workshop_Presenter"
-                                               checked={this.state.type === " Workshop_Presenter"} onChange={this.changeradioHandler}/>
+                                               id="Radios" value=" WorkshopPresenter"
+                                               checked={this.state.type === " WorkshopPresenter"} onChange={this.changeradioHandler}/>
                                         <label className="form-check-label" htmlFor="Radios">
                                             Workshop Presenter
                                         </label>

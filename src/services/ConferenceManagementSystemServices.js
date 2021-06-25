@@ -12,14 +12,22 @@ const BackendAPIUpdateReviwer_URL = "http://localhost:8070/reviwer/update";
 const BackendAPIDeleteReviwer_URL = "http://localhost:8070/reviwer/delete";
 
 //user service URL
-const BackendAPIAddUserr_URL = "http://localhost:8070/user/add";
+const BackendAPIAddResercher = "http://localhost:8070/user/addresearcher";
+const BackendAPIAddWorkshop_presenter = "http://localhost:8070/user/addWorkshop_presenter";
+const BackendAPIAddAttendee = "http://localhost:8070/user/addattende";
 
 class ConferenceManagementSystemServices{
 
     //maleesha
     //add user
-    adduser(user){
-        return axios.post(BackendAPIAddUserr_URL, user);
+    addresercher(user){
+        return axios.post(BackendAPIAddResercher, user);
+    }
+    addworkshop_presenter(user) {
+        return axios.post(BackendAPIAddWorkshop_presenter, user);
+    }
+    addattendess(user) {
+        return axios.post(BackendAPIAddAttendee, user);
     }
 
     //vihanga
