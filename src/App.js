@@ -7,6 +7,8 @@ import reviwerchangepassword from './components/changePasswordcomponent';
 import allresearch from './components/allresearch';
 import newresearch from './components/newResearch';
 import signup from './components/UserSignUpComponent';
+import addresearchdoc from './components/Addresearchpapers';
+import addproposaldoc from './components/Addproposalpapers';
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
           <Route path = "/reviwerchangepassword/" component = {reviwerchangepassword}></Route>
           <Route path = "/allresearch" component = {allresearch}></Route>
           <Route path = "/newresearch"  component = {newresearch}></Route>
-          <Route path = "/signup"  component = {signup}></Route>
+          <Route path="/signup" component={signup}></Route>
+          <Route path="/addresearchdoc" component={addresearchdoc}></Route>
+          <Route path="/addproposalhdoc" component={addproposaldoc}></Route>
         </Switch>
     </Router>
       
