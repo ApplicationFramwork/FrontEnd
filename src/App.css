@@ -110,7 +110,7 @@
 
 /* Style the back side */
 .flip-box-back {
-  background-color: yellowgreen;
+  background-color: #010101;
   color: white;
   transform: rotateY(180deg);
 }
@@ -838,4 +838,21 @@ getStarted-a{
   text-align: right;
   font-size: 30px;
 }
-
+.about{
+  background-image: url("images/moon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.aboutText{
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+}
+.contact{
+  align-content: center;
+  background-image: url("images/moon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250vh;
+}

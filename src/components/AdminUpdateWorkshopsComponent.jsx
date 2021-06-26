@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import logo from "../images/logo.png";
 import event from "../images/Followers.svg";
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
+import Header from "./Header";
 
 class AdminUpdateWorkshopsComponent extends Component {
     constructor(props){
@@ -100,6 +101,7 @@ class AdminUpdateWorkshopsComponent extends Component {
 
         return (
             <div className="container-fluid bg-light">
+                <Header/>
                 {/*Editor sidebar*/}
                 <div className="row">
                     <div className="col-sm-2 bg-dark text-light">

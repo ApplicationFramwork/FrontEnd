@@ -4,6 +4,7 @@ import background from "../images/Conference.jpg";
 import formBackground from "../images/addEvent.svg";
 import event from "../images/event.svg";
 import logo from "../images/logo.png";
+import Header from "./Header";
 class AddConferenceEvent extends Component {
     constructor(props){
         super(props)
@@ -83,7 +84,7 @@ class AddConferenceEvent extends Component {
     render() {
         return (
             <div className="container-fluid bg-light">
-
+                <Header/>
                 {/*Editor sidebar*/}
                 <div className="row">
                     <div className="col-sm-2 bg-dark text-light">

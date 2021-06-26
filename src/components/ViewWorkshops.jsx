@@ -7,6 +7,8 @@ import wallpaper2 from "../images/wallpaper2.png";
 import notice from "../images/notice.png"
 import conference from "../images/Conference.png"
 import conference2 from "../images/Conference2.png"
+import IndexHeader from "./index-header";
+import banner from "../images/banner.png"
 class ViewWorkshops extends Component {
     constructor(props){
         super(props)
@@ -22,78 +24,13 @@ class ViewWorkshops extends Component {
     }
     render() {
         return (
-            <div className="bg-light">
-                <Header/>
-                {/*Editor sidebar*/}
+            <div className="bg" style={{background:"#010101"}}>
+                <IndexHeader/>
                 <div className="row">
-                    <div className="col-sm-2 bg-dark text-light">
-                        <div className="dropdown">
-                            <img src={logo} height={"150px"} width={"150px"}/>
-                            <br/>
-                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                <i className="fas fa-calendar-alt"></i> &nbsp;
-                                View Events
-                            </button>
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">All Users</a></li>
-                                <li><a className="dropdown-item" href="#">Add Users</a></li>
-                                <li><a className="dropdown-item" href="#">Search</a></li>
-                            </ul>
-                        </div>
-                        <hr className="text-light"/>
-                        <div className="dropdown my-2">
-                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Researches
-                            </button>
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
-                        <hr className="text-light"/>
-                        <div className="dropdown my-2">
-                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Events
-                            </button>
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
-                        <hr className="text-light"/>
-                    </div>
-                    <div className="col-sm-10">
-                        <div className="row">
-                            <div className="collapse" id="navbarToggleExternalContent">
-                                <div className="bg-dark p-4">
-                                    <h5 className="text-white h4">Upcoming Research Presentation Events</h5>
-                                    <span className="text-muted">{this.state.currentDateTime}</span>
-                                </div>
-                            </div>
-                            <nav className="navbar navbar-dark bg-dark">
-                                <div className="container-fluid">
-                                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#navbarToggleExternalContent"
-                                            aria-controls="navbarToggleExternalContent" aria-expanded="false"
-                                            aria-label="Toggle navigation">
-                                        <span className="fas fa-angle-down"></span>
-                                    </button>
-                                </div>
-                            </nav>
-                            <div className="row">
+                    <hr style={{border:"5px solid white"}}/>
                                 <center>
-                                    <br/>
-                                    <h2>Research Paper Presentations</h2>
+                                    <h2 style={{color:"white"}}>Research Paper Presentations</h2>
                                 </center>
-                            </div>
-                            <hr/>
                             <div className="row">
                                 <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                                     <div className="carousel-inner">
@@ -104,7 +41,7 @@ class ViewWorkshops extends Component {
                                             <img src={wallpaper2}  className="d-block w-100" alt="..."/>
                                         </div>
                                         <div className="carousel-item">
-                                            <img src={wallpaper}  className="d-block w-100" alt="..."/>
+                                            <img src={banner}  className="d-block w-100" alt="..."/>
                                         </div>
                                     </div>
                                     <button className="carousel-control-prev" type="button"
@@ -246,8 +183,7 @@ class ViewWorkshops extends Component {
                                 </div>
 
                             </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         );

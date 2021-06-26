@@ -62,7 +62,7 @@ class AdminViewResearchEvents extends Component {
     render() {
         return (
             <div className="bg-light">
-                {/*<Header/>*/}
+                <Header/>
                 {/*Editor sidebar*/}
                 <div className="row">
                     <div className="col-sm-2 bg-dark text-light">

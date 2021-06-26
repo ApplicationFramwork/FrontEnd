@@ -19,6 +19,9 @@ import AdminUpdateEvents from "./components/AdminUpdateEvents";
 import AdminViewWorkshops from "./components/AdminViewWorkshops";
 import AdminAddResearchComponent from "./components/AdminAddResearchComponent";
 import AdminUpdateWorkshopsComponent from "./components/AdminUpdateWorkshopsComponent";
+import AboutUsComponent from "./components/AboutUsComponent";
+import ContactUsComponent from "./components/ContactUsComponent";
+import DocumentsDownloadComponent from "./components/DocumentsDownloadComponent";
 import footer from "./components/Footer"
 import sidebar from "./components/EditorSidebarComponent";
 
@@ -53,7 +56,9 @@ function App(){
             <Route path = "/login" component = {UserLogin}></Route>
             <Route path = "/dash" component = {dash2}></Route>
             <Route path = "/profile" component = {userProfileComponent}></Route>
-
+            <Route path = "/aboutUs" component = {AboutUsComponent}></Route>
+            <Route path = "/contact" component = {ContactUsComponent}></Route>
+            <Route path = "/download" component = {DocumentsDownloadComponent}></Route>
 
             <Route path = "/Test" component = {Test}></Route>
             <Route path = "/side" component = {sidebar}></Route>

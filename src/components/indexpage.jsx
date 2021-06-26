@@ -11,7 +11,6 @@ class indexpage extends Component{
                     <div className="col-sm-10 bodyText">
                         <h1 className="text-light heddingText">Conference Management</h1>
                         <small className="smallText">CREATIVE MIND, CREATIVE WORKS</small>
-
                         <div className="row">
                             <div className="col-sm-4 mt-3 text-light">
                                 <small >ICMS is the only all-in-one event platform built with the mission to drive deep engagement – first and foremost – yielding greater business results.

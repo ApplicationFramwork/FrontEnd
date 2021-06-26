@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import {Table} from "react-bootstrap";
 import logo from "../images/logo.png";
+import Header from "./Header";
 
 class ListWorkshopComponent extends Component {
     constructor(props){
@@ -33,6 +34,7 @@ class ListWorkshopComponent extends Component {
     render() {
         return (
             <div className="container-fluid bg-light">
+                <Header/>
                 {/*Editor sidebar*/}
                 <div className="row">
                     <div className="col-sm-2  bg-dark text-light">
