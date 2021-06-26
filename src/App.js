@@ -14,6 +14,10 @@ import AddWorkshop from "./components/AddWorkshopComponent";
 import UpdateWorkshopComponent from "./components/UpdateWorkshopComponent";
 import ViewResearchEvents from "./components/ViewResearchEvents";
 import ViewWorkshops from "./components/ViewWorkshops";
+import AdminViewResearchEvents from "./components/AdminViewResearchEvents";
+import AdminUpdateEvents from "./components/AdminUpdateEvents";
+import AdminViewWorkshops from "./components/AdminViewWorkshops";
+import footer from "./components/Footer"
 import sidebar from "./components/EditorSidebarComponent";
 import Test from "./components/Test"
 import about from "./components/AboutUs";
@@ -56,10 +60,10 @@ function App(){
     return(
         <Router>
         <div>
+            <Route path="/header" exact component={Header} />
             <div className="container">
             <Switch>
                 <Route path="/addEvent" exact component={AddEventComponent} />
-
             </Switch>
             </div>
             <Route path = "/Test" component = {Test}></Route>
@@ -73,7 +77,11 @@ function App(){
             <Route path = "/updateWorkshop/:id" component = {UpdateWorkshopComponent}></Route>
             <Route path = "/research" component = {ViewResearchEvents}></Route>
             <Route path = "/workshop" component = {ViewWorkshops}></Route>
+            <Route path = "/adminResearch" component = {AdminViewResearchEvents}></Route>
+            <Route path = "/adminUpdateResearch/:id" component = {AdminUpdateEvents}></Route>
+            <Route path = "/adminWorkshop" component = {AdminViewWorkshops}></Route>
             <Route path = "/about" component = {about}></Route>
+            <Route path = "/footer" component = {footer}></Route>
         </div>
         </Router>
     );

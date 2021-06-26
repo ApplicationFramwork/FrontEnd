@@ -8,6 +8,7 @@ import calendar2 from "../images/calendar.gif";
 import logo from "../images/logo.png";
 import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import localise from "../images/localise.gif";
+import Header from "./Header";
 
 class EditorDashboardComponent extends Component {
     constructor(props){
@@ -66,12 +67,11 @@ class EditorDashboardComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Researches
+                                Add Event
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><a className="dropdown-item" href="#">Add Research Paper Presentation</a></li>
+                                <li><a className="dropdown-item" href="#">Add a Workshop</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -79,12 +79,11 @@ class EditorDashboardComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Events
+                                View Upcoming Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><a className="dropdown-item" href="#">View Research Paper Presentations</a></li>
+                                <li><a className="dropdown-item" href="#">View Workshops</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -120,7 +119,7 @@ class EditorDashboardComponent extends Component {
                                                 <h5 className="card-title">Add Research Paper Prsentation</h5>
                                                 <p className="card-text">Some quick example text to build on the card title and make up the
                                                     bulk of the card's content.</p>
-                                                <a href="/addConferenceEvent" className="btn btn-primary">Go to Add Events
+                                                <a href="/addConferenceEvent" className="btn btn-primary">Go to Add Research Paper Prsentation
                                                     &nbsp;<i className=" fas fa-calendar-alt"></i>
                                                 </a>
                                             </div>
@@ -134,7 +133,7 @@ class EditorDashboardComponent extends Component {
                                                 <h5 className="card-title">Add a Workshop</h5>
                                                 <p className="card-text">Some quick example text to build on the card title and make up the
                                                     bulk of the card's content.</p>
-                                                <a href="/addWorkshop" className="btn btn-primary">Go to View Events
+                                                <a href="/addWorkshop" className="btn btn-primary">Go to Add a Workshop
                                                     &nbsp;<i className=" fas fa-calendar-alt"></i>
                                                 </a>
                                             </div>
@@ -148,7 +147,7 @@ class EditorDashboardComponent extends Component {
                                                 <h5 className="card-title">View upcoming Events</h5>
                                                 <p className="card-text">Some quick example text to build on the card title and make up the
                                                     bulk of the card's content.</p>
-                                                <a href="/eventList" className="btn btn-primary">Go somewhere
+                                                <a href="/eventList" className="btn btn-primary">View upcoming Research Paper Presentations
                                                     &nbsp;<i className=" fas fa-calendar-alt"></i>
                                                 </a>
                                             </div>
@@ -170,13 +169,16 @@ class EditorDashboardComponent extends Component {
                                                             <h5>{events.title}</h5>
                                                             <div className="mt-3 info">
                                                                 <span className="text1 d-block mb-3">{events.description}</span>
-                                                                <span className="text1 ">Time {events.duration} </span>
+                                                                <span className="text1 ">Venue: {events.venue} </span>
                                                             </div>
                                                             <div className="mt-3 info">
-                                                                <span className="text1 ">Status {events.eventStatus} </span>
+                                                                <span className="text1 ">Date: {events.startDate} </span>
+                                                            </div>
+                                                            <div className="mt-3 info">
+                                                                <span className="text1 ">Time: {events.duration} </span>
                                                             </div>
                                                             <div className="cost mt-3 text-dark">
-                                                                <span>{events.date}</span>
+                                                                <span>Status: {events.eventStatus}</span>
                                                             </div>
 
                                                         </div>
@@ -185,8 +187,7 @@ class EditorDashboardComponent extends Component {
                                                                 <div className="p-3 text-center text-white mt-2 cursor">
                                                                     <button className="btn btn-success btn-block" onClick={ () => this.editEvent(events._id)}>
                                                                         <i className="fas fa-edit"></i>&nbsp;
-                                                                        Edit Event
-
+                                                                        Edit Events
                                                                     </button>
                                                                     <br/>
                                                                 </div>
@@ -212,14 +213,18 @@ class EditorDashboardComponent extends Component {
                                                             <h5>{workshops.title}</h5>
                                                             <div className="mt-3 info">
                                                                 <span className="text1 d-block mb-3">{workshops.description}</span>
-                                                                <span className="text1 ">Time {workshops.duration} </span>
-                                                            </div>
-                                                            <div className="mt-3 info">
-                                                                <span className="text1 ">Status {workshops.eventStatus} </span>
+                                                                <span className="text1 d-block mb-3">Venue: {workshops.venue}</span>
                                                             </div>
                                                             <div className="cost mt-3 text-dark">
-                                                                <span>{workshops.date}</span>
+                                                                <span>Date: {workshops.startDate}</span>
                                                             </div>
+                                                            <div className="cost mt-3 text-dark">
+                                                                <span>Time: {workshops.duration}</span>
+                                                            </div>
+                                                            <div className="mt-3 info">
+                                                                <span className="text1 ">Status: {workshops.eventStatus} </span>
+                                                            </div>
+
 
                                                         </div>
                                                         <div className="row mt-2">

@@ -7,7 +7,8 @@ class ListEventsComponent extends Component {
     constructor(props){
         super(props)
         this.state = {
-            events: []
+            events: [],
+            StatusType : ''
         }
     }
     componentDidMount(){
@@ -24,6 +25,12 @@ class ListEventsComponent extends Component {
     editEvent(id){
         console.log('event id'+id);
         this.props.history.push('/updateEvent/'+ id);
+    }
+    changeStatusHandler = (event)=> {
+        this.setState({StatusType: event.target.value});
+        conferenceManagementSystemServices.getEventByStatus(event.target.value).then(res=>{
+            this.setState({events : res.data});
+        })
     }
     render() {
         return (
@@ -69,17 +76,7 @@ class ListEventsComponent extends Component {
                         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     </div>
                     <div className="col-sm-10">
-                        <div className="row">
-                            <nav className="navbar navbar-light bg-light">
-                                <div className="container-fluid">
-                                    <form className="d-flex">
-                                        <input className="form-control me-2" type="search" placeholder="Search"
-                                               name="searchQuery"aria-label="Search"/>
-                                        <button className="btn btn-outline-success" type="submit">Search</button>
-                                    </form>
-                                </div>
-                            </nav>
-                            </div>
+
                         <div className="row">
                             <div className="collapse" id="navbarToggleExternalContent">
                                 <div className="bg-dark p-4">
@@ -97,13 +94,28 @@ class ListEventsComponent extends Component {
                                     </button>
                                 </div>
                             </nav>
+                            <div className="row">
+                                <nav className="navbar navbar-light bg-light">
+                                    <div className="container-fluid">
+                                        <form className="d-flex">
+                                            <input className="form-control me-2" type="search" placeholder="Search"
+                                                   name="searchQuery"aria-label="Search" value={this.state.StatusType} onChange={this.changeStatusHandler}/>
+                                        </form>
+                                    </div>
+                                </nav>
+                            </div>
                         </div>
+                        <div className="row">
+                            <center>
+                                <h2>Research Paper Presentations List</h2>
+                            </center>
+                        </div>
+                        <hr/>
                         {/*Add Event*/}
                         <div className="row">
-
                             <div className="container">
                                 <br/>
-                                <Table className="table" striped bordered hover>
+                                <Table responsive className="table" striped bordered hover>
                                     <thead>
                                     <tr>
                                         <th scope="col"> Title</th>
@@ -126,9 +138,9 @@ class ListEventsComponent extends Component {
                                                     <td>{event.title}</td>
                                                     <td>{event.eventType}</td>
                                                     <td> {event.description} </td>
-                                                    <td> {event.startDate}</td>
-                                                    <td> {event.duration}</td>
-                                                    <td> {event.venue}</td>
+                                                    <td className="p-2"> {event.startDate}</td>
+                                                    <td className="p-3"> {event.duration}</td>
+                                                    <td className="p-3"> {event.venue}</td>
                                                     <td> {event.organizedBy}</td>
                                                     <td> {event.eventStatus}</td>
                                                     <td>
@@ -138,15 +150,16 @@ class ListEventsComponent extends Component {
                                                         </button>
                                                     </td>
                                                     <td>
-                                                        <button style={{marginLeft: "10px"}}  className="btn btn-danger"onClick={ () => this.delete(event._id)}>
+                                                        <button style={{marginLeft: "10px"}}  className="btn btn-danger" onClick={ () => this.delete(event._id)}>
                                                             Delete
                                                             <i className="fas fa-trash-alt"></i>
                                                         </button>
                                                     </td>
-                                                    <br/>
+                                                    <br/><br/><br/>
                                                 </tr>
                                         )
                                     }
+
                                     </tbody>
                                 </Table>
                             </div>
@@ -154,7 +167,6 @@ class ListEventsComponent extends Component {
                     </div>
                 </div>
             </div>
-
         );
     }
 }

@@ -24,6 +24,12 @@ class ListWorkshopComponent extends Component {
         console.log('event id'+id);
         this.props.history.push('/updateWorkshop/'+ id);
     }
+    changeStatusHandler = (workshop)=> {
+        this.setState({StatusType: workshop.target.value});
+        conferenceManagementSystemServices.getWorkshopByStatus(workshop.target.value).then(res=>{
+            this.setState({workshops : res.data});
+        })
+    }
     render() {
         return (
             <div className="container-fluid bg-light">
@@ -68,17 +74,7 @@ class ListWorkshopComponent extends Component {
                         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     </div>
                     <div className="col-sm-10">
-                        <div className="row">
-                            <nav className="navbar navbar-light bg-light">
-                                <div className="container-fluid">
-                                    <form className="d-flex">
-                                        <input className="form-control me-2" type="search" placeholder="Search"
-                                               name="searchQuery"aria-label="Search"/>
-                                        <button className="btn btn-outline-success" type="submit">Search</button>
-                                    </form>
-                                </div>
-                            </nav>
-                        </div>
+
                         <div className="row">
                             <div className="collapse" id="navbarToggleExternalContent">
                                 <div className="bg-dark p-4">
@@ -96,13 +92,29 @@ class ListWorkshopComponent extends Component {
                                     </button>
                                 </div>
                             </nav>
+                            <div className="row">
+                                <nav className="navbar navbar-light bg-light">
+                                    <div className="container-fluid">
+                                        <form className="d-flex">
+                                            <input className="form-control me-2" type="search" placeholder="Search"
+                                                   name="searchQuery"aria-label="Search" value={this.state.StatusType} onChange={this.changeStatusHandler}/>
+                                        </form>
+                                    </div>
+                                </nav>
+                            </div>
                         </div>
+                        <div className="row">
+                            <center>
+                                <h2>Workshops List</h2>
+                            </center>
+                        </div>
+                        <hr/>
                         {/*Add Event*/}
                         <div className="row">
 
                             <div className="container">
                                 <br/>
-                                <Table className="table" striped bordered hover>
+                                <Table responsive className="table" striped bordered hover>
                                     <thead>
                                     <tr>
                                         <th scope="col"> Title</th>

@@ -117,4 +117,11 @@
   color: white;
   transform: rotateY(180deg);
 }
+/*Header css*/
+.dash-head{
+  text-align: right;
+}
+.footer{
+  background-color: #282c34;
+}
 
