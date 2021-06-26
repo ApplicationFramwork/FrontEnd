@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import ConferenceImage from "../images/Conference.jpg";
-import editor from "../components/EditorDashboardComponent";
+import editor from "./EditorDashboardComponent";
 
 
 
@@ -49,7 +49,7 @@ export default function AddEventComponent(){
 
                 <div className="col-md-8">
 
-                    <h1 className="text-center mt-4 font-weight-bold font-italic text-primary">ADD EVENT</h1>
+                    <h1 className="text-center mt-4 font-weight-bold font-italic text-primary">ADD Research Paper Prsentation</h1>
                     <div className="justify-contend-center mt-5">
                         <div className="row">
                             <div className="col-md-2"></div>
