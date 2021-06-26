@@ -90,11 +90,7 @@ class UserSignUpComponent extends Component{
                         'Created!',
                         'Your Account has been Created.',
                         'success'
-<<<<<<< HEAD
-                    )
-=======
                     ).then(this.props.history.push("/login"))
->>>>>>> 48fb1e3c43d600f4996b4356b5a7ab046a3afb97
                     
             }else{
                 Swal.fire({

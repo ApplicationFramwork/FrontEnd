@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import './App.css';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import IndexPageComponent from './components/indexcomponent';
-=======
 import React, {Component} from 'react';
 import "./App.css";
 import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
@@ -27,7 +22,6 @@ import AdminUpdateWorkshopsComponent from "./components/AdminUpdateWorkshopsComp
 import footer from "./components/Footer"
 import sidebar from "./components/EditorSidebarComponent";
 
->>>>>>> 48fb1e3c43d600f4996b4356b5a7ab046a3afb97
 import reviwerdash from './components/ReviwerDashcomponent';
 import reviwersettings from './components/reviwersettingcomponent';
 import reviwerchangepassword from './components/changePasswordcomponent';
@@ -37,28 +31,6 @@ import signup from './components/UserSignUpComponent';
 import addresearchdoc from './components/Addresearchpapers';
 import addproposaldoc from './components/Addproposalpapers';
 
-<<<<<<< HEAD
-function App() {
-  return (
-    <div>
-
-      <Router>
-          <Switch>
-          <Route path = "/" exact component = {IndexPageComponent}></Route>
-          <Route path = "/reviwer/" component = {reviwerdash}></Route>
-          <Route path = "/reviwersettings/" component = {reviwersettings}></Route>
-          <Route path = "/reviwerchangepassword/" component = {reviwerchangepassword}></Route>
-          <Route path = "/allresearch" component = {allresearch}></Route>
-          <Route path = "/newresearch"  component = {newresearch}></Route>
-          <Route path="/signup" component={signup}></Route>
-          <Route path="/addresearchdoc" component={addresearchdoc}></Route>
-          <Route path="/addproposalhdoc" component={addproposaldoc}></Route>
-        </Switch>
-    </Router>
-      
-    </div>
-  );
-=======
 import Index from "./components/indexpage"
 import dash from './components/DashBoard-AdminComponent';
 import  dash2 from './components/user-dashboard';
@@ -115,7 +87,6 @@ function App(){
         </div>
         </Router>
     );
->>>>>>> 48fb1e3c43d600f4996b4356b5a7ab046a3afb97
 }
 
 export default App;

@@ -3,11 +3,7 @@ import logo from '../images/logo.png';
 import research from '../images/research.png';
 import proposal from '../images/proposal.png';
 import CmsSevice from '../services/ConferenceManagementSystemServices';
-<<<<<<< HEAD
-
-=======
 import Header from "./Header";
->>>>>>> 48fb1e3c43d600f4996b4356b5a7ab046a3afb97
 class ReviwerDashcomponent extends Component {
     constructor(props){
         super(props)
@@ -44,10 +40,6 @@ class ReviwerDashcomponent extends Component {
         return (
             <body>
                     <input type="checkbox" id="check"></input>
-<<<<<<< HEAD
-                    
-=======
->>>>>>> 48fb1e3c43d600f4996b4356b5a7ab046a3afb97
                     <header>
                         <label for="check">
                             <i class="fas fa-bars" id="sidebar_btn"></i>
@@ -56,11 +48,7 @@ class ReviwerDashcomponent extends Component {
                             <img src={logo} alt="" />
                         </div>
                         <div class="right_area">
-<<<<<<< HEAD
-                            <a href="/" class="logout_btn">Logout</a>
-=======
                             <a href="/profile" class="logout_btn">Profile</a>
->>>>>>> 48fb1e3c43d600f4996b4356b5a7ab046a3afb97
                         </div>
                     </header>
                     

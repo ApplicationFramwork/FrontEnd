@@ -25,11 +25,6 @@ const CONFIRMED_WORKSHOPS_URL = "http://localhost:8070/workshop/getConfirmed";
 const GET_WORKSHOPS_BY_STATUS_URL = "http://localhost:8070/workshop/getEvents";
 
 
-//reviwer Servises URL
-const BackendAPIGetOneReviwer_URL = "http://localhost:8070/reviwer/getreviwer";
-const BackendAPIUpdateReviwer_URL = "http://localhost:8070/reviwer/update";
-const BackendAPIDeleteReviwer_URL = "http://localhost:8070/reviwer/delete";
-
 //user service URL
 const BackendAPIAddResercher = "http://localhost:8070/user/addresearcher";
 const BackendAPIAddWorkshop_presenter = "http://localhost:8070/user/addWorkshop_presenter";
@@ -43,49 +38,8 @@ const BackendAPIGetOneReviwer_URL = "http://localhost:8070/reviwer/getreviwer";
 const BackendAPIUpdateReviwer_URL = "http://localhost:8070/reviwer/update";
 const BackendAPIDeleteReviwer_URL = "http://localhost:8070/reviwer/delete";
 
-//user service URL
-const BackendAPIAddResercher = "http://localhost:8070/user/addresearcher";
-const BackendAPIAddWorkshop_presenter = "http://localhost:8070/user/addWorkshop_presenter";
-const BackendAPIAddAttendee = "http://localhost:8070/user/addattende";
-
-//Research Service URL
-const BackendAPIgetllresearch = "http://localhost:8070/researchdoc/getallresearchdocs";
 
 class ConferenceManagementSystemServices{
-<<<<<<< HEAD
-
-    //maleesha
-    //add user
-    addresercher(user){
-        return axios.post(BackendAPIAddResercher, user);
-    }
-    addworkshop_presenter(user) {
-        return axios.post(BackendAPIAddWorkshop_presenter, user);
-    }
-    addattendess(user) {
-        return axios.post(BackendAPIAddAttendee, user);
-    }
-
-    //vihanga
-    //get reviwer details using reviwer id
-    getreviwer(id){
-        return axios.get(BackendAPIGetOneReviwer_URL + '/' + id);
-    }
-    //update reviwer using reviwer id
-    updatereviwer(reviwer, id){
-        return axios.put(BackendAPIUpdateReviwer_URL  + '/' + id, reviwer);
-    }
-    //delete reviwer using reviwer id
-    deletereviwer(id, email){
-        return axios.delete(BackendAPIDeleteReviwer_URL  + '/' + id + '/' + email)
-    }
-    getallresearchdoc() {
-        return axios.get(BackendAPIgetllresearch);
-    }
-
-
-    //kithmini
-=======
     //maleesha
     login(user){
         return axios.post(LOGIN_URL, user);
@@ -99,7 +53,6 @@ class ConferenceManagementSystemServices{
         return axios.put(ACCOUNT_UPDATE_URL + '/' + jwt_decord(localStorage.getItem("token")).id,user);
     }
 
->>>>>>> 48fb1e3c43d600f4996b4356b5a7ab046a3afb97
     //get all events
     getEvents(){
         return axios.get(EVENT_API_BASE_URL);

@@ -129,228 +129,6 @@ header .left_area img{
 label #sidebar_btn{
   z-index: 1;
   color: #fff;
-<<<<<<< HEAD
-  position: fixed;
-  cursor: pointer;
-  left: 300px;
-  font-size: 20px;
-  margin-top: 20px;
-  transition: 0.5s;
-  transition-property: color;
-}
-
-label #sidebar_btn:hover{
-  color: #19B3D3;
-}
-
-#check:checked ~ .sidebar{
-  left: -185px;
-}
-
-#check:checked ~ .sidebar a span{
-  display: none;
-}
-
-#check:checked ~ .sidebar a{
-  font-size: 20px;
-  margin-left: 165px;
-  width: 100%;
-}
-
-.content{
-  width: (100% - 250px);
-  margin-top: 95px;
-  padding: 20px;
-  margin-left: 250px;
-  background-color: #0B87A6;
-  background-position: center;
-  background-size: cover;
-  height:max-content;
-  transition: 0.5s;
-}
-.glass {
-  background: white;
-  background: linear-gradient(
-    to right bottom,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.3)
-  );
-  border-radius: 1rem;
-  z-index: 2;
-}
-.glass h1{
-  color: #426696;
-  font-weight: 750;
-  font-size: 2rem;
-  opacity: 0.9;  
-}
-.glass .names{
-  font-size: 1rem;
-  color: #426696;
-  font-weight: 750;
-  font-size: 2rem;
-  opacity: 0.9;
-  width:auto;
-  background: linear-gradient(
-    to right bottom,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.3)
-  );
-  border: none;
-  padding: 0.5rem;
-  border-radius: 2rem;
-}
-.glass .names h5{
-  color: #426696;
-  font-weight: 400;
-  font-size: 2rem;
-  opacity: 0.9;
-  width:auto;
-}
-.glass input{
-  background: linear-gradient(
-    to right bottom,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.3)
-  );
-  border: none;
-  padding: 0.5rem;
-  border-radius: 2rem;
-}
-.glass .breake{
-  width:200px;
-  height: 3px;
-  background: #2f323a;
-  opacity: 0.6;
-  border-radius: 50px;
-}
-#check:checked ~ .content{
-  margin-left: 60px;
-}
-
-#check:checked ~ .sidebar .profile_info{
-  display: none;
-}
-
-#check{
-  display: none;
-}
-
-.mobile_nav{
-  display: none;
-}
-
-.content .card p{
-  background: #fff;
-  padding: 15px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-/* Responsive CSS */
-
-@media screen and (max-width: 780px){
-  .pagetopic{
-    display: none;
-  }
-  header{
-    z-index: 20;
-    position: fixed;
-    background: #151515;
-    padding: 20px;
-    width: calc(100% - 0%);
-    top: 0;
-    height: 140px;
-  }
-  .sidebar{
-    display: none;
-  }
-
-  #sidebar_btn{
-    display: none;
-  }
-
-  .content{
-    margin-left: 0;
-    margin-top: 0;
-    padding: 10px 20px;
-    transition: 0s;
-  }
-
-  #check:checked ~ .content{
-    margin-left: 0;
-  }
-
-  .mobile_nav{
-    display: block;
-    width: calc(100% - 0%);
-  }
-
-  .nav_bar{
-    background: #222;
-    width: (100% - 0px);
-    margin-top: 130px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
-
-  .nav_bar .mobile_profile_image{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-  }
-
-  .nav_bar .nav_btn{
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer;
-    transition: 0.5s;
-    transition-property: color;
-  }
-
-  .nav_bar .nav_btn:hover{
-    color: #19B3D3;
-  }
-
-  .mobile_nav_items{
-    background: #2F323A;
-    display: none;
-  }
-
-  .mobile_nav_items a{
-    color: #fff;
-    display: block;
-    text-align: center;
-    letter-spacing: 1px;
-    line-height: 60px;
-    text-decoration: none;
-    box-sizing: border-box;
-    transition: 0.5s;
-  }
-
-  .mobile_nav_items a:hover{
-    background: #19B3D3;
-  }
-
-  .mobile_nav_items i{
-    padding-right: 10px;
-  }
-
-  .active{
-    display: block;
-  }
-}
-.boody{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 30px;
-  background: #131313;
-=======
->>>>>>> 48fb1e3c43d600f4996b4356b5a7ab046a3afb97
 }
 .box{
   position: relative;
@@ -393,41 +171,8 @@ label #sidebar_btn:hover{
   bottom: 0;
   left: 50%;
   color: #fff;
-<<<<<<< HEAD
-  width: 60%;
-  transform-style: preserve-3d;
-  transform: translate3d(-50%,0,75px);
-  font-size: small;
-  text-align: center;
-  background: #333;
-  padding: 10px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.5s;
-  opacity: 0;
-  z-index: 10;
-}
-.boody:hover .skillname{
-  bottom: 30px;
-  opacity: 1;
-}
-.box .cricle{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  transition: 0.5s;
-  background: #fff;
-  transform-style: preserve-3d;
-  z-index: 10;
-  opacity: 0.2;
-  transform: translate3d(-50%,-50%,50px);
-=======
   border-color: #fff;
   box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
->>>>>>> 48fb1e3c43d600f4996b4356b5a7ab046a3afb97
 }
 .skills{
   position:absolute;
@@ -477,8 +222,6 @@ a{
   text-align: center;
 
 }
-<<<<<<< HEAD
-=======
 .side-nav{
   height: 100vh;
 }
@@ -1043,7 +786,6 @@ a{
 .alignRight{
   text-align: center;
 }
->>>>>>> 48fb1e3c43d600f4996b4356b5a7ab046a3afb97
 .ulIcons{
   display: inline-block;
   text-align: center;
@@ -1055,8 +797,6 @@ a{
   padding: 2px;
   margin-right: 10px;
   border-radius: 3px;
-<<<<<<< HEAD
-=======
 
 }
 .twit{
@@ -1254,9 +994,8 @@ getStarted-a{
   text-align: right;
   font-size: 30px;
 }
->>>>>>> 48fb1e3c43d600f4996b4356b5a7ab046a3afb97
 
-}
+
 .twit{
   background-color: #5eacec;
   color: white;
