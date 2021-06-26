@@ -61,7 +61,7 @@ class AdminViewResearchEvents extends Component {
     }
     render() {
         return (
-            <div className="bg-light">
+            <div className="container-fluid bg-light">
                 <Header/>
                 {/*Editor sidebar*/}
                 <div className="row">
@@ -72,7 +72,7 @@ class AdminViewResearchEvents extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                View Events
+                                Change Password
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a className="dropdown-item" href="#">All Users</a></li>
@@ -88,8 +88,8 @@ class AdminViewResearchEvents extends Component {
                                 Add Event
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Add Research Paper Presentation</a></li>
-                                <li><a className="dropdown-item" href="#">Add a Workshop</a></li>
+                                <li><a className="dropdown-item" href="/adminAddResearch">Add Research Paper Presentation</a></li>
+                                <li><a className="dropdown-item" href="/adminAddWorkshop">Add a Workshop</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -100,8 +100,8 @@ class AdminViewResearchEvents extends Component {
                                 View Upcoming Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">View Research Paper Presentations</a></li>
-                                <li><a className="dropdown-item" href="#">View Workshops</a></li>
+                                <li><a className="dropdown-item" href="/adminResearch">View Research Paper Presentations</a></li>
+                                <li><a className="dropdown-item" href="/adminWorkshop">View Workshops</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -139,41 +139,39 @@ class AdminViewResearchEvents extends Component {
                         <div className="container m-2">
                             <div className="row align-items-start">
                                 <div className="col">
-                                    <div className="card" style={{width: "20rem"}}>
+                                    <div className="card" style={{width: "15rem"}}>
                                         <img src={graph} className="card-img-top" alt="..." style={{height:"250px"}}/>
                                         <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">Add Research Paper Prsentation</h5>
-                                            <p className="card-text">Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.</p>
+                                            <p className="card-text">Please click to Add a new Research Paper Presentation based on the submitted research papers</p>
 
-                                            <a href="/addConferenceEvent" className="btn btn-dark">Go to Add Research Paper Prsentation
+                                            <a href="/adminAddResearch" className="btn btn-dark">Go to Add Research Paper Prsentation
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <div className="card" style={{width: "20rem"}}>
+                                    <div className="card" style={{width: "15rem"}}>
                                         <img src={graph3} className="card-img-top" style={{height:"250px"}} alt="..."/>
                                         <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">Add a Workshop</h5>
-                                            <p className="card-text">Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.</p>
+                                            <p className="card-text">Please click to Add a new Workshop based on the submitted workshop presentations</p>
                                             <br/>
-                                            <a href="/addWorkshop" className="btn btn-dark">Go to Add a Workshop
+                                            <a href="/adminAddWorkshop" className="btn btn-dark">Go to Add a Workshop
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <div className="card" style={{width: "20rem"}}>
+                                    <div className="card" style={{width: "15rem"}}>
                                         <img src={graph2} className="card-img-top" style={{height:"250px"}} alt="..."/>
                                         <div className="card-body" style={{background:"#FFCD01"}}>
-                                            <h5 className="card-title">View upcoming Events</h5>
-                                            <p className="card-text">Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.</p>
-                                            <a href="/eventList" className="btn btn-dark">View upcoming Research Paper Presentations
+                                            <h5 className="card-title">View upcoming Workshops</h5>
+                                            <p className="card-text">Please click to view Upcoming Workshops' details</p>
+                                            <br/>
+                                            <a href="/adminWorkshop" className="btn btn-dark">View upcoming Workshops
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
                                         </div>

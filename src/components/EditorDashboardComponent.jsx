@@ -55,6 +55,17 @@ class EditorDashboardComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
+                                Home Page
+                            </button>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a className="dropdown-item" href="/editor">Home Page</a></li>
+                            </ul>
+                        </div>
+                        <hr className="text-light"/>
+                        <div className="dropdown my-2">
+                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <i className="fas fa-calendar-alt"></i> &nbsp;
                                 View Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -82,20 +93,7 @@ class EditorDashboardComponent extends Component {
                                 Change Password
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">View Research Paper Presentations</a></li>
-                                <li><a className="dropdown-item" href="#">View Workshops</a></li>
-                            </ul>
-                        </div>
-                        <hr className="text-light"/>
-                        <div className="dropdown my-2">
-                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Account Settings
-                            </button>
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">View Research Paper Presentations</a></li>
-                                <li><a className="dropdown-item" href="#">View Workshops</a></li>
+                                <li><a className="dropdown-item" href="#">Change Password</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>

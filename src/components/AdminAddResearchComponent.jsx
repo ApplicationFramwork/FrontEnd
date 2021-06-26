@@ -92,10 +92,12 @@ class AdminAddResearchComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Home Page
+                                View Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href={"/editor"}>Navigate to Homepage</a></li>
+                                <li><a className="dropdown-item" href="#">All Users</a></li>
+                                <li><a className="dropdown-item" href="#">Add Users</a></li>
+                                <li><a className="dropdown-item" href="#">Search</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -106,8 +108,8 @@ class AdminAddResearchComponent extends Component {
                                 Add Event
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href={"/addConferenceEvent"}>Add new Event</a></li>
-
+                                <li><a className="dropdown-item" href="/adminAddResearch">Add Research Paper Presentation</a></li>
+                                <li><a className="dropdown-item" href="/adminAddWorkshop">Add a Workshop</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -118,11 +120,11 @@ class AdminAddResearchComponent extends Component {
                                 View Upcoming Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href={"/eventList"}>View upcoming Events</a></li>
+                                <li><a className="dropdown-item" href="/adminResearch">View Research Paper Presentations</a></li>
+                                <li><a className="dropdown-item" href="/adminWorkshop">View Workshops</a></li>
                             </ul>
                         </div>
-                        <hr className="text-light"/><br/><br/>
-                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/>
+                        <hr className="text-light"/>
                     </div>
                     <div className="col-sm-10">
                         <div className="row">

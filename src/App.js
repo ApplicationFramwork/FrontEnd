@@ -18,6 +18,7 @@ import AdminViewResearchEvents from "./components/AdminViewResearchEvents";
 import AdminUpdateEvents from "./components/AdminUpdateEvents";
 import AdminViewWorkshops from "./components/AdminViewWorkshops";
 import AdminAddResearchComponent from "./components/AdminAddResearchComponent";
+import AdminAddWorkshopComponent from "./components/AdminAddWorkshopComponent";
 import AdminUpdateWorkshopsComponent from "./components/AdminUpdateWorkshopsComponent";
 import AboutUsComponent from "./components/AboutUsComponent";
 import ContactUsComponent from "./components/ContactUsComponent";
@@ -75,6 +76,7 @@ function App(){
             <Route path = "/adminUpdateResearch/:id" component = {AdminUpdateEvents}></Route>
             <Route path = "/adminWorkshop" component = {AdminViewWorkshops}></Route>
             <Route path = "/adminAddResearch" component = {AdminAddResearchComponent}></Route>
+            <Route path = "/adminAddWorkshop" component = {AdminAddWorkshopComponent}></Route>
             <Route path = "/adminUpdateWorkshop/:id" component = {AdminUpdateWorkshopsComponent}></Route>
 
 

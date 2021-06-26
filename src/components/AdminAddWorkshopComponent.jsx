@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import logo from "../images/logo.png";
-import event from "../images/event.svg";
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import Header from "./Header";
+import logo from "../images/logo.png";
+import event from "../images/event.svg";
 
-class AddWorkshopComponent extends Component {
+class AdminAddWorkshopComponent extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -95,19 +95,7 @@ class AddWorkshopComponent extends Component {
                                 Home Page
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="/editor">Home Page</a></li>
-                            </ul>
-                        </div>
-                        <hr className="text-light"/>
-                        <div className="dropdown my-2">
-                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                <i className="fas fa-calendar-alt"></i> &nbsp;
-                                View Events
-                            </button>
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="/eventList">View Research Presentations</a></li>
-                                <li><a className="dropdown-item" href="/workshopList">View Workshops</a></li>
+                                <li><a className="dropdown-item" href={"/editor"}>Navigate to Homepage</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -118,8 +106,8 @@ class AddWorkshopComponent extends Component {
                                 Add Event
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="/addConferenceEvent">Add Research Paper Presentation</a></li>
-                                <li><a className="dropdown-item" href="/addWorkshop">Add a Workshop</a></li>
+                                <li><a className="dropdown-item" href={"/addConferenceEvent"}>Add new Workshop</a></li>
+
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -127,19 +115,20 @@ class AddWorkshopComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Change Password
+                                View Upcoming Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Change Password</a></li>
+                                <li><a className="dropdown-item" href={"/eventList"}>View upcoming Events</a></li>
                             </ul>
                         </div>
-                        <hr className="text-light"/>
+                        <hr className="text-light"/><br/><br/>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/>
                     </div>
                     <div className="col-sm-10">
                         <div className="row">
                             <div className="collapse" id="navbarToggleExternalContent">
                                 <div className="bg-dark p-4">
-                                    <h5 className="text-white h4">Editor Dashboard</h5>
+                                    <h5 className="text-white h4">Admin Dashboard</h5>
                                     <span className="text-muted">{this.state.currentDateTime}</span>
                                 </div>
                             </div>
@@ -275,4 +264,4 @@ class AddWorkshopComponent extends Component {
     }
 }
 
-export default AddWorkshopComponent;
+export default AdminAddWorkshopComponent;
