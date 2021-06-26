@@ -44,7 +44,8 @@ class EditorDashboardComponent extends Component {
     render() {
         return (
 
-            <div className="container-fluid bg-light">
+            <div className="bg-light">
+                <Header/>
                 {/*Editor sidebar*/}
                 <div className="row">
                     <div className="col-sm-2 bg-dark text-light">
@@ -57,9 +58,8 @@ class EditorDashboardComponent extends Component {
                                 View Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">All Users</a></li>
-                                <li><a className="dropdown-item" href="#">Add Users</a></li>
-                                <li><a className="dropdown-item" href="#">Search</a></li>
+                                <li><a className="dropdown-item" href="/eventList">View Research Presentations</a></li>
+                                <li><a className="dropdown-item" href="/workshopList">View Workshops</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -70,8 +70,8 @@ class EditorDashboardComponent extends Component {
                                 Add Event
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Add Research Paper Presentation</a></li>
-                                <li><a className="dropdown-item" href="#">Add a Workshop</a></li>
+                                <li><a className="dropdown-item" href="/addConferenceEvent">Add Research Paper Presentation</a></li>
+                                <li><a className="dropdown-item" href="/addWorkshop">Add a Workshop</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -79,7 +79,19 @@ class EditorDashboardComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                View Upcoming Events
+                                Change Password
+                            </button>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a className="dropdown-item" href="#">View Research Paper Presentations</a></li>
+                                <li><a className="dropdown-item" href="#">View Workshops</a></li>
+                            </ul>
+                        </div>
+                        <hr className="text-light"/>
+                        <div className="dropdown my-2">
+                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <i className="fas fa-calendar-alt"></i> &nbsp;
+                                Account Settings
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a className="dropdown-item" href="#">View Research Paper Presentations</a></li>
@@ -116,9 +128,8 @@ class EditorDashboardComponent extends Component {
                                             <br/>
                                             <img src={calendar2} className="card-img-top" alt="..."/>
                                             <div className="card-body">
-                                                <h5 className="card-title">Add Research Paper Prsentation</h5>
-                                                <p className="card-text">Some quick example text to build on the card title and make up the
-                                                    bulk of the card's content.</p>
+                                                <h5 className="card-title">Add Research Paper Presentation</h5>
+                                                <p className="card-text">Please click to Add a new Research Paper Presentation based on the submitted research papers</p>
                                                 <a href="/addConferenceEvent" className="btn btn-primary">Go to Add Research Paper Prsentation
                                                     &nbsp;<i className=" fas fa-calendar-alt"></i>
                                                 </a>
@@ -131,8 +142,9 @@ class EditorDashboardComponent extends Component {
                                             <img src={localise} className="card-img-top" style={{height:"200"}} alt="..."/>
                                             <div className="card-body">
                                                 <h5 className="card-title">Add a Workshop</h5>
-                                                <p className="card-text">Some quick example text to build on the card title and make up the
-                                                    bulk of the card's content.</p>
+                                                <br/>
+                                                <p className="card-text">Please click to Add a new Workshop based on the submitted workshop presentations</p>
+                                                <br/>
                                                 <a href="/addWorkshop" className="btn btn-primary">Go to Add a Workshop
                                                     &nbsp;<i className=" fas fa-calendar-alt"></i>
                                                 </a>
@@ -145,8 +157,8 @@ class EditorDashboardComponent extends Component {
                                             <img src={editEvent} className="card-img-top"alt="..."/>
                                             <div className="card-body">
                                                 <h5 className="card-title">View upcoming Events</h5>
-                                                <p className="card-text">Some quick example text to build on the card title and make up the
-                                                    bulk of the card's content.</p>
+                                                <br/>
+                                                <p className="card-text">Please click to view Upcoming Research Paper Presentations' details </p>
                                                 <a href="/eventList" className="btn btn-primary">View upcoming Research Paper Presentations
                                                     &nbsp;<i className=" fas fa-calendar-alt"></i>
                                                 </a>
@@ -252,18 +264,18 @@ class EditorDashboardComponent extends Component {
                                     <h2 className="accordion-header" id="headingOne">
                                         <button className="accordion-button" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Accordion Item #1
+                                            CALL FOR PAPERS:
                                         </button>
                                     </h2>
                                     <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne"
                                          data-bs-parent="#accordionExample">
                                         <div className="accordion-body">
-                                            <strong>This is the first item's accordion body.</strong> It is shown by default, until
-                                            the collapse plugin adds the appropriate classes that we use to style each element.
-                                            These classes control the overall appearance, as well as the showing and hiding via CSS
-                                            transitions. You can modify any of this with custom CSS or overriding our default
-                                            variables. It's also worth noting that just about any HTML can go within
-                                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                                            <strong>The 2021 International Conference on Advancements in Computing (ICAF 2021) will
+                                                be held in Sri Lanka from 9th to 11th December 2021. The ICAF 2021 is themed “Empowering
+                                                the society through innovation and invention.” The conference organizers invite contributions
+                                                from diverse computing areas including Computer Engineering, Computer Science, Information Systems, Information
+                                                Technology and Software Engineering, but not limited to. ICAF 2021 will include attractive workshops and industry
+                                                programs aimed at practitioners, with keynotes and panels from both local and international researchers. </strong>
                                         </div>
                                     </div>
                                 </div>
@@ -271,18 +283,22 @@ class EditorDashboardComponent extends Component {
                                     <h2 className="accordion-header" id="headingTwo">
                                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Accordion Item #2
+                                            SUBMISSIONS:
                                         </button>
                                     </h2>
                                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo"
                                          data-bs-parent="#accordionExample">
                                         <div className="accordion-body">
-                                            <strong>This is the second item's accordion body.</strong> It is hidden by default,
-                                            until the collapse plugin adds the appropriate classes that we use to style each
-                                            element. These classes control the overall appearance, as well as the showing and hiding
-                                            via CSS transitions. You can modify any of this with custom CSS or overriding our
-                                            default variables. It's also worth noting that just about any HTML can go within
-                                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                                            <strong>
+                                                To be published in the ICAF2021 Conference Proceedings and to be eligible for
+                                                publication in IEEE Xplore®, an author of an accepted paper is required to
+                                                register for the conference and the paper must be presented by an author of that
+                                                paper at the conference. During the initial paper submission process via Microsoft
+                                                Conference Management tool. Only PDF files will be accepted for the review process,
+                                                and all submissions must be done through Microsoft CMT. Author List and their affiliations
+                                                should be removed from the initial PDF File. Please note that IEEE Plagiarism Policies will
+                                                be applied upon the submission.
+                                            </strong>
                                         </div>
                                     </div>
                                 </div>
@@ -290,18 +306,22 @@ class EditorDashboardComponent extends Component {
                                     <h2 className="accordion-header" id="headingThree">
                                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Accordion Item #3
+                                            IMPORTANT:
                                         </button>
                                     </h2>
                                     <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree"
                                          data-bs-parent="#accordionExample">
                                         <div className="accordion-body">
-                                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until
-                                            the collapse plugin adds the appropriate classes that we use to style each element.
-                                            These classes control the overall appearance, as well as the showing and hiding via CSS
-                                            transitions. You can modify any of this with custom CSS or overriding our default
-                                            variables. It's also worth noting that just about any HTML can go within
-                                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                                            <strong>The page length limit for all initial submissions for review is SIX (6) printed pages (10-point font)
+                                                and must be written in English.
+                                                Initial submissions longer than SIX (6) pages will be rejected without review.
+                                                Paper selection is subjected to the contribution, originality, relevance, technical strength, and
+                                                the overall quality. Upon selection of the paper, at least one author is expected to register for
+                                                the conference before the deadline and present the paper.
+                                                Only papers that have been presented by the respective authors during the conference will be published
+                                                in the IEEE Proceedings which will be available in IEEE Xplore digital library, provided that they meet
+                                                the IEEE quality review standards.
+                                            </strong>
                                         </div>
                                     </div>
                                 </div>

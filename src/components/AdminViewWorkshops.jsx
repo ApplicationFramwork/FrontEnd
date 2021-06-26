@@ -46,7 +46,7 @@ class AdminViewWorkshops extends Component {
     }
     editEvent(id){
         console.log('workshop id'+id);
-        this.props.history.push('/adminUpdateResearch/'+ id);
+        this.props.history.push('/adminUpdateWorkshop/'+ id);
     }
     changeStatusHandler = (workshop)=> {
         this.setState({StatusType: workshop.target.value});
@@ -57,7 +57,7 @@ class AdminViewWorkshops extends Component {
     render() {
         return (
             <div className="bg-light">
-                <Header/>
+                {/*<Header/>*/}
                 {/*Editor sidebar*/}
                 <div className="row">
                     <div className="col-sm-2 bg-dark text-light">
@@ -121,7 +121,7 @@ class AdminViewWorkshops extends Component {
                             </nav>
                         </div>
                         <br/>
-                        <div className="row">
+                        <div className="row" >
                             <center>
                                 <h2>Workshops</h2>
                             </center>
@@ -131,44 +131,43 @@ class AdminViewWorkshops extends Component {
                         <div className="container m-2">
                             <div className="row align-items-start">
                                 <div className="col">
-                                    <div className="card" style={{width: "18rem"}}>
-                                        <img src={chart} className="card-img-top" alt="..."/>
-                                        <div className="card-body">
+                                    <div className="card" style={{width: "20rem"}}>
+                                        <img src={chart} className="card-img-top" alt="..." style={{height:"250px"}}/>
+                                        <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">Add Research Paper Prsentation</h5>
                                             <p className="card-text">Some quick example text to build on the card title and make up the
                                                 bulk of the card's content.</p>
 
-                                            <a href="/addConferenceEvent" className="btn btn-primary">Go to Add Research Paper Prsentation
+                                            <a href="/addConferenceEvent" className="btn btn-dark">Go to Add Research Paper Prsentation
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <div className="card" style={{width: "18rem"}}>
-                                        <img src={chart2} className="card-img-top" style={{height:"200"}} alt="..."/>
-                                        <br/><br/><br/>
-                                        <div className="card-body">
+                                    <div className="card" style={{width: "20rem"}}>
+                                        <img src={chart2} className="card-img-top" style={{height:"250px"}} alt="..."/>
+                                        <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">Add a Workshop</h5>
+                                            <br/>
                                             <p className="card-text">Some quick example text to build on the card title and make up the
                                                 bulk of the card's content.</p>
-                                            <br/><br/>
-                                            <a href="/addWorkshop" className="btn btn-primary">Go to Add a Workshop
-                                                &nbsp;<i className=" fas fa-calendar-alt"></i>
+                                            <br/>
+                                            <a href="/addWorkshop" className="btn btn-dark">Go to Add a Workshop
+                                                &nbsp;&nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <div className="card" style={{width: "18rem"}}>
-                                        <img src={chart3} className="card-img-top"alt="..."/>
-                                        <br/><br/>
-                                        <div className="card-body">
+                                    <div className="card" style={{width: "20rem"}}>
+                                        <img src={chart3} className="card-img-top"alt="..." style={{height:"250px"}}/>
+                                        <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">View upcoming Events</h5>
                                             <p className="card-text">Some quick example text to build on the card title and make up the
                                                 bulk of the card's content.</p>
-                                            <br/><br/>
-                                            <a href="/eventList" className="btn btn-primary">View upcoming Research Paper Presentations
+                                            <br/>
+                                            <a href="/eventList" className="btn btn-dark">View upcoming Research Paper Presentations
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
                                         </div>
@@ -179,7 +178,7 @@ class AdminViewWorkshops extends Component {
                         <br/><br/>
                         <br/>
                         <div className="row">
-                            <button className="btn btn-warning"><br/></button>
+                            <button className="btn btn-dark"><br/></button>
                             <nav className="navbar navbar-light bg-light">
                                 <div className="container-fluid">
                                     <select className="custom-select" style={{height:"45px",width:"200px"}} value={this.state.StatusType} onChange={this.changeStatusHandler}>

@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
-import background from "../images/Conference.jpg";
-import formBackground from "../images/addEvent.svg";
-import event from "../images/event.svg";
 import logo from "../images/logo.png";
-class AddConferenceEvent extends Component {
+import event from "../images/event.svg";
+import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
+
+class AdminAddResearchComponent extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -44,7 +43,7 @@ class AddConferenceEvent extends Component {
             && this.state.duration!=='' && this.state.venue!=='' && this.state.organizedBy!=='' && this.state.eventStatus!==''){
             ConferenceManagementSystemServices.addEvent(event).then(res =>{
                 alert("Ëvent Added Successfully");
-                this.props.history.push('/eventList');
+                this.props.history.push('/adminResearch');
             });
         }else{
             alert("Please fill each required field");
@@ -79,11 +78,9 @@ class AddConferenceEvent extends Component {
     cancel(){
         this.props.history.push('/editor');
     }
-
     render() {
         return (
             <div className="container-fluid bg-light">
-
                 {/*Editor sidebar*/}
                 <div className="row">
                     <div className="col-sm-2 bg-dark text-light">
@@ -93,11 +90,10 @@ class AddConferenceEvent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                View Events
+                                Home Page
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="/eventList">View Research Presentations</a></li>
-                                <li><a className="dropdown-item" href="/workshopList">View Workshops</a></li>
+                                <li><a className="dropdown-item" href={"/editor"}>Navigate to Homepage</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -108,8 +104,8 @@ class AddConferenceEvent extends Component {
                                 Add Event
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="/addConferenceEvent">Add Research Paper Presentation</a></li>
-                                <li><a className="dropdown-item" href="/addWorkshop">Add a Workshop</a></li>
+                                <li><a className="dropdown-item" href={"/addConferenceEvent"}>Add new Event</a></li>
+
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -117,32 +113,20 @@ class AddConferenceEvent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Change Password
+                                View Upcoming Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">View Research Paper Presentations</a></li>
-                                <li><a className="dropdown-item" href="#">View Workshops</a></li>
+                                <li><a className="dropdown-item" href={"/eventList"}>View upcoming Events</a></li>
                             </ul>
                         </div>
-                        <hr className="text-light"/>
-                        <div className="dropdown my-2">
-                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Account Settings
-                            </button>
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">View Research Paper Presentations</a></li>
-                                <li><a className="dropdown-item" href="#">View Workshops</a></li>
-                            </ul>
-                        </div>
-                        <hr className="text-light"/>
+                        <hr className="text-light"/><br/><br/>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/>
                     </div>
                     <div className="col-sm-10">
                         <div className="row">
                             <div className="collapse" id="navbarToggleExternalContent">
                                 <div className="bg-dark p-4">
-                                    <h5 className="text-white h4">Editor Dashboard</h5>
+                                    <h5 className="text-white h4">Admin Dashboard</h5>
                                     <span className="text-muted">{this.state.currentDateTime}</span>
                                 </div>
                             </div>
@@ -278,4 +262,4 @@ class AddConferenceEvent extends Component {
     }
 }
 
-export default AddConferenceEvent;
+export default AdminAddResearchComponent;

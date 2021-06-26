@@ -1,5 +1,5 @@
 import React from "react";
-
+import jwt_decord from "jwt-decode";
 function Header(){
     return(
         <div className="container-fluid bg-dark">
@@ -16,10 +16,10 @@ function Header(){
                     <i className="fas fa-search m-2"></i>
                     <i className="fas fa-bell m-2"></i>
 
-                    {/*<a href={"/profile"}> <i className="m-2"> {*/}
-                    {/*    jwt_decord(localStorage.getItem("token")).name*/}
+                    {<a href={"/profile"}> <i className="m-2">
+                    {    jwt_decord(localStorage.getItem("token")).email}
 
-                    {/*}</i></a>*/}
+                    </i></a>}
                     <i className="fas fa-user m-2"></i>
                 </div>
             </div>

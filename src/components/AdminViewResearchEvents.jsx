@@ -62,7 +62,7 @@ class AdminViewResearchEvents extends Component {
     render() {
         return (
             <div className="bg-light">
-                <Header/>
+                {/*<Header/>*/}
                 {/*Editor sidebar*/}
                 <div className="row">
                     <div className="col-sm-2 bg-dark text-light">
@@ -139,44 +139,41 @@ class AdminViewResearchEvents extends Component {
                         <div className="container m-2">
                             <div className="row align-items-start">
                                 <div className="col">
-                                    <div className="card" style={{width: "18rem"}}>
-                                        <img src={graph} className="card-img-top" alt="..."/>
-                                        <div className="card-body">
+                                    <div className="card" style={{width: "20rem"}}>
+                                        <img src={graph} className="card-img-top" alt="..." style={{height:"250px"}}/>
+                                        <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">Add Research Paper Prsentation</h5>
                                             <p className="card-text">Some quick example text to build on the card title and make up the
                                                 bulk of the card's content.</p>
 
-                                            <a href="/addConferenceEvent" className="btn btn-primary">Go to Add Research Paper Prsentation
+                                            <a href="/addConferenceEvent" className="btn btn-dark">Go to Add Research Paper Prsentation
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <div className="card" style={{width: "18rem"}}>
-                                        <img src={graph3} className="card-img-top" style={{height:"200"}} alt="..."/>
-                                        <br/><br/>
-                                        <div className="card-body">
+                                    <div className="card" style={{width: "20rem"}}>
+                                        <img src={graph3} className="card-img-top" style={{height:"250px"}} alt="..."/>
+                                        <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">Add a Workshop</h5>
                                             <p className="card-text">Some quick example text to build on the card title and make up the
                                                 bulk of the card's content.</p>
-                                            <br/><br/>
-                                            <a href="/addWorkshop" className="btn btn-primary">Go to Add a Workshop
+                                            <br/>
+                                            <a href="/addWorkshop" className="btn btn-dark">Go to Add a Workshop
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <div className="card" style={{width: "18rem"}}>
-                                        <img src={graph2} className="card-img-top"alt="..."/>
-                                        <br/>
-                                        <div className="card-body">
+                                    <div className="card" style={{width: "20rem"}}>
+                                        <img src={graph2} className="card-img-top" style={{height:"250px"}} alt="..."/>
+                                        <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">View upcoming Events</h5>
                                             <p className="card-text">Some quick example text to build on the card title and make up the
                                                 bulk of the card's content.</p>
-                                            <br/>
-                                            <a href="/eventList" className="btn btn-primary">View upcoming Research Paper Presentations
+                                            <a href="/eventList" className="btn btn-dark">View upcoming Research Paper Presentations
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
                                         </div>
@@ -186,7 +183,7 @@ class AdminViewResearchEvents extends Component {
                         </div>
                         <br/>
                         <div className="row">
-                            <button className="btn btn-warning"><br/></button>
+                            <button className="btn btn-dark"><br/></button>
                             <nav className="navbar navbar-light bg-light">
                                 <div className="container-fluid">
                                     <select className="custom-select" style={{height:"45px",width:"200px"}} value={this.state.StatusType} onChange={this.changeStatusHandler}>
