@@ -38,6 +38,9 @@ const BackendAPIGetOneReviwer_URL = "http://localhost:8070/reviwer/getreviwer";
 const BackendAPIUpdateReviwer_URL = "http://localhost:8070/reviwer/update";
 const BackendAPIDeleteReviwer_URL = "http://localhost:8070/reviwer/delete";
 
+//image url
+const Imageurl = "http://localhost:8070/uploads/"
+
 
 class ConferenceManagementSystemServices{
     //maleesha

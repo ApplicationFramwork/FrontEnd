@@ -3,13 +3,14 @@ import logo from '../images/logo.png';
 import research from '../images/research.png';
 import proposal from '../images/proposal.png';
 import CmsSevice from '../services/ConferenceManagementSystemServices';
-import Header from "./Header";
+import jwt_decord from "jwt-decode";
+
 class ReviwerDashcomponent extends Component {
     constructor(props){
         super(props)
 
         this.state = {
-            id : this.props.match.params.id,
+            id: jwt_decord(localStorage.getItem("token"))._id ,
             firstname: '',
             Lastname: '',
             email: '',
@@ -35,6 +36,7 @@ class ReviwerDashcomponent extends Component {
                         number_of_reviwes : reviwewr.number_Of_reviews
              })
         }))
+        console.log(this.state.reviwewr)
     }
     render() {
         return (
@@ -60,7 +62,6 @@ class ReviwerDashcomponent extends Component {
                         <div class="mobile_nav_items">
                             <a href="/reviwer+{this.state.id}"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
                             <a href="/reviwerchangepassword"><i class="fa fa-key"></i><span>Change Password</span></a>
-                            <a href="/reviwersettings"><i class="fas fa-sliders-h"></i><span>Account-Settings</span></a>
                         </div>
                     </div>
                     
@@ -68,7 +69,6 @@ class ReviwerDashcomponent extends Component {
                     
                             <a className="active" href="/reviwer"><i class="fas fa-desktop mt-5 mb-5"></i><span>Dashboard</span></a>
                             <a href="/reviwerchangepassword"><i class="fa fa-key mt-5 mb-5"></i><span>Change Password</span></a>
-                            <a href="/reviwersettings"><i class="fas fa-sliders-h mt-5 mb-5"></i><span>Account-Settings</span></a>
                     </div>
                     
 
