@@ -2,21 +2,22 @@ import React, { Component } from 'react';
 import logo from '../images/logo.png'
 import CmsSevice from '../services/ConferenceManagementSystemServices';
 import Swal from 'sweetalert2';
+import jwt_decord from "jwt-decode";
 
 class changePasswordcomponent extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            id: this.props.match.params.id,
-            firstname: '',
-            lastname: '',
-            number_Of_reviews: '',
-            email: '',
-            password: '',
+            id: jwt_decord(localStorage.getItem("token")).id,
+            firstname: jwt_decord(localStorage.getItem("token")).name,
+            email: jwt_decord(localStorage.getItem("token")).email,
+            password: jwt_decord(localStorage.getItem("token")).password,
+            mobile_number: jwt_decord(localStorage.getItem("token")).mobile,
             currentpassword: '',
             newpassword: '',
             reenterpassword: ''
+
         }
 
         this.changepasswordHandler = this.changepasswordHandler.bind(this);
@@ -32,22 +33,7 @@ class changePasswordcomponent extends Component {
     changereenterpassHandler = (event) => {
         this.setState({ reenterpassword: event.target.value });
     }
-    //get reviwer details
-    componentDidMount() {
-        CmsSevice.getreviwer(this.state.id).then((res => {
-            let reviwewr = res.data;
-            this.setState({
-                firstname: reviwewr.first_name,
-                lastname: reviwewr.last_name,
-                email: reviwewr.email,
-                password: reviwewr.password,
-                number_Of_reviews: reviwewr.number_Of_reviews
-            })
-
-            console.log(this.state.password);
-            console.log(this.state.currentpassword);
-        }))
-    }
+   
     //UPADATE REVIWER DETAILS
     updatereviwer = (e) => {
         e.preventDefault();
@@ -72,8 +58,8 @@ class changePasswordcomponent extends Component {
                 if (this.state.currentpassword === this.state.password && this.state.newpassword === this.state.reenterpassword) {
 
                     let reviwer = {
-                        first_name: this.state.firstname, last_name: this.state.lastname, email: this.state.email,
-                        password: this.state.newpassword, number_Of_reviews: this.state.number_Of_reviews
+                        first_name: this.state.firstname, email: this.state.email,
+                        password: this.state.newpassword
                     };
                     console.log('reviwer => ' + JSON.stringify(reviwer));
 

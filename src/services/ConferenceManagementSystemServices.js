@@ -29,20 +29,21 @@ const GET_WORKSHOPS_BY_STATUS_URL = "http://localhost:8070/workshop/getEvents";
 const BackendAPIAddResercher = "http://localhost:8070/user/addresearcher";
 const BackendAPIAddWorkshop_presenter = "http://localhost:8070/user/addWorkshop_presenter";
 const BackendAPIAddAttendee = "http://localhost:8070/user/addattende";
+const BackendAPIFindUser = "http://localhost:8070/user/getuser";
 
 //Research Service URL
 const BackendAPIgetllresearch = "http://localhost:8070/researchdoc/getallresearchdocs";
+const GetresearchpapersusignAPI = "http://localhost:8070/researchdoc/getresearch"
 
 //reviwer Servises URL
-const BackendAPIGetOneReviwer_URL = "http://localhost:8070/reviwer/getreviwer";
-const BackendAPIUpdateReviwer_URL = "http://localhost:8070/reviwer/update";
+const BackendAPIUpdateReviwer_URL = "http://localhost:8070/user/update";
 const BackendAPIDeleteReviwer_URL = "http://localhost:8070/reviwer/delete";
 
-//image url
-const Imageurl = "http://localhost:8070/uploads/"
+
 
 
 class ConferenceManagementSystemServices{
+
     //maleesha
     login(user){
         return axios.post(LOGIN_URL, user);
@@ -128,9 +129,9 @@ class ConferenceManagementSystemServices{
         return axios.post(BackendAPIAddAttendee, user);
     }
     //vihanga
-    //get reviwer details using reviwer id
-    getreviwer(id){
-        return axios.get(BackendAPIGetOneReviwer_URL + '/' + id);
+    //get reviwer details using user id
+    getuser(id){
+        return axios.get(BackendAPIFindUser + '/' + id);
     }
     //update reviwer using reviwer id
     updatereviwer(reviwer, id){
@@ -140,10 +141,13 @@ class ConferenceManagementSystemServices{
     deletereviwer(id, email){
         return axios.delete(BackendAPIDeleteReviwer_URL  + '/' + id + '/' + email)
     }
+    //get all research deatails
     getallresearchdoc() {
         return axios.get(BackendAPIgetllresearch);
     }
-
+    getresearch(id) {
+        return axios.get(GetresearchpapersusignAPI + '/' + id);
+    }
 
 
 }

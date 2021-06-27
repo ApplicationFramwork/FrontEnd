@@ -19,6 +19,9 @@ class allresearch extends Component {
         }))
 
     }
+    NavigationPreloadManager(e, researchid) {
+        this.props.history.push('/addreviw/' + researchid);
+    }
     render() {
         return (
             <body>
@@ -71,11 +74,11 @@ class allresearch extends Component {
                                 </div>
                             </div>
                         </div>
-                        
+
                         {
                             this.state.research.map(
                                 research =>
-                                    <div className="glass mt-3 mb-2">
+                                    <div className="glass mt-3">
                                         <div className="row text-center">
                                             <div className="col-md-4 mt-2">
                                                 <span>Topic</span><h4>{research.research_topic}</h4>
@@ -83,15 +86,15 @@ class allresearch extends Component {
                                             <div className="col-md-5 mb-3">
                                                 <span>Description</span><h4>{research.reseach_description}</h4>
                                             </div>
-                                            
-                                            <div className="col-md-3 mt-2">
+
+                                            <div className="col-md-3 mt-2 ">
                                                 <span className="mb-3">Document</span><br />
-                                                <a href={Imageurl + research.document} target="_blank">download</a>
+                                                <a href={Imageurl + research.document} target="_blank">View Document</a>
 
 
                                             </div>
                                         </div>
-                                        <div className="row text-center mt-2 ">
+                                        <div className="row text-center">
                                             <div className="col-md-4 mb-3">
                                                 <span>Submiter's Email</span><h4>{research.submiteremail}</h4>
                                             </div>
@@ -101,28 +104,8 @@ class allresearch extends Component {
                                             <div className="col-md-2 mt-2">
                                                 <span>Points</span><h4>{research.total_reviwe_point}</h4>
                                             </div>
-                                            <div className="col-md-3 mt-3"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">
-                                                View more....
-                                            </button>
-                                            </div>
-                                        </div><div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLongTitle">{research.research_topic}</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div className="container-fluid">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    </div>
-                                                </div>
+                                            <div className="col-md-2 mt-3 content-justify-center">
+                                                <button className="btn btn-success btn-block" onClick={e => this.NavigationPreloadManager(e, research._id)}>View More</button> <br />
                                             </div>
                                         </div>
                                     </div>

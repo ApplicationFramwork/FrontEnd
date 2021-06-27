@@ -30,6 +30,7 @@ import newresearch from './components/newResearch';
 import signup from './components/UserSignUpComponent';
 import addresearchdoc from './components/Addresearchpapers';
 import addproposaldoc from './components/Addproposalpapers';
+import addreviw from './components/addreview';
 
 import Index from "./components/indexpage"
 import dash from './components/DashBoard-AdminComponent';
@@ -81,6 +82,7 @@ function App(){
             <Route path="/signup" component={signup}></Route>
             <Route path="/addresearchdoc" component={addresearchdoc}></Route>
             <Route path="/addproposalhdoc" component={addproposaldoc}></Route>
+            <Route path="/addreviw/:id" component={addreviw}></Route>
 
             <Route path = "/about" component = {about}></Route>
             <Route path = "/footer" component = {footer}></Route>
