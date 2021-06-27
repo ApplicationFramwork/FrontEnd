@@ -36,10 +36,20 @@ const BackendAPIgetllresearch = "http://localhost:8070/researchdoc/getallresearc
 const GetresearchpapersusignAPI = "http://localhost:8070/researchdoc/getresearch"
 const addreserchAPI = "http://localhost:8070/researchreviwe/add"
 const updateresearchdetails = "http://localhost:8070/researchdoc/updateresearchdeatails"
+const BackendAPIgetllpending = "http://localhost:8070/researchdoc/getpending"
+const BackendAPIgetllpendingproposal = "http://localhost:8070/proposaldoc/getpending"
+const BackendAPIgetllapproveusingid = "http://localhost:8070/researchreviwe/getresearchreviwereviwer"
+const BackendAPIgetllapproveproposalusingid = "http://localhost:8070/proposaldoc/getresearchreviwereviwer"
+const BackendAPIgetlldeclineusingid = "http://localhost:8070/researchreviwe/getdeclineresearchreviwereviwer"
+const BackendAPIgetlldeclineproposalusingid = "http://localhost:8070/proposalreviwe/getdeclineresearchreviwereviwer"
+const BackendAPIgetreveiwusingdocid = "http://localhost:8070/researchreviwe/getresearchreviwetoupdate"
+const BackendAPIupdatereview= "http://localhost:8070/researchreviwe/updateResearchReview"
 
 //reviwer Servises URL
 const BackendAPIUpdateReviwer_URL = "http://localhost:8070/user/update";
 const BackendAPIDeleteReviwer_URL = "http://localhost:8070/reviwer/delete";
+const BackendAPIgetllPowerpoint = "http://localhost:8070/proposaldoc/getallproposaldocs";
+
 
 
 
@@ -147,6 +157,38 @@ class ConferenceManagementSystemServices{
     getallresearchdoc() {
         return axios.get(BackendAPIgetllresearch);
     }
+    //get all proposal deatails
+    getallproposaldoc() {
+        return axios.get(BackendAPIgetllPowerpoint);
+    }
+    //get all pending research deatails
+    getallpendingresearchdoc() {
+        return axios.get(BackendAPIgetllpending);
+    }
+    //get all pending proposal deatails
+    getallpendingproposaldoc() {
+        return axios.get(BackendAPIgetllpendingproposal);
+    }
+    //get all approve research using review id
+    getallapproveresearchdoc(id) {
+        return axios.get(BackendAPIgetllapproveusingid + '/' + id);
+    }
+    //get all approve proposal using review id
+    getallapproveproposaldoc(id) {
+        return axios.get(BackendAPIgetllapproveproposalusingid + '/' + id);
+    }
+    //get all decline research using review id
+    getalldeclineresearchdoc(id) {
+        return axios.get(BackendAPIgetlldeclineusingid + '/' + id);
+    }
+    //get all decline research using review id
+    getalldeclineproposaldoc(id) {
+        return axios.get(BackendAPIgetlldeclineproposalusingid + '/' + id);
+    }
+    //get all decline research using review id
+    getrewieusingdocid(id) {
+        return axios.get(BackendAPIgetreveiwusingdocid + '/' + id);
+    }
     //getresearch using id
     getresearch(id) {
         return axios.get(GetresearchpapersusignAPI + '/' + id);
@@ -158,6 +200,10 @@ class ConferenceManagementSystemServices{
     //update research details using research id
     updateresearch(research, id) {
         return axios.put(updateresearchdetails + '/' + id, research);
+    }
+    //update reviw details using reviw id
+    updatereview(review, id) {
+        return axios.put(BackendAPIupdatereview + '/' + id, review);
     }
 
 

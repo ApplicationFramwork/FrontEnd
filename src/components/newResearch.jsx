@@ -12,7 +12,7 @@ class newResearch extends Component {
         }
     }
     componentDidMount() {
-        CmsSevice.getallresearchdoc().then((res => {
+        CmsSevice.getallpendingresearchdoc().then((res => {
             this.setState({ research: res.data });
             console.log(this.state.research)
             { console.log(this.state.research.document) }
@@ -106,7 +106,7 @@ class newResearch extends Component {
                                                 <span>Points</span><h4>{research.total_reviwe_point}</h4>
                                             </div>
                                             <div className="col-md-2 mt-3 content-justify-center">
-                                                <button className="btn btn-success btn-block" onClick={e => this.NavigationPreloadManager(e, research._id)}>View More</button> <br />
+                                                <button className="btn btn-success btn-block" onClick={e => this.NavigationPreloadManager(e, research._id)}>Add Review</button> <br />
                                             </div>
                                         </div>
                                     </div>

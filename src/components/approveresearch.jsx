@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.png';
 import CmsSevice from '../services/ConferenceManagementSystemServices';
+import jwt_decord from "jwt-decode";
 const Imageurl = "http://localhost:8070/uploads/"
 
-class allresearch extends Component {
+class approveresearch extends Component {
     constructor(props) {
         super(props)
 
@@ -12,7 +13,7 @@ class allresearch extends Component {
         }
     }
     componentDidMount() {
-        CmsSevice.getallresearchdoc().then((res => {
+        CmsSevice.getallapproveresearchdoc(jwt_decord(localStorage.getItem("token")).id).then((res => {
             this.setState({ research: res.data });
             console.log(this.state.research)
             { console.log(this.state.research.document) }
@@ -20,8 +21,9 @@ class allresearch extends Component {
 
     }
     NavigationPreloadManager(e, researchid) {
-        this.props.history.push('/addreviw/' + researchid);
+        this.props.history.push('/editresearchreview/' + researchid);
     }
+    
     render() {
         return (
             <body>
@@ -62,7 +64,7 @@ class allresearch extends Component {
                         <div className="glass">
                             <div className="row text-center mb-3">
                                 <div className="col-12 mt-5">
-                                    <h1>ALL RESEARCH</h1>
+                                    <h1>APPROVE RESEARCH</h1>
                                     <div className="row ">
                                         <div className="col-md-4"></div>
                                         <div className="col-md-4 d-flex justify-content-center mb-5">
@@ -81,31 +83,19 @@ class allresearch extends Component {
                                     <div className="glass mt-3">
                                         <div className="row text-center">
                                             <div className="col-md-4 mt-2">
-                                                <span>Topic</span><h4>{research.research_topic}</h4>
+                                                <span>Comment</span><h4>{research.reviwe_comment}</h4>
                                             </div>
                                             <div className="col-md-5 mb-3">
-                                                <span>Description</span><h4>{research.reseach_description}</h4>
-                                            </div>
-
-                                            <div className="col-md-3 mt-2 ">
-                                                <span className="mb-3">Document</span><br />
-                                                <button className="btn btn-light"> <a href={Imageurl + research.document} target="_blank">View Document</a></button>
-
-
-                                            </div>
-                                        </div>
-                                        <div className="row text-center">
-                                            <div className="col-md-4 mb-3">
-                                                <span>Submiter's Email</span><h4>{research.submiteremail}</h4>
+                                                <span>Review Point</span><h4>{research.reviwe_point}</h4>
                                             </div>
                                             <div className="col-md-3 mt-2">
                                                 <span>Status</span><h4>{research.status}</h4>
                                             </div>
-                                            <div className="col-md-2 mt-2">
-                                                <span>Points</span><h4>{research.total_reviwe_point}</h4>
-                                            </div>
+                                        </div>
+                                        <div className="row text-center">
+                                            <div className="col-md-9"></div>
                                             <div className="col-md-2 mt-3 content-justify-center">
-                                                <button className="btn btn-success btn-block" onClick={e => this.NavigationPreloadManager(e, research._id)}>Add Review</button> <br />
+                                                <button className="btn btn-success btn-block" onClick={e => this.NavigationPreloadManager(e, research.research_id)}>Edit</button> <br />
                                             </div>
                                         </div>
                                     </div>
@@ -122,4 +112,4 @@ class allresearch extends Component {
     }
 }
 
-export default allresearch;
+export default approveresearch;

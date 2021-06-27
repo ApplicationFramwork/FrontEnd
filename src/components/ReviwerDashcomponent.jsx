@@ -100,12 +100,12 @@ class ReviwerDashcomponent extends Component {
                                     <div class="cricle"></div>
                                     <img src={research} alt="" class="skills" /></a>
                                 </div>
-                                <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                <div class="col-md-2 box boody mt-1 mb-2"><a href="/approveresearch">
                                     <h2 class="skillname text-center">ACCEPTED RESEARCH</h2>
                                     <div class="cricle"></div>
                                     <img src={research} alt="" class="skills" /></a>
                                 </div>
-                                <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                <div class="col-md-2 box boody mt-1 mb-2"><a href="/declinreviw">
                                     <h2 class="skillname">REJECTED RESEARCH</h2>
                                     <div class="cricle"></div>
                                     <img src={research} alt="" class="skills" /></a>
@@ -125,17 +125,17 @@ class ReviwerDashcomponent extends Component {
                                 </div>
                             </div>
                             <div className="row mt-2 mb-5">
-                                <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                <div class="col-md-2 box boody mt-1 mb-2"><a href="/newproposal">
                                     <h2 class="skillname text-center">NEW PROPOSALS</h2>
                                     <div class="cricle"></div>
                                     <img src={proposal} alt="" class="skills" /></a>
                                 </div>
-                                <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                <div class="col-md-2 box boody mt-1 mb-2"><a href="/allproposal">
                                     <h2 class="skillname text-center">ALL PROPOSALS</h2>
                                     <div class="cricle"></div>
                                     <img src={proposal} alt="" class="skills" /></a>
                                 </div>
-                                <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                <div class="col-md-2 box boody mt-1 mb-2"><a href="/approveproposal">
                                     <h2 class="skillname text-center">ACCEPTED PROPOSALS</h2>
                                     <div class="cricle"></div>
                                     <img src={proposal} alt="" class="skills" /></a>

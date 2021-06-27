@@ -26,11 +26,18 @@ import reviwerdash from './components/ReviwerDashcomponent';
 import reviwersettings from './components/reviwersettingcomponent';
 import reviwerchangepassword from './components/changePasswordcomponent';
 import allresearch from './components/allresearch';
+import allproposal from './components/allproposal';
 import newresearch from './components/newResearch';
+import newproposal from './components/newproposal';
 import signup from './components/UserSignUpComponent';
 import addresearchdoc from './components/Addresearchpapers';
 import addproposaldoc from './components/Addproposalpapers';
 import addreviw from './components/addreview';
+import approveresearch from './components/approveresearch'
+import approveproposal from './components/approveproposal';
+import declinereviw from './components/declinereserch';
+import declinproposal from './components/declineproposal';
+import editresearchreview from './components/editresearchreview';
 
 import Index from "./components/indexpage"
 import dash from './components/DashBoard-AdminComponent';
@@ -77,12 +84,19 @@ function App(){
             <Route path = "/reviwer/" component = {reviwerdash}></Route>
             <Route path = "/reviwersettings/" component = {reviwersettings}></Route>
             <Route path = "/reviwerchangepassword/" component = {reviwerchangepassword}></Route>
-            <Route path = "/allresearch" component = {allresearch}></Route>
-            <Route path = "/newresearch"  component = {newresearch}></Route>
-            <Route path="/signup" component={signup}></Route>
-            <Route path="/addresearchdoc" component={addresearchdoc}></Route>
-            <Route path="/addproposalhdoc" component={addproposaldoc}></Route>
-            <Route path="/addreviw/:id" component={addreviw}></Route>
+            <Route path= "/allproposal" component={allproposal}></Route>
+            <Route path= "/allresearch" component={allresearch}></Route>
+            <Route path= "/newresearch" component={newresearch}></Route>
+            <Route path= "/newproposal" component={newproposal}></Route>
+            <Route path = "/signup" component={signup}></Route>
+            <Route path = "/addresearchdoc" component={addresearchdoc}></Route>
+            <Route path = "/addproposalhdoc" component={addproposaldoc}></Route>
+            <Route path = "/addreviw/:id" component={addreviw}></Route>
+            <Route path= "/approveresearch" component={approveresearch}></Route>
+            <Route path= "/approveproposal" component={approveproposal}></Route>
+            <Route path="/declinreviw" component={declinereviw}></Route>
+            <Route path="/declinproposal" component={declinproposal}></Route>
+            <Route path = "/editresearchreview/:id" component={editresearchreview}></Route>
 
             <Route path = "/about" component = {about}></Route>
             <Route path = "/footer" component = {footer}></Route>
