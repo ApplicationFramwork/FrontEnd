@@ -3,11 +3,14 @@ import ConferenceManagementSystemServices from "../services/ConferenceManagement
 import Header from "./Header";
 import logo from "../images/logo.png";
 import event from "../images/events.svg";
+import {Table} from "react-bootstrap";
+const Imageurl = "http://localhost:8070/uploads/"
 
 class AdminAddWorkshopComponent extends Component {
     constructor(props){
         super(props)
         this.state = {
+            workshop: [],
             title: '',
             eventType: '',
             description: '',
@@ -25,6 +28,15 @@ class AdminAddWorkshopComponent extends Component {
         this.changeVenueHandler=this.changeVenueHandler.bind(this);
         this.changeOrganizerHAndler=this.changeOrganizerHAndler.bind(this);
         this.changeStatusHandler=this.changeStatusHandler.bind(this);
+    }
+    componentDidMount() {
+        ConferenceManagementSystemServices. getallpresentationdoc().then((res => {
+            this.setState({workshop: res.data});
+            console.log(this.state.workshop)
+            {
+                console.log(this.state.workshop.document)
+            }
+        }))
     }
     saveWorkshop = (e) => {
         e.preventDefault();
@@ -92,12 +104,10 @@ class AdminAddWorkshopComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Change Password
+                                Home Page
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">All Users</a></li>
-                                <li><a className="dropdown-item" href="#">Add Users</a></li>
-                                <li><a className="dropdown-item" href="#">Search</a></li>
+                                <li><a className="dropdown-item" href="#">Home Page</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -124,7 +134,17 @@ class AdminAddWorkshopComponent extends Component {
                                 <li><a className="dropdown-item" href="/adminWorkshop">View Workshops</a></li>
                             </ul>
                         </div>
-
+                        <hr className="text-light"/>
+                        <div className="dropdown my-2">
+                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <i className="fas fa-calendar-alt"></i> &nbsp;
+                                Change Password
+                            </button>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a className="dropdown-item" href="#">Change Password</a></li>
+                            </ul>
+                        </div>
                         <hr className="text-light"/>
                     </div>
                     <div className="col-sm-10">
@@ -219,8 +239,8 @@ class AdminAddWorkshopComponent extends Component {
                                                 <div className="row">
                                                     <div className="col-12">
                                                         <div className="form-group">
-                                                            <label htmlFor="organizedBy" className="form-label">Organized By</label>
-                                                            <input type="text" className="form-control" name="organizedBy" id="organizedBy" placeholder="Event Organized By"
+                                                            <label htmlFor="organizedBy" className="form-label">Workshop Conductor Email: </label>
+                                                            <input type="email" className="form-control" name="organizedBy" id="organizedBy" placeholder="Event Organized By"
                                                                    onChange={this.changeOrganizerHAndler}/>
                                                         </div>
                                                     </div>
@@ -258,7 +278,41 @@ class AdminAddWorkshopComponent extends Component {
                                 </div>
                             </div>
                         </div>
-                        <br/><br/><br/><br/>
+                        <br/>
+                        <div className="row">
+                            <div className="container">
+                                <br/>
+                                <Table responsive className="table" striped bordered hover>
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"> Proposal Topic</th>
+                                        <th scope="col"> Description</th>
+                                        <th scope="col"> Document URL</th>
+                                        <th scope="col"> Workshop Conductor Email</th>
+                                        <th scope="col"> Status: </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {
+                                        this.state.workshop.map(
+                                            workshop =>
+                                                <tr key = {workshop._id}>
+                                                    <td> {workshop.proposal_topic}</td>
+                                                    <td> {workshop.proposal_description}</td>
+                                                    <td> <a href={Imageurl + workshop.document} target="_blank">View Document</a> </td>
+                                                    <td> {workshop.submiteremail}</td>
+                                                    <td> {workshop.status}</td>
+                                                </tr>
+                                        )
+
+                                    }
+
+
+                                    </tbody>
+                                </Table>
+                            </div>
+                        </div>
+                        <br/><br/><br/>
                     </div>
                 </div>
             </div>

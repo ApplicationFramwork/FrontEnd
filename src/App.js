@@ -3,7 +3,7 @@ import "./App.css";
 import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
 
 import Header from "./components/Header";
-import AddEventComponent from "./components/AddEventComponent";
+
 import ListEvents from "./components/ListEventsComponent";
 import EditorDashboardComponent from "./components/EditorDashboardComponent";
 import AddConferenceEvent from "./components/AddConferenceEvent";
@@ -48,7 +48,7 @@ function App(){
             <Route path="/header" exact component={Header} />
             <div className="container">
             <Switch>
-                <Route path="/addEvent" exact component={AddEventComponent} />
+
             </Switch>
             </div>
             <Route path = "/" exact component = {Index}></Route>

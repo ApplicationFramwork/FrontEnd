@@ -151,7 +151,7 @@ class AdminViewWorkshops extends Component {
                                             <br/>
                                             <p className="card-text">Please click to Add a new Workshop based on the submitted workshop presentations</p>
                                             <br/>
-                                            <a href="/adminAddResearch" className="btn btn-dark">Go to Add a Workshop
+                                            <a href="/adminAddWorkshop" className="btn btn-dark">Go to Add a Workshop
                                                 &nbsp;&nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
                                         </div>

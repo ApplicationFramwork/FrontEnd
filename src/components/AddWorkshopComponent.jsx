@@ -4,11 +4,13 @@ import event from "../images/event.svg";
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import Header from "./Header";
 import {Table} from "react-bootstrap";
+const Imageurl = "http://localhost:8070/uploads/"
 
 class AddWorkshopComponent extends Component {
     constructor(props){
         super(props)
         this.state = {
+            workshop: [],
             title: '',
             eventType: '',
             description: '',
@@ -26,6 +28,15 @@ class AddWorkshopComponent extends Component {
         this.changeVenueHandler=this.changeVenueHandler.bind(this);
         this.changeOrganizerHAndler=this.changeOrganizerHAndler.bind(this);
         this.changeStatusHandler=this.changeStatusHandler.bind(this);
+    }
+    componentDidMount() {
+        ConferenceManagementSystemServices. getallpresentationdoc().then((res => {
+            this.setState({workshop: res.data});
+            console.log(this.state.workshop)
+            {
+                console.log(this.state.workshop.document)
+            }
+        }))
     }
     saveWorkshop = (e) => {
         e.preventDefault();
@@ -228,8 +239,8 @@ class AddWorkshopComponent extends Component {
                                                 <div className="row">
                                                     <div className="col-12">
                                                         <div className="form-group">
-                                                            <label htmlFor="organizedBy" className="form-label">Organized By</label>
-                                                            <input type="text" className="form-control" name="organizedBy" id="organizedBy" placeholder="Event Organized By"
+                                                            <label htmlFor="organizedBy" className="form-label">Workshop Conductor Email:</label>
+                                                            <input type="email" className="form-control" name="organizedBy" id="organizedBy" placeholder="Event Organized By"
                                                                    onChange={this.changeOrganizerHAndler}/>
                                                         </div>
                                                     </div>
@@ -273,19 +284,27 @@ class AddWorkshopComponent extends Component {
                                 <Table responsive className="table" striped bordered hover>
                                     <thead>
                                     <tr>
-                                        <th scope="col"> Title</th>
-                                        <th scope="col"> Event Type</th>
+                                        <th scope="col"> Proposal Topic</th>
                                         <th scope="col"> Description</th>
-                                        <th scope="col"> Start Date</th>
-                                        <th scope="col"> Time</th>
-                                        <th scope="col"> Venue</th>
-                                        <th scope="col"> Organized By</th>
-                                        <th scope="col"> Event Status</th>
-                                        <th scope="col"> Update</th>
-                                        <th scope="col"> Delete</th>
+                                        <th scope="col"> Document URL</th>
+                                        <th scope="col"> Workshop Conductor Email</th>
+                                        <th scope="col"> Status: </th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    {
+                                        this.state.workshop.map(
+                                            workshop =>
+                                                <tr key = {workshop._id}>
+                                                    <td> {workshop.proposal_topic}</td>
+                                                    <td> {workshop.proposal_description}</td>
+                                                    <td> <a href={Imageurl + workshop.document} target="_blank">View Document</a> </td>
+                                                    <td> {workshop.submiteremail}</td>
+                                                    <td> {workshop.status}</td>
+                                                </tr>
+                                        )
+
+                                    }
 
 
                                     </tbody>

@@ -87,10 +87,11 @@ class ViewResearchEvents extends Component {
                                                         <div className="row mt-8">
                                                             <div className="col-md-6">
                                                                 <div className="p-3 text-center text-white mt-2 cursor">
-                                                                    <button className="btn btn-warning btn-block">
-                                                                        <i className="fas fa-edit"></i>&nbsp;
-                                                                        Attend Event
-                                                                    </button>
+                                                                    <a href={"/login"}>
+                                                                        <button className="btn btn-warning btn-block">
+                                                                            <i className="fas fa-edit"></i>&nbsp;
+                                                                            Attend Workshop
+                                                                        </button></a>
                                                                     <br/>
                                                                 </div>
                                                             </div>

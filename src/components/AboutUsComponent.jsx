@@ -12,12 +12,13 @@ class AboutUsComponent extends Component {
                     <div className="col-sm-2"></div>
                     <div className="col-sm-10 bodyText">
                         <h1 className="text-light heddingText">About Us</h1>
-                        <small className="smallText">THE CARS WE DRIVE SAY A LOT ABOUT US.</small>
+                        <small className="smallText">International Conference on Application Frameworks.</small>
                         <div className="row">
                             <div className="col-sm-4 mt-3 text-light">
                                 <small >“International Conference on Application Frameworks” – ICAF
                                     is a Conference management tool that manages academic conferences organized by
-                                    SLIIT where researchers present results, workshops, and perform other activities.</small>
+                                    SLIIT where researchers present results, workshops, and perform other activities.
+                                </small>
                             </div>
                         </div>
                     </div>
@@ -96,12 +97,8 @@ class AboutUsComponent extends Component {
                             </div>
                         </div>
                         <br/>
-
-
-
                     </div>
                 </div>
-
             </div>
         );
     }

@@ -238,8 +238,8 @@ class AdminUpdateWorkshopsComponent extends Component {
                                                 <div className="row">
                                                     <div className="col-12">
                                                         <div className="form-group">
-                                                            <label htmlFor="organizedBy" className="form-label">Organized By</label>
-                                                            <input type="text" className="form-control" name="organizedBy" id="organizedBy" placeholder="Event Organized By"
+                                                            <label htmlFor="organizedBy" className="form-label">Workshop Conductor Email:</label>
+                                                            <input type="email" className="form-control" name="organizedBy" id="organizedBy" placeholder="Event Organized By"
                                                                    value={this.state.organizedBy} onChange={this.changeOrganizerHAndler}/>
                                                         </div>
                                                     </div>

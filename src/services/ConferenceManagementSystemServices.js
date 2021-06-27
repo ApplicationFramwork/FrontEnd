@@ -41,6 +41,7 @@ const BackendAPIAddAttendee = "http://localhost:8070/user/addattende";
 
 //Research Service URL
 const BackendAPIgetllresearch = "http://localhost:8070/researchdoc/getallresearchdocs";
+const BackendAPIgetllPowerpoint = "http://localhost:8070/proposaldoc/getallproposaldocs";
 
 class ConferenceManagementSystemServices{
     //maleesha
@@ -150,9 +151,16 @@ class ConferenceManagementSystemServices{
     deletereviwer(id, email){
         return axios.delete(BackendAPIDeleteReviwer_URL  + '/' + id + '/' + email)
     }
+    //get all research deatails
     getallresearchdoc() {
         return axios.get(BackendAPIgetllresearch);
     }
+    //get all presentation deatails
+    getallpresentationdoc() {
+        return axios.get(BackendAPIgetllPowerpoint);
+    }
+
+
 
 
 

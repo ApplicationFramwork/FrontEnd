@@ -85,10 +85,11 @@ class ViewWorkshops extends Component {
                                                         <div className="row mt-8">
                                                             <div className="col-md-6">
                                                                 <div className="p-3 text-center text-white mt-2 cursor">
+                                                                    <a href={"/login"}>
                                                                     <button className="btn btn-warning btn-block">
                                                                         <i className="fas fa-edit"></i>&nbsp;
                                                                         Attend Workshop
-                                                                    </button>
+                                                                    </button></a>
                                                                     <br/>
                                                                 </div>
                                                             </div>

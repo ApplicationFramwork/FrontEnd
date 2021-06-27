@@ -92,12 +92,10 @@ class AdminAddResearchComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Change Password
+                                Home Page
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">All Users</a></li>
-                                <li><a className="dropdown-item" href="#">Add Users</a></li>
-                                <li><a className="dropdown-item" href="#">Search</a></li>
+                                <li><a className="dropdown-item" href="#">Home</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -125,7 +123,20 @@ class AdminAddResearchComponent extends Component {
                             </ul>
                         </div>
                         <hr className="text-light"/>
+                        <div className="dropdown my-2">
+                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <i className="fas fa-calendar-alt"></i> &nbsp;
+                                Change Password
+                            </button>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a className="dropdown-item" href="#">Change Password</a></li>
+                            </ul>
+                        </div>
+                        <hr className="text-light"/>
+
                     </div>
+
                     <div className="col-sm-10">
                         <div className="row">
                             <div className="collapse" id="navbarToggleExternalContent">
@@ -258,6 +269,11 @@ class AdminAddResearchComponent extends Component {
                                 </div>
                             </div>
                         </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
                         <br/>
                     </div>
                 </div>
