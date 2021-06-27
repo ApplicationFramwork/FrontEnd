@@ -2,7 +2,7 @@ import React from "react";
 import jwt_decord from "jwt-decode";
 function Header(){
     return(
-        <div className="container-fluid bg-dark">
+        <div className=" bg-dark">
             <div className="row dash-1st ">
                 <div className="col-sm-6 text-light mt-2 mb-2">
                     <i className="fas fa-calendar-week m-2"></i>

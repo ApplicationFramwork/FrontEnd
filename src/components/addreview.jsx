@@ -18,21 +18,22 @@ class addreview extends Component {
             total_reviwe_point: '',
             researchcomment: '',
             status: '',
-            point: ''
+            point: '',
+            finalpoint : ''
 
         }
-        this.changereseartopic = this.changereseartopic.bind(this);
-        this.changeresearchDescription = this.changeresearchDescription.bind(this);
-        this.changedocHandler = this.changedocHandler.bind(this);
+        this.changerpointhander = this.changerpointhander.bind(this);
+        this.changestatusHandler = this.changestatusHandler.bind(this);
+        this.changecommenthander = this.changecommenthander.bind(this);
     }
-    changedocHandler = (event) => {
-        this.setState({ doc: event.target.files[0] });
+    changestatusHandler = (event) => {
+        this.setState({ status: event.target.value });
     }
-    changereseartopic = (event) => {
-        this.setState({ researchTopic: event.target.value });
+    changerpointhander = (event) => {
+        this.setState({ point: event.target.value });
     }
-    changeresearchDescription = (event) => {
-        this.setState({ researchDescription: event.target.value });
+    changecommenthander = (event) => {
+        this.setState({ researchcomment: event.target.value });
     }
     componentDidMount() {
         CmsSevice.getresearch(this.state.researchid).then((res => {
@@ -47,13 +48,32 @@ class addreview extends Component {
             });
             console.log(this.state.email)
         }))
+    }
+    addreview = (e) => {
+        e.preventDefault();
+        let research = { reviwer_id: jwt_decord(localStorage.getItem("token")).id, research_id: this.state.researchid, reviwe_comment: this.state.researchcomment, status: this.state.status, reviwe_point: this.state.point, email: this.state.email, researchTopic: this.state.researchTopic};
+        console.log('research => ' + JSON.stringify(research));
 
+        CmsSevice.addresearch(research).then(res => {
+            
+        })
+        this.setState({
+            finalpoint : this.state.total_reviwe_point + this.state.point
+        })
+        this.state.finalpoint = (this.state.total_reviwe_point) + (this.state.point);
+        let researchdetails = { research_topic: this.state.researchTopic, submiteremail: this.state.email, reseach_description: this.state.researchDescription, document: this.state.doc, status: this.state.status, total_reviwe_point: ((this.state.point+4))};
+        
+        CmsSevice.updateresearch(researchdetails, this.state.researchid).then(res => {
+            this.props.history.push('/');
+        })
+        
     }
     render() {
         return (
+            
             <body>
                 <input type="checkbox" id="check"></input>
-
+                {console.log(this.state.finalpoint)}
                 <header>
                     <label for="check">
                         <i class="fas fa-bars" id="sidebar_btn"></i>
@@ -145,22 +165,42 @@ class addreview extends Component {
                                     <div className="col-md-6 ml-2 mr-2 mt-3">
                                         <div className="form-group">
                                             <h5>Comment</h5>
-                                            <textarea placeholder="Reserch Description" class="form-control" name="researchDescription"
-                                                rows="5" value={this.state.researchcomment} />
+                                            <textarea placeholder="Comment" class="form-control" name="researchcomment"
+                                                rows="5" value={this.state.researchcomment} onChange={this.changecommenthander} />
                                         </div>
+                                        {console.log(this.state.researchcomment)}
                                     </div>
                                     <div className="col-md-2 ml-4 mr-2 mt-3">
                                         <div className="form-group">
-                                            <h5>status</h5>
-                                            <button className="btn btn-light"><a href={Imageurl + this.state.doc} target="_blank">View Document</a></button>
+                                            <label htmlFor="eventType" className="form-label">Status</label>
+                                            <div className="input-group mb-3">
+                                                <select className="custom-select" name="status" placeholder={"Event Status"}
+                                                    onChange={this.changestatusHandler}>
+                                                    <option selected>Choose...</option>
+                                                    <option value="Approved">Approved</option>
+                                                    <option value="Decline">Decline</option>
+                                                </select>
+                                                { console.log(this.state.status)}
+                                            </div>
                                         </div>
                                         <div className="form-group">
-                                            <h5>status</h5>
-                                            <button className="btn btn-light"><a href={Imageurl + this.state.doc} target="_blank">View Document</a></button>
+                                            <label htmlFor="eventType" className="form-label">Status</label>
+                                            <div className="input-group mb-3">
+                                                <select className="custom-select" name="point" type="number" placeholder={"Event Status"}
+                                                    onChange={this.changerpointhander}>
+                                                    <option selected>Choose...</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                                {console.log(this.state.point)}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                
+
 
                                 <div className="row d-flex justify-content-center">
                                     <div className="col-md-3 mt-3 mb-5">

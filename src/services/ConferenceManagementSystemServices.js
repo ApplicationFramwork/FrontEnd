@@ -34,6 +34,8 @@ const BackendAPIFindUser = "http://localhost:8070/user/getuser";
 //Research Service URL
 const BackendAPIgetllresearch = "http://localhost:8070/researchdoc/getallresearchdocs";
 const GetresearchpapersusignAPI = "http://localhost:8070/researchdoc/getresearch"
+const addreserchAPI = "http://localhost:8070/researchreviwe/add"
+const updateresearchdetails = "http://localhost:8070/researchdoc/updateresearchdeatails"
 
 //reviwer Servises URL
 const BackendAPIUpdateReviwer_URL = "http://localhost:8070/user/update";
@@ -145,8 +147,17 @@ class ConferenceManagementSystemServices{
     getallresearchdoc() {
         return axios.get(BackendAPIgetllresearch);
     }
+    //getresearch using id
     getresearch(id) {
         return axios.get(GetresearchpapersusignAPI + '/' + id);
+    }
+    //addnewreserach
+    addresearch(research) {
+        return axios.post(addreserchAPI, research);
+    }
+    //update research details using research id
+    updateresearch(research, id) {
+        return axios.put(updateresearchdetails + '/' + id, research);
     }
 
 

@@ -89,7 +89,7 @@ class allresearch extends Component {
 
                                             <div className="col-md-3 mt-2 ">
                                                 <span className="mb-3">Document</span><br />
-                                                <a href={Imageurl + research.document} target="_blank">View Document</a>
+                                                <button className="btn btn-light"> <a href={Imageurl + research.document} target="_blank">View Document</a></button>
 
 
                                             </div>
