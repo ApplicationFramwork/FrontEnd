@@ -3,6 +3,7 @@ import logo from "../images/logo.png";
 import event from "../images/event.svg";
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import Header from "./Header";
+import {Table} from "react-bootstrap";
 
 class AddWorkshopComponent extends Component {
     constructor(props){
@@ -242,9 +243,7 @@ class AddWorkshopComponent extends Component {
                                                                         style={{height:"45px",width:"100%"}}
                                                                         onChange={this.changeStatusHandler}>
                                                                     <option selected>Choose...</option>
-                                                                    <option value="Confirmed">Confirmed</option>
                                                                     <option value="Pending">Pending</option>
-                                                                    <option value="Rejected">Rejected</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -268,6 +267,31 @@ class AddWorkshopComponent extends Component {
                             </div>
                         </div>
                         <br/>
+                        <div className="row">
+                            <div className="container">
+                                <br/>
+                                <Table responsive className="table" striped bordered hover>
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"> Title</th>
+                                        <th scope="col"> Event Type</th>
+                                        <th scope="col"> Description</th>
+                                        <th scope="col"> Start Date</th>
+                                        <th scope="col"> Time</th>
+                                        <th scope="col"> Venue</th>
+                                        <th scope="col"> Organized By</th>
+                                        <th scope="col"> Event Status</th>
+                                        <th scope="col"> Update</th>
+                                        <th scope="col"> Delete</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                    </tbody>
+                                </Table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

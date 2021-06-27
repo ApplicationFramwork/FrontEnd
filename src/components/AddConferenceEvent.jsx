@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import background from "../images/Conference.jpg";
 import formBackground from "../images/addEvent.svg";
-import event from "../images/event.svg";
+import event from "../images/conference.svg";
 import logo from "../images/logo.png";
 import Header from "./Header";
 class AddConferenceEvent extends Component {

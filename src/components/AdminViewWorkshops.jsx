@@ -131,38 +131,39 @@ class AdminViewWorkshops extends Component {
                         <div className="container m-2">
                             <div className="row align-items-start">
                                 <div className="col">
-                                    <div className="card" style={{width: "16rem"}}>
+                                    <div className="card" style={{width: "17rem"}}>
                                         <img src={chart} className="card-img-top" alt="..." style={{height:"250px"}}/>
                                         <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">Add Research Paper Presentation</h5>
                                             <p className="card-text">Please click to Add a new Research Paper Presentation based on the submitted research papers</p>
 
-                                            <a href="/adminAddResearch" className="btn btn-dark">Go to Add Research Paper Prsentation
+                                            <a href="/adminAddResearch" className="btn btn-dark">Go to Add Research Paper Presentation
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <div className="card" style={{width: "16rem"}}>
+                                    <div className="card" style={{width: "17rem"}}>
                                         <img src={chart2} className="card-img-top" style={{height:"250px"}} alt="..."/>
                                         <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">Add a Workshop</h5>
                                             <br/>
                                             <p className="card-text">Please click to Add a new Workshop based on the submitted workshop presentations</p>
                                             <br/>
-                                            <a href="/addWorkshop" className="btn btn-dark">Go to Add a Workshop
+                                            <a href="/adminAddResearch" className="btn btn-dark">Go to Add a Workshop
                                                 &nbsp;&nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <div className="card" style={{width: "16rem"}}>
+                                    <div className="card" style={{width: "17rem"}}>
                                         <img src={chart3} className="card-img-top"alt="..." style={{height:"250px"}}/>
                                         <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">View upcoming Research Paper Presentations</h5>
                                             <p className="card-text">Please click to view Upcoming Research Paper Presentations' details</p>
+                                            <br/>
                                             <a href="/adminResearch" className="btn btn-dark">View upcoming Research Paper Presentations
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>

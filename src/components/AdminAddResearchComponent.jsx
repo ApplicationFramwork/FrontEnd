@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import logo from "../images/logo.png";
-import event from "../images/event.svg";
+import event from "../images/calendar.svg";
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import Header from "./Header";
 
@@ -92,7 +92,7 @@ class AdminAddResearchComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                View Events
+                                Change Password
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a className="dropdown-item" href="#">All Users</a></li>

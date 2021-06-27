@@ -61,7 +61,7 @@ class AdminViewResearchEvents extends Component {
     }
     render() {
         return (
-            <div className="container-fluid bg-light">
+            <div className="bg-light">
                 <Header/>
                 {/*Editor sidebar*/}
                 <div className="row">
@@ -139,12 +139,11 @@ class AdminViewResearchEvents extends Component {
                         <div className="container m-2">
                             <div className="row align-items-start">
                                 <div className="col">
-                                    <div className="card" style={{width: "15rem"}}>
-                                        <img src={graph} className="card-img-top" alt="..." style={{height:"250px"}}/>
+                                    <div className="card" style={{width: "17rem"}}>
+                                        <img src={graph} className="card-img-top" alt="..." style={{height:"200px"}}/>
                                         <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">Add Research Paper Prsentation</h5>
                                             <p className="card-text">Please click to Add a new Research Paper Presentation based on the submitted research papers</p>
-
                                             <a href="/adminAddResearch" className="btn btn-dark">Go to Add Research Paper Prsentation
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
@@ -152,12 +151,12 @@ class AdminViewResearchEvents extends Component {
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <div className="card" style={{width: "15rem"}}>
-                                        <img src={graph3} className="card-img-top" style={{height:"250px"}} alt="..."/>
+                                    <div className="card" style={{width: "17rem"}}>
+                                        <img src={graph3} className="card-img-top" style={{height:"200px"}} alt="..."/>
                                         <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">Add a Workshop</h5>
                                             <p className="card-text">Please click to Add a new Workshop based on the submitted workshop presentations</p>
-                                            <br/>
+                                            <br/><br/>
                                             <a href="/adminAddWorkshop" className="btn btn-dark">Go to Add a Workshop
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
@@ -165,12 +164,12 @@ class AdminViewResearchEvents extends Component {
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <div className="card" style={{width: "15rem"}}>
-                                        <img src={graph2} className="card-img-top" style={{height:"250px"}} alt="..."/>
+                                    <div className="card" style={{width: "17rem"}}>
+                                        <img src={graph2} className="card-img-top" style={{height:"200px"}} alt="..."/>
                                         <div className="card-body" style={{background:"#FFCD01"}}>
                                             <h5 className="card-title">View upcoming Workshops</h5>
                                             <p className="card-text">Please click to view Upcoming Workshops' details</p>
-                                            <br/>
+                                            <br/><br/>
                                             <a href="/adminWorkshop" className="btn btn-dark">View upcoming Workshops
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>

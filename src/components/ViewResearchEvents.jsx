@@ -9,6 +9,7 @@ import conference from "../images/Conference.png";
 import conference2 from "../images/Conference2.png";
 import IndexHeader from "./index-header";
 import banner from "../images/banner.png"
+import Conference from "../images/Conference.jpg"
 
 class ViewResearchEvents extends Component {
     constructor(props){
@@ -32,6 +33,7 @@ class ViewResearchEvents extends Component {
                                 <center>
                                     <br/>
                                     <h2 style={{color:"white"}}>Research Paper Presentations</h2>
+                                    <br/>
                                 </center>
                             <div className="row">
                                 <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
@@ -69,6 +71,7 @@ class ViewResearchEvents extends Component {
                                                     <div className="card mt-3 sellercard">
                                                         <div className="product text-center mt-3">
                                                             <h5>Upcoming Research Paper Presentations</h5>
+                                                            <img src={Conference} style={{height:"50%",width:"100%"}}/>
                                                             <h2>{events.title}</h2>
                                                             <div className="mt-3 info">
                                                                 <span className="text1 d-block mb-3">{events.description}</span>

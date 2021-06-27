@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import Header from "./Header";
 import logo from "../images/logo.png";
-import event from "../images/event.svg";
+import event from "../images/events.svg";
 
 class AdminAddWorkshopComponent extends Component {
     constructor(props){
@@ -41,9 +41,9 @@ class AdminAddWorkshopComponent extends Component {
         console.log('workshop => ' + JSON.stringify(workshop));
         if(this.state.title !==''&& this.state.eventType!=='' && this.state.description!== '' && this.state.startDate!==''
             && this.state.duration!=='' && this.state.venue!=='' && this.state.organizedBy!=='' && this.state.eventStatus!==''){
-            ConferenceManagementSystemServices.addWorkshop(workshop).then(res =>{
+            ConferenceManagementSystemServices.adminAddEvent(workshop).then(res =>{
                 alert("Workshop Added Successfully");
-                this.props.history.push('/workshopList');
+                this.props.history.push('/adminWorkshop');
             });
         }else{
             alert("Please fill each required field");
@@ -92,10 +92,12 @@ class AdminAddWorkshopComponent extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Home Page
+                                Change Password
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href={"/editor"}>Navigate to Homepage</a></li>
+                                <li><a className="dropdown-item" href="#">All Users</a></li>
+                                <li><a className="dropdown-item" href="#">Add Users</a></li>
+                                <li><a className="dropdown-item" href="#">Search</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -106,8 +108,8 @@ class AdminAddWorkshopComponent extends Component {
                                 Add Event
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href={"/addConferenceEvent"}>Add new Workshop</a></li>
-
+                                <li><a className="dropdown-item" href="/adminAddResearch">Add Research Paper Presentation</a></li>
+                                <li><a className="dropdown-item" href="/adminAddWorkshop">Add a Workshop</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -118,11 +120,12 @@ class AdminAddWorkshopComponent extends Component {
                                 View Upcoming Events
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href={"/eventList"}>View upcoming Events</a></li>
+                                <li><a className="dropdown-item" href="/adminResearch">View Research Paper Presentations</a></li>
+                                <li><a className="dropdown-item" href="/adminWorkshop">View Workshops</a></li>
                             </ul>
                         </div>
-                        <hr className="text-light"/><br/><br/>
-                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/>
+
+                        <hr className="text-light"/>
                     </div>
                     <div className="col-sm-10">
                         <div className="row">
@@ -232,7 +235,6 @@ class AdminAddWorkshopComponent extends Component {
                                                                         onChange={this.changeStatusHandler}>
                                                                     <option selected>Choose...</option>
                                                                     <option value="Confirmed">Confirmed</option>
-                                                                    <option value="Pending">Pending</option>
                                                                     <option value="Rejected">Rejected</option>
                                                                 </select>
                                                             </div>
@@ -256,7 +258,7 @@ class AdminAddWorkshopComponent extends Component {
                                 </div>
                             </div>
                         </div>
-                        <br/>
+                        <br/><br/><br/><br/>
                     </div>
                 </div>
             </div>

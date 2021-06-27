@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import logo from "../images/logo.png";
-import event from "../images/Followers.svg";
+import event from "../images/call.svg";
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import Header from "./Header";
 
@@ -259,9 +259,7 @@ class UpdateWorkshopComponent extends Component {
                                                                         style={{height:"45px",width:"100%"}}
                                                                         value={this.state.eventStatus} onChange={this.changeStatusHandler}>
                                                                     <option selected>Choose...</option>
-                                                                    <option value="Confirmed">Confirmed</option>
                                                                     <option value="Pending">Pending</option>
-                                                                    <option value="Rejected">Rejected</option>
                                                                 </select>
                                                             </div>
                                                         </div>

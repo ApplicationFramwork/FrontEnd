@@ -176,6 +176,7 @@ class ListEventsComponent extends Component {
 
                                     </tbody>
                                 </Table>
+                                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                             </div>
                         </div>
                     </div>

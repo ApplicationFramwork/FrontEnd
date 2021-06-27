@@ -14,6 +14,10 @@ const EVENT_API_UPDATE_EVENT_URL = "http://localhost:8070/event/update";
 const EVENT_API_GET_EVENTBYID_URL = "http://localhost:8070/event/get";
 const CONFIRMED_EVENTS_URL = "http://localhost:8070/event/getConfirmed";
 const GET_EVENTS_BY_STATUS_URL = "http://localhost:8070/event/getEvents";
+//Admin add workshop
+const ADMIN_ADD_WORKSHOP_URL = "http://localhost:8070/workshop/adminAdd";
+//Admin update workshop
+const ADMIN_UPDATE_WORKSHOP_URL = "http://localhost:8070/workshop/adminUpdate";
 
 //Workshop Service URLS
 const WORKSHOP_API_BASE_URL = "http://localhost:8070/workshop";
@@ -64,6 +68,10 @@ class ConferenceManagementSystemServices{
     addEvent(event){
         return axios.post(EVENT_API_ADDEVENT_URL, event);
     }
+    //admin add event
+    adminAddEvent(event){
+        return axios.post(ADMIN_ADD_WORKSHOP_URL, event);
+    }
     //delete an event
     deleteEvent(id){
         console.log("Item ID:"+id);
@@ -73,6 +81,12 @@ class ConferenceManagementSystemServices{
     updateEvent(event, id){
         console.log("update"+id);
         return axios.put(EVENT_API_UPDATE_EVENT_URL + '/' + id, event);
+    }
+    //admin update workshop
+    //update an event
+    adminUpdateWorkshop(event, id){
+        console.log("update"+id);
+        return axios.put(ADMIN_UPDATE_WORKSHOP_URL + '/' + id, event);
     }
     //get confirmed events
     getConfirmedEvents(){

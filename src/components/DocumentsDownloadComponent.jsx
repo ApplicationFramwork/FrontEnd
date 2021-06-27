@@ -58,7 +58,23 @@ class DocumentsDownloadComponent extends Component {
                         <br/>
                         <br/>
                         <br/>
-                        <h5 style={{color:"white"}}>You can download Research Paper Templates and Powerpoint templates from above links</h5>
+
+                        <p style={{color:"white"}}>
+                            For Authors:<br/><br/>
+
+                            To be published in the ICAF 2021 Conference Proceedings and to be eligible for publication in IEEE Xplore (Digital Library), at least one author of an accepted paper is required to register for the conference at the FULL (IEEE member or non-IEEE member) rate.
+                            One FULL REGISTRATION allows the author to upload one (1) on which he/she is an author or co-author. The deadline for author registration is xxth November 2021.
+                            One Full REGISTRATION allows ALL the authors to receive certificate of participation.
+                            The paper MUST be presented by an author of that paper at the conference.
+                            If an author or co-author is NOT available to present the paper at the conference, will NOT be eligible for publication in IEEE Xplore.
+                            The registration fee is non-transferable and non- refundable.<br/><br/>
+
+                            For All Conference Participants: <br/><br/>
+
+                            One Day REGISTRATION allows the participants to access all technical sessions and workshops on a selected day.
+                            All Guests who are registered for the conference will be given the access to all technical sessions. All Guests who are registered for the conference will NOT be allowed to attend any workshops. Guest registrants may attend the welcoming reception including keynote speeches.
+                            The registration fee is non-transferable and non- refundable.
+                        </p>
                     </div>
                 </div>
 

@@ -128,7 +128,7 @@ class EditorDashboardComponent extends Component {
                                             <div className="card-body">
                                                 <h5 className="card-title">Add Research Paper Presentation</h5>
                                                 <p className="card-text">Please click to Add a new Research Paper Presentation based on the submitted research papers</p>
-                                                <a href="/addConferenceEvent" className="btn btn-primary">Go to Add Research Paper Prsentation
+                                                <a href="/addConferenceEvent" className="btn btn-primary">Go to Add Research Paper Presentation
                                                     &nbsp;<i className=" fas fa-calendar-alt"></i>
                                                 </a>
                                             </div>

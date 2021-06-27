@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import "./App.css";
 import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
-import CounterClass from "./components/CounterClass";
-import CounterFunction from "./components/CounterFunction";
+
 import Header from "./components/Header";
 import AddEventComponent from "./components/AddEventComponent";
 import ListEvents from "./components/ListEventsComponent";
@@ -40,8 +39,7 @@ import dash from './components/DashBoard-AdminComponent';
 import  dash2 from './components/user-dashboard';
 import userProfileComponent from './components/user-profile-component';
 import UserLogin from "./components/UserLogin";
-import Test from "./components/Test"
-import about from "./components/AboutUs";
+
 
 function App(){
     return(
@@ -61,7 +59,6 @@ function App(){
             <Route path = "/contact" component = {ContactUsComponent}></Route>
             <Route path = "/download" component = {DocumentsDownloadComponent}></Route>
 
-            <Route path = "/Test" component = {Test}></Route>
             <Route path = "/side" component = {sidebar}></Route>
             <Route path = "/eventList" component = {ListEvents}></Route>
             <Route path = "/addConferenceEvent" component = {AddConferenceEvent}></Route>
@@ -89,7 +86,6 @@ function App(){
             <Route path="/addresearchdoc" component={addresearchdoc}></Route>
             <Route path="/addproposalhdoc" component={addproposaldoc}></Route>
 
-            <Route path = "/about" component = {about}></Route>
             <Route path = "/footer" component = {footer}></Route>
         </div>
         </Router>
