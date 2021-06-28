@@ -95,7 +95,7 @@ class AdminAddResearchComponent extends Component {
                                 Home Page
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Home</a></li>
+                                <li><a className="dropdown-item" href={"/dash"}>Home</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>

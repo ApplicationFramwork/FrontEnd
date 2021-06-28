@@ -72,12 +72,10 @@ class AdminViewResearchEvents extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Change Password
+                                Home Page
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">All Users</a></li>
-                                <li><a className="dropdown-item" href="#">Add Users</a></li>
-                                <li><a className="dropdown-item" href="#">Search</a></li>
+                                <li><a className="dropdown-item" href={"/dash"}>Home Page</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -102,6 +100,17 @@ class AdminViewResearchEvents extends Component {
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a className="dropdown-item" href="/adminResearch">View Research Paper Presentations</a></li>
                                 <li><a className="dropdown-item" href="/adminWorkshop">View Workshops</a></li>
+                            </ul>
+                        </div>
+                        <hr className="text-light"/>
+                        <div className="dropdown my-2">
+                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <i className="fas fa-calendar-alt"></i> &nbsp;
+                                Change Password
+                            </button>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a className="dropdown-item" href="#">Change Password</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -142,9 +151,9 @@ class AdminViewResearchEvents extends Component {
                                     <div className="card" style={{width: "17rem"}}>
                                         <img src={graph} className="card-img-top" alt="..." style={{height:"200px"}}/>
                                         <div className="card-body" style={{background:"#FFCD01"}}>
-                                            <h5 className="card-title">Add Research Paper Prsentation</h5>
+                                            <h5 className="card-title">Add Research Paper Presentation</h5>
                                             <p className="card-text">Please click to Add a new Research Paper Presentation based on the submitted research papers</p>
-                                            <a href="/adminAddResearch" className="btn btn-dark">Go to Add Research Paper Prsentation
+                                            <a href="/adminAddResearch" className="btn btn-dark">Go to Add Research Paper Presentation
                                                 &nbsp;<i className=" fas fa-calendar-alt"></i>
                                             </a>
                                         </div>

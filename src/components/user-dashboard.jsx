@@ -1,12 +1,8 @@
 import React,{Component} from "react";
-import logo from "../images/logo.png";
 import sliit from "../images/SLIIT-malabe.jpg";
 import Header from "./Header";
-import FCSC from "../images/FCSC.png";
 import Audi from "../images/Audi.jpg";
 import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
-import Switch from "react-bootstrap/Switch";
-import jwt_decord from "jwt-decode";
 
 class userDashboard extends  Component{
     constructor(props) {
@@ -17,7 +13,7 @@ class userDashboard extends  Component{
     }
 
     componentDidMount(){
-        conferenceManagementSystemServices.getEvents().then((res) => {
+        conferenceManagementSystemServices.getEventByStatus("Confirmed").then((res) => {
             this.setState({ events: res.data});
         });
     }
@@ -29,7 +25,7 @@ class userDashboard extends  Component{
                   <div className="col-sm-2 text-light" >
                       <ul className="sideList">
                           <li className= "p-2">
-                              <i className="fas fa-user">&nbsp; &nbsp;<small>Name</small></i>
+                              <i className="fas fa-user">&nbsp; &nbsp;<small><a href="/payment">Payment</a></small></i>
                           </li>
                           <li className= "p-2">
                               <i className="fas fa-heartbeat">&nbsp; &nbsp;<small>COVID special notices</small></i>
@@ -79,7 +75,7 @@ class userDashboard extends  Component{
                                               <i className="fas fa-comment">&nbsp; &nbsp;<small>Comment</small></i>
                                           </div>
                                           <div className="col-sm-4">
-                                              <i className="fas fa-share-alt">&nbsp; &nbsp;<small>Share</small></i>
+                                              <i className="fas fa-share-alt">&nbsp; &nbsp;<a href="/payment">Register</a></i>
                                           </div>
                                       </div>
 
@@ -89,41 +85,6 @@ class userDashboard extends  Component{
                                   </div>
                           )
                       }
-
-                      <div className="card m-2">
-                          <div>
-                              <i className="fas fa-user text-secondary">&nbsp; &nbsp;<small>Name</small></i>
-                          </div>
-                          <div>
-                              <img src={sliit} style={{width:"100%"}}/>
-                          </div>
-                          <div className="row">
-                              <div className="col-sm-6">
-                                  <small>100 likes</small>
-                              </div>
-                              <div className="col-sm-6 giftBox">
-                                  <small>10 comments</small>
-                              </div>
-                          </div>
-
-                          <hr className="text-dark m-0"/>
-
-                          <div className="row block">
-                              <div className="col-sm-4">
-                                  <i className="fas fa-thumbs-up">&nbsp; &nbsp;<small>Like</small></i>
-                              </div>
-                              <div className="col-sm-4">
-                                  <i className="fas fa-comment">&nbsp; &nbsp;<small>Comment</small></i>
-                              </div>
-                              <div className="col-sm-4">
-                                  <i className="fas fa-share-alt">&nbsp; &nbsp;<small>Share</small></i>
-                              </div>
-                          </div>
-
-                          <hr className="text-dark m-0"/>
-                          <br/>
-                          <input type="text" placeholder="Write a comment..." className="mb-1 comment"/>
-                      </div>
 
                   </div>
                   <div className="col-sm-3">

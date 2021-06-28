@@ -36,11 +36,17 @@ class UserLogin extends  Component{
                 let type = jwt_decord(localStorage.getItem("token")).user_role;
 
                 //check user type and navigate to dash board
-                if(type === "editor"){
+                if(type === "Editor"){
                     this.props.history.push('/editor');
-                }else if (type === "admin"){
+                }else if (type === "Admin"){
                     this.props.history.push('/dash');
                 }else if(type === "Researcher"){
+                    this.props.history.push('/researcherDash');
+                }else if(type === "Attendee"){
+                    this.props.history.push('/userDash');
+                }else if(type === "WorkshopPresenter") {
+                    this.props.history.push('/workshopDash');
+                }else if(type === "Reviewer") {
                     this.props.history.push('/reviwer');
                 }else{
 
@@ -70,7 +76,9 @@ class UserLogin extends  Component{
                     <div className="col-sm-8 lg-body">
                         <div className="row">
                             <div className="col-sm-1">
-                                <img src={logo} width={"100px"}/>
+                                <a href={"/"}>
+                                    <img src={logo} width={"100px"}/>
+                                </a>
                             </div>
                         </div>
                     </div>

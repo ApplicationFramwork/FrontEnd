@@ -107,7 +107,7 @@ class AdminAddWorkshopComponent extends Component {
                                 Home Page
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Home Page</a></li>
+                                <li><a className="dropdown-item" href={"/dash"}>Home Page</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>

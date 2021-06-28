@@ -3,26 +3,25 @@ import logo from '../images/logo.png';
 import CmsSevice from '../services/ConferenceManagementSystemServices';
 const Imageurl = "http://localhost:8070/uploads/"
 
-class newResearch extends Component {
+class newproposal extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            research: []
+            proposal: []
         }
     }
     componentDidMount() {
-        CmsSevice.getallpendingresearchdoc().then((res => {
-            this.setState({ research: res.data });
-            console.log(this.state.research)
-            { console.log(this.state.research.document) }
+        CmsSevice.getallpendingproposaldoc().then((res => {
+            this.setState({ proposal: res.data });
+            console.log(this.state.proposal)
+            { console.log(this.state.proposal.document) }
         }))
 
     }
     NavigationPreloadManager(e, researchid) {
-        this.props.history.push('/addreviw/' + researchid);
+        this.props.history.push('/addproposalreview/' + researchid);
     }
-    
     render() {
         return (
             <body>
@@ -63,7 +62,7 @@ class newResearch extends Component {
                         <div className="glass">
                             <div className="row text-center mb-3">
                                 <div className="col-12 mt-5">
-                                    <h1>NEW RESEARCH</h1>
+                                    <h1>NEW PROPOSAL</h1>
                                     <div className="row ">
                                         <div className="col-md-4"></div>
                                         <div className="col-md-4 d-flex justify-content-center mb-5">
@@ -77,36 +76,36 @@ class newResearch extends Component {
                         </div>
 
                         {
-                            this.state.research.map(
-                                research =>
+                            this.state.proposal.map(
+                                proposal =>
                                     <div className="glass mt-3">
                                         <div className="row text-center">
                                             <div className="col-md-4 mt-2">
-                                                <span>Topic</span><h4>{research.research_topic}</h4>
+                                                <span>Topic</span><h4>{proposal.proposal_topic}</h4>
                                             </div>
                                             <div className="col-md-5 mb-3">
-                                                <span>Description</span><h4>{research.reseach_description}</h4>
+                                                <span>Description</span><h4>{proposal.proposal_description}</h4>
                                             </div>
 
                                             <div className="col-md-3 mt-2 ">
                                                 <span className="mb-3">Document</span><br />
-                                                <button className="btn btn-light"> <a href={Imageurl + research.document} target="_blank">View Document</a></button>
+                                                <button className="btn btn-light"> <a href={Imageurl + proposal.document} target="_blank">View Document</a></button>
 
 
                                             </div>
                                         </div>
                                         <div className="row text-center">
                                             <div className="col-md-4 mb-3">
-                                                <span>Submiter's Email</span><h4>{research.submiteremail}</h4>
+                                                <span>Submiter's Email</span><h4>{proposal.submiteremail}</h4>
                                             </div>
                                             <div className="col-md-3 mt-2">
-                                                <span>Status</span><h4>{research.status}</h4>
+                                                <span>Status</span><h4>{proposal.status}</h4>
                                             </div>
                                             <div className="col-md-2 mt-2">
-                                                <span>Points</span><h4>{research.total_reviwe_point}</h4>
+                                                <span>Points</span><h4>{proposal.total_reviwe_point}</h4>
                                             </div>
                                             <div className="col-md-2 mt-3 content-justify-center">
-                                                <button className="btn btn-success btn-block" onClick={e => this.NavigationPreloadManager(e, research._id)}>Add Review</button> <br />
+                                                <button className="btn btn-success btn-block" onClick={e => this.NavigationPreloadManager(e, proposal._id)}>Add Review</button> <br />
                                             </div>
                                         </div>
                                     </div>
@@ -119,4 +118,4 @@ class newResearch extends Component {
     }
 }
 
-export default newResearch;
+export default newproposal;

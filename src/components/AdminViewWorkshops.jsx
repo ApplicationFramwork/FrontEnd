@@ -67,12 +67,10 @@ class AdminViewWorkshops extends Component {
                             <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="fas fa-calendar-alt"></i> &nbsp;
-                                Change Password
+                                Home Page
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">All Users</a></li>
-                                <li><a className="dropdown-item" href="#">Add Users</a></li>
-                                <li><a className="dropdown-item" href="#">Search</a></li>
+                                <li><a className="dropdown-item" href={"/dash"}>Home Page</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
@@ -97,6 +95,17 @@ class AdminViewWorkshops extends Component {
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a className="dropdown-item" href="/adminResearch">View Research Paper Presentations</a></li>
                                 <li><a className="dropdown-item" href="/adminWorkshop">View Workshops</a></li>
+                            </ul>
+                        </div>
+                        <hr className="text-light"/>
+                        <div className="dropdown my-2">
+                            <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <i className="fas fa-calendar-alt"></i> &nbsp;
+                                Change Password
+                            </button>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a className="dropdown-item" href="#">Change Password</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>

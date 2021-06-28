@@ -118,23 +118,22 @@ class UserSignUpComponent extends Component{
             <div className="container-fluid signup-bdy ">
                 <div className="row">
                     <div className="col-md-7">
-                        
+                        <a href={"/"}>
                             <img src ={logo} width={"15%"} alt=""></img>
-                        
+                        </a>
                     </div>
                     
                     <div className="col-md-5 signUpForm mt-5">
                         <center>
-                            <h3 className="text-dark headdingIcms">
+                            <h3 className="text-light headdingIcms">
                                 Welcome to ICMS
                             </h3>
 
                             <div className="card opacity-3 bg-secondary">
-                                <i className="text-mute">International Conference Management System</i>
+                                <i className="text-dark">International Conference Management System</i>
                             </div>
-                            <hr className="m-2"/>
                         </center>
-                        <form className="form-container mt-2">
+                        <form className="bg-dark form-container p-3">
                                 <div className="form-group">
                                     <label htmlFor="User_Name" className="text-small text-light mt-5">User Name : </label>
                                      <input type="name" className="form-control" id="User_Name"
@@ -205,7 +204,7 @@ class UserSignUpComponent extends Component{
                                 <button type="button" className="btn btn-info mb-5 mt-3" onClick={this.adduser}>Sign Up</button>
                                 <div>
                                     <small className="text-light mb-5">
-                                        Already have an account? <i className="text-info">Login</i>
+                                        Already have an account? <a href={"/login"} className="text-info">Login</a>
                                     </small>
                                 </div>
                             </form>

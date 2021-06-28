@@ -4,7 +4,8 @@ import CmsSevice from '../services/ConferenceManagementSystemServices';
 import Swal from 'sweetalert2';
 import jwt_decord from "jwt-decode";
 
-class changePasswordcomponent extends Component {
+
+class changepasswords extends Component {
     constructor(props) {
         super(props)
 
@@ -33,7 +34,7 @@ class changePasswordcomponent extends Component {
     changereenterpassHandler = (event) => {
         this.setState({ reenterpassword: event.target.value });
     }
-   
+
     //UPADATE REVIWER DETAILS
     updatereviwer = (e) => {
         e.preventDefault();
@@ -110,29 +111,14 @@ class changePasswordcomponent extends Component {
                     </div>
                 </header>
 
-                <div class="mobile_nav">
-                    <div class="nav_bar">
-                        <i class="fa fa-bars nav_btn"></i>
-                    </div>
-                    <div class="mobile_nav_items">
-                        <a href="/reviwer"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-                        <a href="/reviwerchangepassword"><i class="fa fa-key"></i><span>Change Password</span></a>
-                    </div>
-                </div>
-
-                <div class="sidebar">
-                    <a href="/reviwer"><i class="fas fa-desktop mt-5 mb-5"></i><span>Dashboard</span></a>
-                    <a className="active" href="/reviwerchangepassword"><i class="fa fa-key mt-5 mb-5"></i><span>Change Password</span></a>
-                </div>
-
-
-                <div class="content">
-                    <div className="container-fluid">
-                        <div className="glass">
-                            <div className="row text-center mb-3">
-                                <div className="col-12 mt-3">
+               
+                <div className="container-fluid mt-5 mb-5" style={{ backgroundColor: "#404040", height: "90vh" }}>
+                    <div className="container mt-5" style={{  height: "80vh" }}>
+                        <div className="glass mt-5" style={{ height: "80vh" }}>
+                            <div className="row text-center  mt-5">
+                                <div className="col-12  mt-5">
                                     <h1>EDIT PASSWORD</h1>
-                                    <div className="row ">
+                                    <div className="row mt-5">
                                         <div className="col-md-4"></div>
                                         <div className="col-md-4 d-flex justify-content-center">
                                             <div className="breake">
@@ -173,11 +159,11 @@ class changePasswordcomponent extends Component {
 
                                 <div className="row justify-content-center">
 
-                                    <div className="col-md-3 mt-4 mb-5">
+                                    <div className="col-md-3 mb-5 ">
                                         <button className="btn btn-success btn-block" onClick={this.updatereviwer}>Update Password</button>
                                     </div>
 
-                                    <div className="col-md-3 mt-4 mb-5 ">
+                                    <div className="col-md-3 mb-5 ">
                                         <button className="btn btn-danger btn-block" onClick={this.cancle}>cancle</button>
                                     </div>
 
@@ -186,9 +172,10 @@ class changePasswordcomponent extends Component {
                         </div>
                     </div>
                 </div>
+               
             </body>
         );
     }
 }
 
-export default changePasswordcomponent;
+export default changepasswords;

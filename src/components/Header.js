@@ -5,7 +5,8 @@ function Header(){
         <div className="bg-dark">
             <div className="row dash-1st ">
                 <div className="col-sm-6 text-light mt-2 mb-2">
-                    <i className="fas fa-calendar-week m-2"></i>
+                    <a className="text-light" href="/userDash"><i className="fas fa-home m-2"></i></a>
+                    <a className="text-light" href="/payment"><i className="fas fa-calendar-week m-2"></i></a>
                     <i className="far fa-comment-alt m-2"></i>
                     <i className="far fa-envelope m-2"></i>
                     <i className="fas fa-calendar-check m-2"></i>

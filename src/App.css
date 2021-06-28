@@ -252,7 +252,7 @@ label #sidebar_btn:hover{
   background-color: #0B87A6;
   background-position: center;
   background-size: cover;
-  height:max-content;
+  min-height:100vh;
   transition: 0.5s;
 }
 .glass {
@@ -661,10 +661,10 @@ a{
 
 .signup-bdy{
 
-  background-image: url("images/WhatsApp Image 2021-05-25 at 11.11.38.jpeg");
+  background-image: url("images/signup.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
 }
 .signUpForm {
   opacity: 0.8;
@@ -855,4 +855,52 @@ getStarted-a{
   background-repeat: no-repeat;
   background-size: cover;
   height: 250vh;
+}
+/*new*/
+.paymentForm{
+  border: 1px solid red;
+  width: 75%;
+  height: 500px;
+
+}
+.otpBanner{
+  background-color: beige;
+  border-radius: 10px;
+}
+.validateButton{
+  border: 1px solid transparent;
+  background-color: #4abcb4;
+  padding: 10px;
+  border-radius: 10px;
+}
+.adduserBody{
+  background-image: url("images/addUserBackgound.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.saveChangesBtn{
+  border: 1px solid transparent;
+  padding: 5px;
+  background-color: #19b3d3;
+  border-radius: 10px;
+  color: white;
+}
+.saveChangesBtn:hover{
+  background-color: #4abcb4;
+  color: black;
+}
+
+.reviewrImg{
+  border: 1px solid white;
+  background-color: white;
+}
+.contBox{
+  box-shadow: 10px 10px 5px grey;
+}
+.nav_menu{
+  border: 1px solid transparent;
+}
+.adminLinks{
+  width: 100%;
 }

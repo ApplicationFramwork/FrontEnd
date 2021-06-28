@@ -93,7 +93,7 @@ class EditorDashboardComponent extends Component {
                                 Change Password
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Change Password</a></li>
+                                <li><a className="dropdown-item" href="/changePassword">Change Password</a></li>
                             </ul>
                         </div>
                         <hr className="text-light"/>
