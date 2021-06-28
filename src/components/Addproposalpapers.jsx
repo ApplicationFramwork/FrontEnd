@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Swal from 'sweetalert2';
+import Header from "./Header";
 import axios from 'axios';
+import jwt_decord from "jwt-decode";
 
 class Addproposalpapers extends Component {
     constructor(props) {
@@ -8,7 +10,7 @@ class Addproposalpapers extends Component {
 
         this.state = {
             proposal_topic: '',
-            submiteremail: 'vihangamalshan12346@gmail.com',
+            submiteremail: jwt_decord(localStorage.getItem("token")).email,
             proposal_description: '',
             doc: ''
 
@@ -85,54 +87,61 @@ class Addproposalpapers extends Component {
     }
     render() {
         return (
-            <div className="container-fluid">
-                <div className="row text-center">
-                    <div className="col-12">
-                        <h1>Add Research Papers</h1>
+            <body>
+                <Header />
+
+                <div className="container-fluid" style={{ backgroundColor: "#404040", height: "100vh" }}>
+                    <div className="row text-center">
+                        <div className="col-12 mt-5">
+                            <h1 style={{ color: "#FFF" }}>Add Proposal Papers</h1>
+                        </div>
+                    </div>
+                    <div className="container mt-5">
+                        <div className="card" style={{ backgroundColor: "#999999" }}>
+                            <form className="form-container">
+                                <div className="row d-flex justify-content-center">
+                                    <div className="col-md-8 ml-2 mr-2 mt-3">
+                                        <div className="form-group">
+                                            <h5>Proposal Topic</h5>
+                                            <input placeholder="Proposal Topic" name="proposal_topic" className="form-control"
+                                                value={this.state.proposal_topic} onChange={this.changeproposaltopic} />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row d-flex justify-content-center">
+                                    <div className="col-md-8 ml-2 mr-2 mt-3">
+                                        <div className="form-group">
+                                            <h5>Proposal Description</h5>
+                                            <textarea placeholder="Proposal Description" class="form-control" name="researchDescription"
+                                                rows="3" value={this.state.proposal_description} onChange={this.changeproposalDescription} />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row d-flex justify-content-center">
+                                    <div className="col-md-8 ml-2 mr-2 mt-3">
+                                        <div className="form-group">
+                                            <h5>Proposal Papers</h5>
+                                            <input className="form-control bg-success mt-2 mb-3" type="file" name="doc"
+                                                onChange={this.changedocHandler} />{console.log(this.state.doc)}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row d-flex justify-content-center">
+                                    <div className="col-md-3 mt-3 mb-5">
+                                        <button className="btn btn-success btn-block" onClick={this.addrproposaldoc}>Add Proposalpapers</button>
+                                    </div>
+
+                                    <div className="col-md-3 mt-3 mb-5">
+                                        <button className="btn btn-danger btn-block" onClick={this.cancle}>cancle</button>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
                     </div>
                 </div>
-
-                <form className="form-container">
-                    <div className="row d-flex justify-content-center">
-                        <div className="col-md-8 ml-2 mr-2 mt-3">
-                            <div className="form-group">
-                                <h5>Proposal Topic</h5>
-                                <input placeholder="Research Topic" name="proposal_topic" className="form-control"
-                                    value={this.state.proposal_topic} onChange={this.changeproposaltopic} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row d-flex justify-content-center">
-                        <div className="col-md-8 ml-2 mr-2 mt-3">
-                            <div className="form-group">
-                                <h5>Proposal Description</h5>
-                                <textarea placeholder="Reserch Description" class="form-control" name="researchDescription"
-                                    rows="3" value={this.state.proposal_description} onChange={this.changeproposalDescription} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row d-flex justify-content-center">
-                        <div className="col-md-8 ml-2 mr-2 mt-3">
-                            <div className="form-group">
-                                <h5>Proposal Papers</h5>
-                                <input className="form-control bg-success mt-2 mb-3" type="file" name="doc"
-                                    onChange={this.changedocHandler} />{console.log(this.state.doc)}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row d-flex justify-content-center">
-                        <div className="col-md-3 mt-3 mb-5">
-                            <button className="btn btn-success btn-block" onClick={this.addrproposaldoc}>Add Proposalpapers</button>
-                        </div>
-
-                        <div className="col-md-3 mt-3 mb-5">
-                            <button className="btn btn-danger btn-block" onClick={this.cancle}>cancle</button>
-                        </div>
-                    </div>
-
-
-                </form>
-            </div>
+            </body>
         );
     }
 }
