@@ -165,7 +165,7 @@ class changePasswordcomponent extends Component {
                                     <div className="col-md-8 ml-2 mr-2 mt-4">
                                         <div className="form-group names">
                                             <h5>Reenter-Password</h5>
-                                            <input placeholder="Reenter-Password" name="reenternewpassword" className="form-control"
+                                            <input type="password" placeholder="Reenter-Password" name="reenternewpassword" className="form-control"
                                                 value={this.state.reenterpassword} onChange={this.changereenterpassHandler} />
                                         </div>
                                     </div>

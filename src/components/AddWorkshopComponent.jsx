@@ -4,7 +4,7 @@ import event from "../images/event.svg";
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import Header from "./Header";
 import {Table} from "react-bootstrap";
-const Imageurl = "http://localhost:8070/uploads/"
+const Imageurl = "http://3.19.77.232:5000/uploads/"
 
 class AddWorkshopComponent extends Component {
     constructor(props){

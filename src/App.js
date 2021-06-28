@@ -55,7 +55,7 @@ import addUsersAdmin from "./components/admin-addUsers";
 import AllUsers from "./components/Admin-viewAllUsers"
 import ResearcherDash from "./components/Researcher-dashboard"
 import WorkshopDash from "./components/workshop-dashboard"
-import changePasswordcomponent from "./components/changePasswordcomponent";
+import changePasswordcomponent from "./components/changepasswords";
 
 
 function App(){

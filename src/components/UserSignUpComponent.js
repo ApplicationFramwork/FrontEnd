@@ -144,14 +144,14 @@ class UserSignUpComponent extends Component{
                                         <div className="col-md-6 mt-2">
                                             <div className="form-group names">
                                                 <label  className="text-small text-light mt-5">Password</label>
-                                                <input placeholder="password" name="password" className="form-control"
+                                                <input type="password" placeholder="password" name="password" className="form-control"
                                                 value={this.state.password} onChange={this.changepasswordHandler} />
                                             </div>
                                         </div>
                                         <div className="col-md-6  mt-2">
                                             <div className="form-group names">
                                                 <label  className="text-small text-light mt-5">Confirm Password</label>
-                                                <input placeholder="Confirm-password" name="reenterpasswolabel" className="form-control"
+                                                <input type="password" placeholder="Confirm-password" name="reenterpasswolabel" className="form-control"
                                                 value={this.state.reneterpassword} onChange={this.changerepasswordHandler}/>
                                             </div>
                                         </div>

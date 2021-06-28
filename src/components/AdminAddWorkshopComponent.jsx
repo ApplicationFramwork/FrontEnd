@@ -4,7 +4,7 @@ import Header from "./Header";
 import logo from "../images/logo.png";
 import event from "../images/events.svg";
 import {Table} from "react-bootstrap";
-const Imageurl = "http://localhost:8070/uploads/"
+const Imageurl = "http://3.19.77.232:5000/uploads/"
 
 class AdminAddWorkshopComponent extends Component {
     constructor(props){
