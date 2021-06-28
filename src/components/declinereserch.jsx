@@ -36,7 +36,7 @@ class declinereserch extends Component {
                         <img src={logo} alt="" />
                     </div>
                     <div class="right_area">
-                        <a href="/" class="logout_btn">Logout</a>
+                        <a href="/profile" class="logout_btn">Profile</a>
                     </div>
                 </header>
 

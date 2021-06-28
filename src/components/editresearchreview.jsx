@@ -79,6 +79,12 @@ class editresearchreview extends Component {
         })
 
     }
+    delete = (e) => {
+        e.preventDefault();
+        CmsSevice.deleteresearch(this.state.details[0]._id).then(res => {
+            this.props.history.push('/reviwer');
+        });
+    }
     render() {
         return (
             <body>
@@ -92,7 +98,7 @@ class editresearchreview extends Component {
                         <img src={logo} alt="" />
                     </div>
                     <div class="right_area">
-                        <a href="/" class="logout_btn">Logout</a>
+                        <a href="/profile" class="logout_btn">Profile</a>
                     </div>
                 </header>
 

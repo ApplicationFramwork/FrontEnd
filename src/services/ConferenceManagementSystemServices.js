@@ -34,16 +34,23 @@ const BackendAPIFindUser = "http://localhost:8070/user/getuser";
 //Research Service URL
 const BackendAPIgetllresearch = "http://localhost:8070/researchdoc/getallresearchdocs";
 const GetresearchpapersusignAPI = "http://localhost:8070/researchdoc/getresearch"
+const GetproposalpapersusignAPI = "http://localhost:8070/proposaldoc/getresearch"
 const addreserchAPI = "http://localhost:8070/researchreviwe/add"
+const addnewproposalAPI = "http://localhost:8070/proposalreviwe/add"
 const updateresearchdetails = "http://localhost:8070/researchdoc/updateresearchdeatails"
+const updateproposaldetails = "http://localhost:8070/proposaldoc/updateresearchdeatails"
 const BackendAPIgetllpending = "http://localhost:8070/researchdoc/getpending"
 const BackendAPIgetllpendingproposal = "http://localhost:8070/proposaldoc/getpending"
 const BackendAPIgetllapproveusingid = "http://localhost:8070/researchreviwe/getresearchreviwereviwer"
-const BackendAPIgetllapproveproposalusingid = "http://localhost:8070/proposaldoc/getresearchreviwereviwer"
+const BackendAPIgetllapproveproposalusingid = "http://localhost:8070/proposalreviwe/getresearchreviwereviwer"
 const BackendAPIgetlldeclineusingid = "http://localhost:8070/researchreviwe/getdeclineresearchreviwereviwer"
 const BackendAPIgetlldeclineproposalusingid = "http://localhost:8070/proposalreviwe/getdeclineresearchreviwereviwer"
 const BackendAPIgetreveiwusingdocid = "http://localhost:8070/researchreviwe/getresearchreviwetoupdate"
-const BackendAPIupdatereview= "http://localhost:8070/researchreviwe/updateResearchReview"
+const BackendAPIgetproposalreveiwusingdocid = "http://localhost:8070/proposalreviwe/getresearchreviwetoupdate"
+const BackendAPIupdatereview = "http://localhost:8070/researchreviwe/updateResearchReview"
+const BackendAPIproposalupdatereview = "http://localhost:8070/proposalreviwe/updateProposalReview"
+const DELETE_RE_REVIEW_USINGID_API_BASE_URL = "http://localhost:8070/researchreviwe/delete"
+const DELETE_proposal_REVIEW_USINGID_API_BASE_URL = "http://localhost:8070/proposalreviwe/delete"
 
 //reviwer Servises URL
 const BackendAPIUpdateReviwer_URL = "http://localhost:8070/user/update";
@@ -185,27 +192,54 @@ class ConferenceManagementSystemServices{
     getalldeclineproposaldoc(id) {
         return axios.get(BackendAPIgetlldeclineproposalusingid + '/' + id);
     }
-    //get all decline research using review id
+    //get research using review id
     getrewieusingdocid(id) {
         return axios.get(BackendAPIgetreveiwusingdocid + '/' + id);
+    }
+    //get proposal using review id
+    getproposalrewieusingdocid(id) {
+        return axios.get(BackendAPIgetproposalreveiwusingdocid + '/' + id);
     }
     //getresearch using id
     getresearch(id) {
         return axios.get(GetresearchpapersusignAPI + '/' + id);
     }
-    //addnewreserach
+    //get proposal research using id
+    getproposal(id) {
+        return axios.get(GetproposalpapersusignAPI + '/' + id);
+    }
+    //addnewreserachewview
     addresearch(research) {
         return axios.post(addreserchAPI, research);
+    }
+    //addnewproposalreview
+    addnewproposalreview(research) {
+        return axios.post(addnewproposalAPI, research);
     }
     //update research details using research id
     updateresearch(research, id) {
         return axios.put(updateresearchdetails + '/' + id, research);
     }
+    //update proposal details using research id
+    updateproposalresearch(research, id) {
+        return axios.put(updateproposaldetails + '/' + id, research);
+    }
     //update reviw details using reviw id
     updatereview(review, id) {
         return axios.put(BackendAPIupdatereview + '/' + id, review);
     }
-
+    //update reviw details using reviw id
+    updateproposalreview(review, id) {
+        return axios.put(BackendAPIproposalupdatereview + '/' + id, review);
+    }
+    //delete proposal review
+    deleteproposal(id) {
+        return axios.delete(DELETE_proposal_REVIEW_USINGID_API_BASE_URL + '/' + id);
+    }
+    //delete research review
+    deleteresearch(id) {
+        return axios.delete(DELETE_RE_REVIEW_USINGID_API_BASE_URL + '/' + id);
+    }
 
 }
 

@@ -4,7 +4,7 @@ import logo from '../images/logo.png';
 import CmsSevice from '../services/ConferenceManagementSystemServices';
 const Imageurl = "http://localhost:8070/uploads/"
 
-class addreview extends Component {
+class editproposalreview extends Component {
     constructor(props) {
         super(props)
 
@@ -19,7 +19,8 @@ class addreview extends Component {
             researchcomment: '',
             status: '',
             point: '',
-            finalpoint : ''
+            finalpoint: '',
+            details: []
 
         }
         this.changerpointhander = this.changerpointhander.bind(this);
@@ -36,41 +37,56 @@ class addreview extends Component {
         this.setState({ researchcomment: event.target.value });
     }
     componentDidMount() {
-        CmsSevice.getresearch(this.state.researchid).then((res => {
+        CmsSevice.getproposal(this.state.researchid).then((res => {
             let research = res.data;
             this.setState({
-                researchTopic: research.research_topic,
-                researchDescription: research.reseach_description,
+                researchTopic: research.proposal_topic,
+                researchDescription: research.proposal_description,
                 doc: research.document,
                 email: research.submiteremail,
                 currentstatus: research.status,
                 total_reviwe_point: research.total_reviwe_point
             });
-            console.log(this.state.email)
+            console.log(research)
+        }))
+        CmsSevice.getproposalrewieusingdocid(this.state.researchid).then((res => {
+            this.setState({
+                details: res.data,
+
+            });
+            console.log(this.state.details[0]._id)
+            this.setState({
+                researchcomment: this.state.details[0].reviwe_comment,
+                status: this.state.details[0].status,
+                point: this.state.details[0].reviwe_point
+            })
+            console.log(this.state.details[0].reviwe_point)
         }))
     }
-    addreview = (e) => {
+    editreview = (e) => {
         e.preventDefault();
-        let research = { reviwer_id: jwt_decord(localStorage.getItem("token")).id, research_id: this.state.researchid, reviwe_comment: this.state.researchcomment, status: this.state.status, reviwe_point: this.state.point, email: this.state.email, researchTopic: this.state.researchTopic};
+        let research = { reviwer_id: jwt_decord(localStorage.getItem("token")).id, proposal_id: this.state.researchid, reviwe_comment: this.state.researchcomment, status: this.state.status, reviwe_point: this.state.point, email: this.state.email, researchTopic: this.state.researchTopic };
         console.log('research => ' + JSON.stringify(research));
 
-        CmsSevice.addresearch(research).then(res => {
-            
+        CmsSevice.updateproposalreview(research, this.state.details[0]._id).then(res => {
+            console.log('success');
         })
-        this.setState({
-            finalpoint : this.state.total_reviwe_point + this.state.point
-        })
-        this.state.finalpoint = (this.state.total_reviwe_point) + (this.state.point);
-        let researchdetails = { research_topic: this.state.researchTopic, submiteremail: this.state.email, reseach_description: this.state.researchDescription, document: this.state.doc, status: this.state.status, total_reviwe_point: this.state.point};
+
+        let researchdetails = { proposal_topic: this.state.researchTopic, submiteremail: this.state.email, proposal_description: this.state.researchDescription, document: this.state.doc, status: this.state.status, total_reviwe_point: this.state.point };
         
-        CmsSevice.updateresearch(researchdetails, this.state.researchid).then(res => {
+        CmsSevice.updateproposalresearch(researchdetails, this.state.researchid).then(res => {
             this.props.history.push('/reviwer');
         })
-        
+
+    }
+    delete = (e) => {
+        e.preventDefault();
+        CmsSevice.deleteproposal(this.state.details[0]._id).then(res => {
+            this.props.history.push('/reviwer');
+        });
     }
     render() {
         return (
-            
             <body>
                 <input type="checkbox" id="check"></input>
                 {console.log(this.state.finalpoint)}
@@ -109,7 +125,7 @@ class addreview extends Component {
                         <div className="glass">
                             <div className="row text-center">
                                 <div className="col-12 mt-5">
-                                    <h1>ADD REVIEW</h1>
+                                    <h1>EDIT PROPOSAL</h1>
                                     <div className="row ">
                                         <div className="col-md-4"></div>
                                         <div className="col-md-4 d-flex justify-content-center mb-5">
@@ -161,6 +177,7 @@ class addreview extends Component {
                                 </div>
 
 
+
                                 <div className="row d-flex justify-content-center">
                                     <div className="col-md-6 ml-2 mr-2 mt-3">
                                         <div className="form-group">
@@ -180,7 +197,7 @@ class addreview extends Component {
                                                     <option value="Approved">Approved</option>
                                                     <option value="Decline">Decline</option>
                                                 </select>
-                                                { console.log(this.state.status)}
+                                                {console.log(this.state.status)}
                                             </div>
                                         </div>
                                         <div className="form-group">
@@ -205,16 +222,21 @@ class addreview extends Component {
 
                                 <div className="row d-flex justify-content-center">
                                     <div className="col-md-3 mt-3 mb-5">
-                                        <button className="btn btn-success btn-block" onClick={this.addreview}>Add Review</button>
+                                        <button className="btn btn-success btn-block" onClick={this.editreview}>Edit Review</button>
                                     </div>
 
                                     <div className="col-md-3 mt-3 mb-5">
                                         <button className="btn btn-danger btn-block" onClick={this.cancle}>cancle</button>
                                     </div>
+
+                                    <div className="col-md-3 mt-3 mb-5">
+                                        <button className="btn btn-danger btn-block" onClick={this.delete}>Delete Review</button>
+                                    </div>
                                 </div>
 
 
                             </form>
+
                         </div>
                     </div>
                 </div>
@@ -223,4 +245,4 @@ class addreview extends Component {
     }
 }
 
-export default addreview;
+export default editproposalreview;

@@ -49,7 +49,7 @@ class ReviwerDashcomponent extends Component {
                         <i class="fa fa-bars nav_btn"></i>
                     </div>
                     <div class="mobile_nav_items">
-                        <a href="/reviwer+{this.state.id}"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+                        <a href="/reviwer"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
                         <a href="/reviwerchangepassword"><i class="fa fa-key"></i><span>Change Password</span></a>
                     </div>
                 </div>
@@ -140,7 +140,7 @@ class ReviwerDashcomponent extends Component {
                                     <div class="cricle"></div>
                                     <img src={proposal} alt="" class="skills" /></a>
                                 </div>
-                                <div class="col-md-2 box boody mt-1 mb-2"><a href="/">
+                                <div class="col-md-2 box boody mt-1 mb-2"><a href="/declinproposal">
                                     <h2 class="skillname">REJECTED PROPOSALS</h2>
                                     <div class="cricle"></div>
                                     <img src={proposal} alt="" class="skills" /></a>

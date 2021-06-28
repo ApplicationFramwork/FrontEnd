@@ -20,7 +20,7 @@ class newproposal extends Component {
 
     }
     NavigationPreloadManager(e, researchid) {
-        this.props.history.push('/addreviw/' + researchid);
+        this.props.history.push('/addproposalreview/' + researchid);
     }
     render() {
         return (
@@ -35,7 +35,7 @@ class newproposal extends Component {
                         <img src={logo} alt="" />
                     </div>
                     <div class="right_area">
-                        <a href="/" class="logout_btn">Logout</a>
+                        <a href="/profile" class="logout_btn">Profile</a>
                     </div>
                 </header>
 

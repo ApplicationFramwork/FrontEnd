@@ -21,7 +21,7 @@ class approveproposal extends Component {
 
     }
     NavigationPreloadManager(e, researchid) {
-        this.props.history.push('/editresearchreview/' + researchid);
+        this.props.history.push('/editproposalreview/' + researchid);
     }
     render() {
         return (
@@ -36,7 +36,7 @@ class approveproposal extends Component {
                         <img src={logo} alt="" />
                     </div>
                     <div class="right_area">
-                        <a href="/" class="logout_btn">Logout</a>
+                        <a href="/profile" class="logout_btn">Profile</a>
                     </div>
                 </header>
 
@@ -94,7 +94,7 @@ class approveproposal extends Component {
                                         <div className="row text-center">
                                             <div className="col-md-9"></div>
                                             <div className="col-md-2 mt-3 content-justify-center">
-                                                <button className="btn btn-success btn-block" onClick={e => this.NavigationPreloadManager(e, research.research_id)}>Edit</button> <br />
+                                                <button className="btn btn-success btn-block" onClick={e => this.NavigationPreloadManager(e, research.proposal_id)}>Edit</button> <br />
                                             </div>
                                         </div>
                                     </div>

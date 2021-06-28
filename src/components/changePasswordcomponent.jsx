@@ -62,9 +62,8 @@ class changePasswordcomponent extends Component {
                         password: this.state.newpassword
                     };
                     console.log('reviwer => ' + JSON.stringify(reviwer));
-
                     CmsSevice.updatereviwer(reviwer, this.state.id).then(res => {
-                        console.log('success');
+                        this.props.history.push('/login');
                     })
                     swalWithBootstrapButtons.fire(
                         'Updated!',
@@ -107,7 +106,7 @@ class changePasswordcomponent extends Component {
                         <img src={logo} alt="" />
                     </div>
                     <div class="right_area">
-                        <a href="/" class="logout_btn">Logout</a>
+                        <a href="/profile" class="logout_btn">Profile</a>
                     </div>
                 </header>
 
@@ -148,7 +147,7 @@ class changePasswordcomponent extends Component {
                                     <div className="col-md-8 ml-2 mr-2 mt-5">
                                         <div className="form-group names">
                                             <h5>Current-Password</h5>
-                                            <input placeholder="Current-Password" name="password" className="form-control"
+                                            <input type="password" placeholder="Current-Password" name="password" className="form-control"
                                                 value={this.state.currentpassword} onChange={this.changepasswordHandler} />
                                         </div>
                                     </div>
@@ -157,7 +156,7 @@ class changePasswordcomponent extends Component {
                                     <div className="col-md-8 ml-2 mr-2 mt-4">
                                         <div className="form-group names">
                                             <h5>New-Password</h5>
-                                            <input placeholder="New-Password" name="newpassword" className="form-control"
+                                            <input type="password" placeholder="New-Password" name="newpassword" className="form-control"
                                                 value={this.state.newpassword} onChange={this.changenewpassHandler} />
                                         </div>
                                     </div>
