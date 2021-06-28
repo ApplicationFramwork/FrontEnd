@@ -85,6 +85,10 @@ class editresearchreview extends Component {
             this.props.history.push('/reviwer');
         });
     }
+    cancle = (e) => {
+        e.preventDefault();
+        this.props.history.push("/reviwer")
+    }
     render() {
         return (
             <body>
