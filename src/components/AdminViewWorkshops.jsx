@@ -2,11 +2,7 @@ import React, {Component} from 'react';
 import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import Header from "./Header";
 import logo from "../images/logo.png";
-import wallpaper from "../images/Research.jpg";
 import {Table} from "react-bootstrap";
-import calendar2 from "../images/calendar.gif";
-import editEvent from "../images/editEvents.gif";
-import localise from "../images/localise.gif";
 import chart from "../images/chart.gif"
 import chart2 from "../images/chart2.gif"
 import chart3 from "../images/chart3.gif"

@@ -1,19 +1,11 @@
 import React, {Component} from 'react';
 import logo from "../images/logo.png";
-import calendar2 from "../images/calendar.gif";
-import localise from "../images/localise.gif";
 import Header from "../components/Header";
 import {Table} from "react-bootstrap";
 import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
-import icon1 from "../images/analytics.png";
-import author2 from "../images/author2.jpg";
-import author3 from "../images/author3.jpg";
-import wallpaper from "../images/Research.jpg"
 import graph from "../images/graph.gif";
 import graph2 from "../images/graph2.gif";
 import graph3 from "../images/graph3.gif";
-import chart2 from "../images/chart2.gif";
-import chart3 from "../images/chart3.gif";
 const options = [
     {
         label : "Confirmed",

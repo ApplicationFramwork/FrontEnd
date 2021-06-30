@@ -1,6 +1,5 @@
 import React,{Component} from "react";
 import picChart from "../images/Maleesha_PieChart.webp"
-import Header from "./Header";
 import AdminHeader from "./AdminHeader";
 class DashBoardAdminComponent extends Component{
 

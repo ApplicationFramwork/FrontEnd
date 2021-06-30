@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../images/logo.png';
 import CmsSevice from '../services/ConferenceManagementSystemServices';
 import jwt_decord from "jwt-decode";
-const Imageurl = "http://3.19.77.232:5000/uploads/"
+const Imageurl = "http://localhost:8070/uploads/"
 
 class approveproposal extends Component {
     constructor(props) {

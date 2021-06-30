@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
-import ResearcherHeader from "./ResearcherHeader";
 import img from "../images/Profile.png";
 import Audi from "../images/Audi.jpg";
 import sliit from "../images/SLIIT-malabe.jpg";

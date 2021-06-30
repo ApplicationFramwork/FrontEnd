@@ -4,7 +4,7 @@ import event from "../images/event.svg";
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import Header from "./Header";
 import {Table} from "react-bootstrap";
-const Imageurl = "http://3.19.77.232:5000/uploads/"
+const Imageurl = "http://localhost:8070/uploads/"
 
 class AddWorkshopComponent extends Component {
     constructor(props){
@@ -278,6 +278,7 @@ class AddWorkshopComponent extends Component {
                             </div>
                         </div>
                         <br/>
+                        {/*Proposal presentations added by workshop conductors.*/}
                         <div className="row">
                             <div className="container">
                                 <br/>
@@ -303,9 +304,7 @@ class AddWorkshopComponent extends Component {
                                                     <td> {workshop.status}</td>
                                                 </tr>
                                         )
-
                                     }
-
 
                                     </tbody>
                                 </Table>

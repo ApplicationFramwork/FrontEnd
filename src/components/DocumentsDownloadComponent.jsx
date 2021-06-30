@@ -4,8 +4,6 @@ import word from "../images/word.jpg"
 import ResearchPaper from "../files/ResearchPaper_Template.docx"
 import powerpoint from "../files/PowerPointTemplate.pptx"
 import powerpointLogo from "../images/PowerPoint.png"
-import calendar2 from "../images/calendar.gif";
-import localise from "../images/localise.gif";
 class DocumentsDownloadComponent extends Component {
     render() {
         return (

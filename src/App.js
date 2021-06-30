@@ -22,7 +22,6 @@ import AdminUpdateWorkshopsComponent from "./components/AdminUpdateWorkshopsComp
 import AboutUsComponent from "./components/AboutUsComponent";
 import ContactUsComponent from "./components/ContactUsComponent";
 import DocumentsDownloadComponent from "./components/DocumentsDownloadComponent";
-import footer from "./components/Footer"
 import sidebar from "./components/EditorSidebarComponent";
 
 import reviwerdash from './components/ReviwerDashcomponent';
@@ -122,8 +121,6 @@ function App(){
             <Route path="/declinproposal" component={declinproposal}></Route>
             <Route path = "/editresearchreview/:id" component={editresearchreview}></Route>
             <Route path="/editproposalreview/:id" component={editproposalreview}></Route>
-
-            <Route path = "/footer" component = {footer}></Route>
         </div>
         </Router>
     );

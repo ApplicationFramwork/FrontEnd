@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
-import logo from "../images/logo.png";
 import wallpaper from "../images/Workshop.jpg";
-import Header from "./Header";
 import wallpaper2 from "../images/wallpaper2.png";
 import notice from "../images/notice.png"
 import conference from "../images/Conference.png"

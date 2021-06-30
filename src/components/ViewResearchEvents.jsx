@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import logo from "../images/logo.png";
 import wallpaper from "../images/Research.jpg"
 import wallpaper2 from "../images/wallpaper2.png"
 import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
-import Header from "./Header";
 import notice from "../images/notice.png";
 import conference from "../images/Conference.png";
 import conference2 from "../images/Conference2.png";

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.png';
 import CmsSevice from '../services/ConferenceManagementSystemServices';
-const Imageurl = "http://3.19.77.232:5000/uploads/"
+const Imageurl = "http://localhost:8070/uploads/"
 
 class allresearch extends Component {
     constructor(props) {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import formBackground from "../images/addEvent.svg";
 import ConferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
 import logo from "../images/logo.png";
 import event from "../images/Followers.svg";

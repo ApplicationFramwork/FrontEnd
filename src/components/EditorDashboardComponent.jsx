@@ -1,8 +1,4 @@
 import React, {Component} from 'react';
-import background from "../images/Meeting-Background.jpg";
-import calender from "../images/calender.jpg";
-import chart from "../images/chart.png";
-import edit from "../images/edit.png";
 import editEvent from "../images/editEvents.gif";
 import calendar2 from "../images/calendar.gif";
 import logo from "../images/logo.png";

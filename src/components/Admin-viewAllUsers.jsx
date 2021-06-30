@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import conferenceManagementSystemServices from "../services/ConferenceManagementSystemServices";
-import {Table} from "react-bootstrap";
 
 class AdminViewAllUsers extends Component {
     constructor(props){
